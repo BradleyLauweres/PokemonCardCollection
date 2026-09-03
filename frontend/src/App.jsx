@@ -85,7 +85,8 @@ export default function App() {
         setSetCards(formattedCards);
         setUserCollection(allUserCards);
       } else if (selectedSetId === 'wanted_list') {
-        const wantedCards = await fetchUserCollection(null, true);
+        const rawCollection = await fetchUserCollection(null, true);
+        const wantedCards = (rawCollection || []).filter(c => c.is_wanted === true);
         const formattedCards = wantedCards.map(c => ({
           id: c.card_id,
           name: c.name,
@@ -463,6 +464,7 @@ export default function App() {
         const isWanted = !!(userCollectionMap[card.id] && userCollectionMap[card.id].is_wanted === true);
 
         if (selectedSetId === 'wanted_list') {
+          if (!isWanted) return false;
           if (statusFilter === 'owned' && !isOwned) return false;
           if (statusFilter === 'unowned' && isOwned) return false;
         } else {
