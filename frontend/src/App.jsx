@@ -140,7 +140,7 @@ export default function App() {
     const cardSetId = card.set?.id || selectedSetId;
 
     if (isCurrentlyOwned) {
-      setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0 } : c));
+      setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0, is_wanted: false } : c));
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== card.id));
       }
@@ -189,7 +189,7 @@ export default function App() {
   // Toggle card wanted status (Wishlist ❤️)
   const handleToggleWanted = async (card) => {
     const existing = userCollectionMap[card.id];
-    const isWantedCurrently = !!(existing && existing.is_wanted);
+    const isWantedCurrently = !!(existing && existing.is_wanted === true);
     const cardSetId = card.set?.id || selectedSetId;
 
     setUserCollection(prev => {
@@ -254,7 +254,7 @@ export default function App() {
   // Change quantity for owned card
   const handleQuantityChange = async (cardId, newQty) => {
     if (newQty <= 0) {
-      setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0 } : c));
+      setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0, is_wanted: false } : c));
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== cardId));
       }
@@ -287,7 +287,8 @@ export default function App() {
       number: c.number,
       rarity: c.rarity || '',
       image_url: c.images?.small || '',
-      quantity: 1
+      quantity: 1,
+      is_wanted: false
     }));
     setUserCollection(allEntries);
 
@@ -414,7 +415,7 @@ export default function App() {
         <CardModal
           card={inspectedCard}
           isOwned={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].quantity > 0)}
-          isWanted={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].is_wanted)}
+          isWanted={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].is_wanted === true)}
           userCardEntry={userCollectionMap[inspectedCard.id]}
           onToggle={handleToggleCard}
           onToggleWanted={handleToggleWanted}
