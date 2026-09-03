@@ -1,7 +1,48 @@
 import React from 'react';
-import { Calendar, CheckCircle2, Trash2, Trophy, Flame, Euro, BookOpen } from 'lucide-react';
+import { Calendar, CheckCircle2, Trash2, Trophy, Flame, Euro, BookOpen, Heart } from 'lucide-react';
 
-export default function SetBanner({ set, cardsCount, ownedCount, setValue = 0, isAllOwnedMode = false, onMarkAll, onClearAll }) {
+export default function SetBanner({ set, cardsCount, ownedCount, setValue = 0, isAllOwnedMode = false, isWantedMode = false, onMarkAll, onClearAll }) {
+  if (isWantedMode) {
+    return (
+      <div className="set-banner" style={{ background: 'linear-gradient(135deg, rgba(255, 0, 127, 0.15) 0%, rgba(18, 24, 40, 0.95) 100%)', borderColor: 'rgba(255, 0, 127, 0.4)' }}>
+        <div className="set-header-row">
+          <div className="set-info-left">
+            <div className="brand-icon" style={{ width: 56, height: 56, background: 'linear-gradient(135deg, #ff007f, #ff4081)' }}>
+              <Heart size={28} color="#ffffff" fill="#ffffff" />
+            </div>
+            <div className="set-details">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <h1>My Wanted List (Wishlist)</h1>
+              </div>
+              <div className="set-meta">
+                <span className="badge" style={{ background: '#ff007f', color: '#ffffff', fontWeight: 800 }}>WISHLIST</span>
+                <span>• Cards you and your partner are looking to buy or collect</span>
+                {setValue > 0 && (
+                  <span className="badge" style={{ background: 'rgba(255, 0, 127, 0.2)', borderColor: '#ff007f', color: '#ff4081', fontWeight: 800 }}>
+                    <Euro size={12} style={{ verticalAlign: 'middle' }} /> Est. Cost to Complete: €{setValue.toFixed(2)}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="progress-container">
+          <div className="progress-header">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Heart size={18} color="#ff007f" fill="#ff007f" />
+              <span style={{ fontWeight: 700, color: '#fff' }}>Total Wanted Cards</span>
+            </div>
+            <div>
+              <span className="progress-stats-num" style={{ color: '#ff4081' }}>{cardsCount}</span>
+              <span style={{ color: 'var(--text-muted)' }}> cards on your wishlist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (isAllOwnedMode) {
     return (
       <div className="set-banner" style={{ background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(18, 24, 40, 0.95) 100%)', borderColor: 'rgba(0, 229, 255, 0.3)' }}>

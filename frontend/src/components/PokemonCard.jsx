@@ -1,18 +1,19 @@
 import React from 'react';
-import { Check, Lock, Eye, Plus, Minus, Tag } from 'lucide-react';
+import { Check, Lock, Eye, Plus, Minus, Tag, Heart } from 'lucide-react';
 
 export default function PokemonCard({
   card,
   isOwned,
+  isWanted,
   userEntry,
   quantity = 0,
   onToggle,
+  onToggleWanted,
   onQuantityChange,
   onInspectCard
 }) {
   const imageUrl = card.images?.small || card.images?.large || '';
 
-  // Extract prices from API (Cardmarket average sell price is natively in EUR)
   const cmPrice = card.cardmarket?.prices?.averageSellPrice;
   const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
   const apiPrice = cmPrice || tcgPrice || 0;
@@ -30,9 +31,10 @@ export default function PokemonCard({
 
   return (
     <div
-      className={`pokemon-card-wrapper ${isOwned ? 'owned' : 'unowned'}`}
+      className={`pokemon-card-wrapper ${isOwned ? 'owned' : (isWanted ? 'wanted' : 'unowned')}`}
       onClick={handleWrapperClick}
-      title={isOwned ? `${card.name} (#${card.number}) - Click to toggle / remove` : `Click to mark ${card.name} (#${card.number}) as OWNED`}
+      title={isOwned ? `${card.name} (#${card.number}) - Owned` : (isWanted ? `${card.name} (#${card.number}) - On Wanted List ❤️` : `Click to mark ${card.name} (#${card.number}) as OWNED`)}
+      style={isWanted && !isOwned ? { borderColor: '#ff007f', boxShadow: '0 0 15px rgba(255, 0, 127, 0.4)' } : {}}
     >
       {/* Owned Badge */}
       {isOwned && (
@@ -41,12 +43,53 @@ export default function PokemonCard({
         </div>
       )}
 
+      {/* Wanted Heart Badge Top Right if not owned */}
+      {isWanted && !isOwned && (
+        <div
+          className="owned-badge"
+          style={{ background: 'linear-gradient(135deg, #ff007f, #ff4081)', boxShadow: '0 0 12px rgba(255, 0, 127, 0.6)' }}
+          title="On Wanted List ❤️"
+        >
+          <Heart size={16} fill="#ffffff" stroke="none" />
+        </div>
+      )}
+
       {/* Unowned Lock Overlay Icon */}
-      {!isOwned && (
+      {!isOwned && !isWanted && (
         <div className="unowned-overlay" title="Click card to mark as owned">
           <Lock size={20} />
         </div>
       )}
+
+      {/* Wanted Heart Toggle Button Top Right */}
+      <button
+        className="no-toggle"
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleWanted(card);
+        }}
+        style={{
+          position: 'absolute',
+          top: isOwned || isWanted ? '42px' : '10px',
+          right: '10px',
+          background: isWanted ? 'rgba(255, 0, 127, 0.85)' : 'rgba(9, 12, 21, 0.75)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          borderRadius: '50%',
+          width: '28px',
+          height: '28px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: isWanted ? '#fff' : 'var(--text-muted)',
+          cursor: 'pointer',
+          zIndex: 7,
+          backdropFilter: 'blur(4px)',
+          transition: 'all 0.2s ease'
+        }}
+        title={isWanted ? 'Remove from Wanted List' : 'Add to Wanted List ❤️'}
+      >
+        <Heart size={14} fill={isWanted ? '#ffffff' : 'none'} />
+      </button>
 
       {/* Price Badge on Card */}
       <div
@@ -57,8 +100,8 @@ export default function PokemonCard({
           right: '8px',
           background: hasCustomPrice
             ? 'linear-gradient(135deg, #ffcc00, #ff9900)'
-            : (isOwned ? 'rgba(0, 230, 118, 0.9)' : 'rgba(9, 12, 21, 0.85)'),
-          color: hasCustomPrice ? '#090c15' : (isOwned ? '#090c15' : 'var(--color-primary)'),
+            : (isOwned ? 'rgba(0, 230, 118, 0.9)' : (isWanted ? 'rgba(255, 0, 127, 0.9)' : 'rgba(9, 12, 21, 0.85)')),
+          color: hasCustomPrice ? '#090c15' : (isOwned || isWanted ? '#ffffff' : 'var(--color-primary)'),
           padding: '0.2rem 0.5rem',
           borderRadius: '9999px',
           fontSize: '0.75rem',
@@ -113,6 +156,7 @@ export default function PokemonCard({
           alt={card.name}
           className="card-img"
           loading="lazy"
+          style={isWanted && !isOwned ? { filter: 'grayscale(0%) opacity(0.95)' } : {}}
         />
       </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Layers, Sparkles, PieChart, Euro, BookOpen } from 'lucide-react';
+import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart } from 'lucide-react';
 
-export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, totalOwnedCount, totalMarketValue }) {
+export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, totalOwnedCount, totalWantedCount, totalMarketValue }) {
   const seriesMap = sets.reduce((acc, set) => {
     const series = set.series || 'Other';
     if (!acc[series]) acc[series] = [];
@@ -20,14 +20,24 @@ export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, 
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
         <button
           className={`btn ${selectedSetId === 'all_owned' ? 'btn-primary' : 'btn-secondary'}`}
           onClick={() => onSelectSet('all_owned')}
           title="View all cards in your collection across all sets"
         >
           <BookOpen size={16} color={selectedSetId === 'all_owned' ? '#090c15' : 'var(--color-primary)'} />
-          <span>My Binder (All Sets)</span>
+          <span>My Binder</span>
+        </button>
+
+        <button
+          className={`btn ${selectedSetId === 'wanted_list' ? 'btn-primary' : 'btn-secondary'}`}
+          style={selectedSetId === 'wanted_list' ? { background: 'linear-gradient(135deg, #ff007f, #ff4081)', color: '#fff' } : {}}
+          onClick={() => onSelectSet('wanted_list')}
+          title="View cards on your Wanted Wishlist"
+        >
+          <Heart size={16} fill={selectedSetId === 'wanted_list' ? '#ffffff' : '#ff007f'} color="#ff007f" />
+          <span>Wanted ({totalWantedCount || 0})</span>
         </button>
 
         <div className="set-selector-group">
@@ -38,6 +48,7 @@ export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, 
             onChange={(e) => onSelectSet(e.target.value)}
           >
             <option value="all_owned">🌟 MY BINDER (All Owned Cards)</option>
+            <option value="wanted_list">❤️ MY WANTED LIST (Wishlist)</option>
             {Object.entries(seriesMap).map(([series, setGroup]) => (
               <optgroup key={series} label={`-- ${series} --`}>
                 {setGroup.map((set) => (

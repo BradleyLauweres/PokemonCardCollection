@@ -7,6 +7,7 @@ export default function CardGrid({
   userCollectionMap,
   isLoading,
   onToggleCard,
+  onToggleWanted,
   onQuantityChange,
   onInspectCard
 }) {
@@ -33,17 +34,20 @@ export default function CardGrid({
     <div className="card-grid">
       {cards.map((card) => {
         const userEntry = userCollectionMap[card.id];
-        const isOwned = !!userEntry;
-        const quantity = userEntry ? userEntry.quantity || 1 : 0;
+        const isOwned = !!(userEntry && userEntry.quantity > 0);
+        const isWanted = !!(userEntry && userEntry.is_wanted);
+        const quantity = userEntry ? userEntry.quantity || 0 : 0;
 
         return (
           <PokemonCard
             key={card.id}
             card={card}
             isOwned={isOwned}
+            isWanted={isWanted}
             userEntry={userEntry}
             quantity={quantity}
             onToggle={onToggleCard}
+            onToggleWanted={onToggleWanted}
             onQuantityChange={onQuantityChange}
             onInspectCard={onInspectCard}
           />

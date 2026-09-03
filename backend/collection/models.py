@@ -9,6 +9,7 @@ class CollectedCard(models.Model):
     image_url = models.URLField(max_length=500, blank=True)
     quantity = models.IntegerField(default=1)
     is_foil = models.BooleanField(default=False)
+    is_wanted = models.BooleanField(default=False)
     market_price = models.FloatField(default=0.0)
     custom_price = models.FloatField(default=0.0)
     notes = models.TextField(blank=True)
@@ -16,4 +17,4 @@ class CollectedCard(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.name} ({self.card_id}) - x{self.quantity}"
+        return f"{self.name} ({self.card_id}) - wanted:{self.is_wanted}"

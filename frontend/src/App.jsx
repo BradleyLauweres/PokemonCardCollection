@@ -11,6 +11,7 @@ import {
   fetchSetCards,
   fetchUserCollection,
   toggleCardOwnership,
+  toggleWantedCard,
   updateCardQuantity,
   updateCardPrice,
   bulkToggleSet,
@@ -63,8 +64,9 @@ export default function App() {
       setIsLoadingCards(true);
 
       if (selectedSetId === 'all_owned') {
-        const allUserCards = await fetchUserCollection(); // Fetch all across all sets
-        const formattedCards = allUserCards.map(c => ({
+        const allUserCards = await fetchUserCollection();
+        const ownedOnly = allUserCards.filter(c => c.quantity > 0);
+        const formattedCards = ownedOnly.map(c => ({
           id: c.card_id,
           name: c.name,
           number: c.number,
@@ -75,6 +77,19 @@ export default function App() {
         }));
         setSetCards(formattedCards);
         setUserCollection(allUserCards);
+      } else if (selectedSetId === 'wanted_list') {
+        const wantedCards = await fetchUserCollection(null, true);
+        const formattedCards = wantedCards.map(c => ({
+          id: c.card_id,
+          name: c.name,
+          number: c.number,
+          rarity: c.rarity,
+          supertype: 'Pokémon',
+          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+          set: { id: c.set_id, name: c.set_id }
+        }));
+        setSetCards(formattedCards);
+        setUserCollection(wantedCards);
       } else {
         const [cardsData, userColData] = await Promise.all([
           fetchSetCards(selectedSetId),
@@ -105,6 +120,7 @@ export default function App() {
   // Current set value
   const currentSetValue = useMemo(() => {
     if (selectedSetId === 'all_owned') return stats?.total_market_value || 0;
+    if (selectedSetId === 'wanted_list') return stats?.total_wanted_cost || 0;
     if (!stats?.set_values || !selectedSetId) return 0;
     return stats.set_values[selectedSetId] || 0;
   }, [stats, selectedSetId]);
@@ -120,11 +136,11 @@ export default function App() {
 
   // Toggle card ownership
   const handleToggleCard = async (card, marketPrice = 0) => {
-    const isCurrentlyOwned = !!userCollectionMap[card.id];
+    const isCurrentlyOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
     const cardSetId = card.set?.id || selectedSetId;
 
     if (isCurrentlyOwned) {
-      setUserCollection(prev => prev.filter(c => c.card_id !== card.id));
+      setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0 } : c));
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== card.id));
       }
@@ -142,9 +158,10 @@ export default function App() {
         image_url: card.images?.small || '',
         market_price: mPrice,
         custom_price: 0,
-        quantity: 1
+        quantity: 1,
+        is_wanted: false
       };
-      setUserCollection(prev => [...prev, newCardEntry]);
+      setUserCollection(prev => [...prev.filter(c => c.card_id !== card.id), newCardEntry]);
     }
 
     try {
@@ -169,6 +186,56 @@ export default function App() {
     }
   };
 
+  // Toggle card wanted status (Wishlist ❤️)
+  const handleToggleWanted = async (card) => {
+    const existing = userCollectionMap[card.id];
+    const isWantedCurrently = !!(existing && existing.is_wanted);
+    const cardSetId = card.set?.id || selectedSetId;
+
+    setUserCollection(prev => {
+      if (existing) {
+        return prev.map(c => c.card_id === card.id ? { ...c, is_wanted: !isWantedCurrently } : c);
+      } else {
+        return [...prev, {
+          card_id: card.id,
+          set_id: cardSetId,
+          name: card.name,
+          number: card.number,
+          rarity: card.rarity || '',
+          image_url: card.images?.small || '',
+          market_price: card.cardmarket?.prices?.averageSellPrice || 0,
+          quantity: 0,
+          is_wanted: true
+        }];
+      }
+    });
+
+    if (selectedSetId === 'wanted_list' && isWantedCurrently) {
+      setSetCards(prev => prev.filter(c => c.id !== card.id));
+    }
+
+    try {
+      const cmPrice = card.cardmarket?.prices?.averageSellPrice;
+      const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
+      const mPrice = cmPrice || tcgPrice || 0;
+
+      await toggleWantedCard({
+        card_id: card.id,
+        set_id: cardSetId,
+        name: card.name,
+        number: card.number,
+        rarity: card.rarity || '',
+        image_url: card.images?.small || '',
+        market_price: mPrice
+      });
+
+      const updatedStats = await fetchCollectionStats();
+      setStats(updatedStats);
+    } catch (err) {
+      console.error('Failed toggle wanted status', err);
+    }
+  };
+
   // Save custom price & notes
   const handleSavePrice = async (cardId, customPrice, notes) => {
     setUserCollection(prev =>
@@ -187,7 +254,7 @@ export default function App() {
   // Change quantity for owned card
   const handleQuantityChange = async (cardId, newQty) => {
     if (newQty <= 0) {
-      setUserCollection(prev => prev.filter(c => c.card_id !== cardId));
+      setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0 } : c));
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== cardId));
       }
@@ -208,7 +275,7 @@ export default function App() {
 
   // Bulk action: Mark All as Owned
   const handleMarkAllOwned = async () => {
-    if (selectedSetId === 'all_owned') return;
+    if (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') return;
     if (!window.confirm(`Are you sure you want to mark all ${setCards.length} cards in ${currentSet?.name} as owned?`)) {
       return;
     }
@@ -241,7 +308,7 @@ export default function App() {
 
   // Bulk action: Clear Set
   const handleClearSet = async () => {
-    if (selectedSetId === 'all_owned') return;
+    if (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') return;
     if (!window.confirm(`Are you sure you want to clear all collected cards for ${currentSet?.name}?`)) {
       return;
     }
@@ -268,7 +335,7 @@ export default function App() {
           if (!nameMatch && !numMatch && !setMatch) return false;
         }
 
-        const isOwned = !!userCollectionMap[card.id];
+        const isOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
         if (statusFilter === 'owned' && !isOwned) return false;
         if (statusFilter === 'missing' && isOwned) return false;
 
@@ -289,8 +356,8 @@ export default function App() {
       });
   }, [setCards, userCollectionMap, searchQuery, statusFilter, rarityFilter, sortBy]);
 
-  const ownedCountInSet = selectedSetId === 'all_owned' ? setCards.length : Object.keys(userCollectionMap).length;
-  const missingCountInSet = selectedSetId === 'all_owned' ? 0 : setCards.length - ownedCountInSet;
+  const ownedCountInSet = selectedSetId === 'all_owned' ? setCards.length : (selectedSetId === 'wanted_list' ? 0 : Object.keys(userCollectionMap).filter(k => userCollectionMap[k].quantity > 0 && userCollectionMap[k].set_id === selectedSetId).length);
+  const missingCountInSet = (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') ? 0 : setCards.length - ownedCountInSet;
 
   return (
     <div className="app-container">
@@ -300,6 +367,7 @@ export default function App() {
         onSelectSet={setSelectedSetId}
         onOpenStats={() => setShowStatsModal(true)}
         totalOwnedCount={stats?.total_collected || 0}
+        totalWantedCount={stats?.total_wanted || 0}
         totalMarketValue={stats?.total_market_value || 0}
       />
 
@@ -310,6 +378,7 @@ export default function App() {
           ownedCount={ownedCountInSet}
           setValue={currentSetValue}
           isAllOwnedMode={selectedSetId === 'all_owned'}
+          isWantedMode={selectedSetId === 'wanted_list'}
           onMarkAll={handleMarkAllOwned}
           onClearAll={handleClearSet}
         />
@@ -334,6 +403,7 @@ export default function App() {
           userCollectionMap={userCollectionMap}
           isLoading={isLoadingCards || isLoadingSets}
           onToggleCard={handleToggleCard}
+          onToggleWanted={handleToggleWanted}
           onQuantityChange={handleQuantityChange}
           onInspectCard={setInspectedCard}
         />
@@ -343,9 +413,11 @@ export default function App() {
       {inspectedCard && (
         <CardModal
           card={inspectedCard}
-          isOwned={!!userCollectionMap[inspectedCard.id]}
+          isOwned={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].quantity > 0)}
+          isWanted={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].is_wanted)}
           userCardEntry={userCollectionMap[inspectedCard.id]}
           onToggle={handleToggleCard}
+          onToggleWanted={handleToggleWanted}
           onSavePrice={handleSavePrice}
           onClose={() => setInspectedCard(null)}
         />

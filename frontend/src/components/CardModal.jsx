@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, Euro, Save } from 'lucide-react';
+import { X, Check, Euro, Save, Heart } from 'lucide-react';
 
-export default function CardModal({ card, isOwned, userCardEntry, onToggle, onSavePrice, onClose }) {
+export default function CardModal({ card, isOwned, isWanted, userCardEntry, onToggle, onToggleWanted, onSavePrice, onClose }) {
   if (!card) return null;
 
   const largeImg = card.images?.large || card.images?.small;
   
-  // Extract prices from API (Cardmarket average sell price is natively in EUR)
   const cmPrice = card.cardmarket?.prices?.averageSellPrice;
   const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
   const apiPrice = cmPrice || tcgPrice || 0.0;
@@ -34,8 +33,8 @@ export default function CardModal({ card, isOwned, userCardEntry, onToggle, onSa
           <X size={20} />
         </button>
 
-        {/* Left column: Card Image */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+        {/* Left column: Card Image & Actions */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative', width: '100%', borderRadius: 12, overflow: 'hidden' }}>
             <img
               src={largeImg}
@@ -44,7 +43,7 @@ export default function CardModal({ card, isOwned, userCardEntry, onToggle, onSa
                 width: '100%',
                 display: 'block',
                 borderRadius: 12,
-                filter: isOwned ? 'none' : 'grayscale(100%) opacity(0.6)'
+                filter: isOwned || isWanted ? 'none' : 'grayscale(100%) opacity(0.6)'
               }}
             />
           </div>
@@ -63,6 +62,21 @@ export default function CardModal({ card, isOwned, userCardEntry, onToggle, onSa
                 <Check size={18} /> Mark as Owned (Full Color)
               </>
             )}
+          </button>
+
+          <button
+            className="btn btn-secondary"
+            style={{
+              width: '100%',
+              justify: 'center',
+              background: isWanted ? 'rgba(255, 0, 127, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+              borderColor: isWanted ? '#ff007f' : 'rgba(255, 255, 255, 0.12)',
+              color: isWanted ? '#ff4081' : '#fff'
+            }}
+            onClick={() => onToggleWanted(card)}
+          >
+            <Heart size={18} fill={isWanted ? '#ff007f' : 'none'} color="#ff007f" />
+            {isWanted ? 'On Wanted List ❤️' : 'Add to Wanted List'}
           </button>
         </div>
 

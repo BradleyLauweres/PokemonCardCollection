@@ -24,9 +24,14 @@ export async function fetchSetCards(setId) {
   }
 }
 
-export async function fetchUserCollection(setId = null) {
+export async function fetchUserCollection(setId = null, wantedOnly = false) {
   try {
-    const url = setId ? `${API_BASE}/collection/?set_id=${setId}` : `${API_BASE}/collection/`;
+    let url = `${API_BASE}/collection/`;
+    const params = [];
+    if (setId) params.push(`set_id=${setId}`);
+    if (wantedOnly) params.push(`wanted=true`);
+    if (params.length > 0) url += `?${params.join('&')}`;
+
     const res = await fetch(url);
     if (!res.ok) throw new Error('Failed to fetch collection');
     return await res.json();
@@ -47,6 +52,21 @@ export async function toggleCardOwnership(cardData) {
     return await res.json();
   } catch (err) {
     console.error('Error toggling card:', err);
+    throw err;
+  }
+}
+
+export async function toggleWantedCard(cardData) {
+  try {
+    const res = await fetch(`${API_BASE}/collection/wanted/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cardData)
+    });
+    if (!res.ok) throw new Error('Failed to toggle wanted');
+    return await res.json();
+  } catch (err) {
+    console.error('Error toggling wanted status:', err);
     throw err;
   }
 }
@@ -103,6 +123,6 @@ export async function fetchCollectionStats() {
     return await res.json();
   } catch (err) {
     console.error('Error fetching stats:', err);
-    return { total_collected: 0, total_sets_tracked: 0, total_market_value: 0, total_custom_value: 0, set_counts: {} };
+    return { total_collected: 0, total_wanted: 0, total_wanted_cost: 0, total_sets_tracked: 0, total_market_value: 0, total_custom_value: 0, set_counts: {} };
   }
 }

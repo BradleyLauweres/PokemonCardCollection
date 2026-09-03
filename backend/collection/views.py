@@ -6,7 +6,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.cache import cache
-from django.db.models import Sum, F
 from .models import CollectedCard
 from .serializers import CollectedCardSerializer
 
@@ -33,10 +32,14 @@ def fetch_tcg_api(url, max_retries=6, delay=0.8):
 @api_view(['GET'])
 def list_collection(request):
     set_id = request.query_params.get('set_id', None)
+    wanted_only = request.query_params.get('wanted', None)
+
+    cards = CollectedCard.objects.all()
     if set_id:
-        cards = CollectedCard.objects.filter(set_id=set_id)
-    else:
-        cards = CollectedCard.objects.all()
+        cards = cards.filter(set_id=set_id)
+    if wanted_only == 'true':
+        cards = cards.filter(is_wanted=True)
+
     serializer = CollectedCardSerializer(cards, many=True)
     return Response(serializer.data)
 
@@ -50,19 +53,29 @@ def toggle_card(request):
     rarity = request.data.get('rarity', '')
     image_url = request.data.get('image_url', '')
     market_price = request.data.get('market_price', 0.0)
-    custom_price = request.data.get('custom_price', 0.0)
 
     if not card_id:
         return Response({'error': 'card_id is required'}, status=status.HTTP_400_BAD_REQUEST)
 
     existing = CollectedCard.objects.filter(card_id=card_id).first()
     if existing:
-        existing.delete()
-        return Response({
-            'owned': False,
-            'card_id': card_id,
-            'message': f'Removed {card_id} from collection'
-        })
+        if existing.quantity > 0:
+            if existing.is_wanted:
+                # Keep record as wanted only
+                existing.quantity = 0
+                existing.save()
+                serializer = CollectedCardSerializer(existing)
+                return Response({'owned': False, 'wanted': True, 'card': serializer.data})
+            else:
+                existing.delete()
+                return Response({'owned': False, 'wanted': False, 'card_id': card_id})
+        else:
+            # Re-own
+            existing.quantity = 1
+            existing.is_wanted = False
+            existing.save()
+            serializer = CollectedCardSerializer(existing)
+            return Response({'owned': True, 'wanted': False, 'card': serializer.data})
     else:
         card = CollectedCard.objects.create(
             card_id=card_id,
@@ -72,15 +85,51 @@ def toggle_card(request):
             rarity=rarity,
             image_url=image_url,
             market_price=float(market_price or 0.0),
-            custom_price=float(custom_price or 0.0),
-            quantity=1
+            quantity=1,
+            is_wanted=False
         )
         serializer = CollectedCardSerializer(card)
-        return Response({
-            'owned': True,
-            'card': serializer.data,
-            'message': f'Added {card_id} to collection'
-        })
+        return Response({'owned': True, 'wanted': False, 'card': serializer.data})
+
+
+@api_view(['POST'])
+def toggle_wanted(request):
+    card_id = request.data.get('card_id')
+    set_id = request.data.get('set_id', '')
+    name = request.data.get('name', '')
+    number = request.data.get('number', '')
+    rarity = request.data.get('rarity', '')
+    image_url = request.data.get('image_url', '')
+    market_price = request.data.get('market_price', 0.0)
+
+    if not card_id:
+        return Response({'error': 'card_id is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    card = CollectedCard.objects.filter(card_id=card_id).first()
+    if card:
+        new_wanted = not card.is_wanted
+        card.is_wanted = new_wanted
+        if not new_wanted and card.quantity <= 0:
+            card.delete()
+            return Response({'wanted': False, 'card_id': card_id})
+        else:
+            card.save()
+            serializer = CollectedCardSerializer(card)
+            return Response({'wanted': new_wanted, 'card': serializer.data})
+    else:
+        card = CollectedCard.objects.create(
+            card_id=card_id,
+            set_id=set_id,
+            name=name,
+            number=number,
+            rarity=rarity,
+            image_url=image_url,
+            market_price=float(market_price or 0.0),
+            quantity=0,
+            is_wanted=True
+        )
+        serializer = CollectedCardSerializer(card)
+        return Response({'wanted': True, 'card': serializer.data})
 
 
 @api_view(['POST'])
@@ -96,11 +145,19 @@ def update_quantity(request):
     except ValueError:
         return Response({'error': 'quantity must be an integer'}, status=status.HTTP_400_BAD_REQUEST)
 
-    if quantity <= 0:
-        CollectedCard.objects.filter(card_id=card_id).delete()
-        return Response({'owned': False, 'card_id': card_id, 'quantity': 0})
-
     card = CollectedCard.objects.filter(card_id=card_id).first()
+    if quantity <= 0:
+        if card:
+            if card.is_wanted:
+                card.quantity = 0
+                card.save()
+                serializer = CollectedCardSerializer(card)
+                return Response({'owned': False, 'wanted': True, 'card': serializer.data})
+            else:
+                card.delete()
+                return Response({'owned': False, 'wanted': False, 'card_id': card_id})
+        return Response({'owned': False, 'card_id': card_id})
+
     if card:
         card.quantity = quantity
         card.save()
@@ -130,7 +187,7 @@ def update_card_price(request):
 
     card = CollectedCard.objects.filter(card_id=card_id).first()
     if not card:
-        return Response({'error': 'Card is not in collection'}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'error': 'Card is not in database'}, status=status.HTTP_404_NOT_FOUND)
 
     if custom_price is not None:
         try:
@@ -143,7 +200,7 @@ def update_card_price(request):
 
     card.save()
     serializer = CollectedCardSerializer(card)
-    return Response({'owned': True, 'card': serializer.data})
+    return Response({'owned': card.quantity > 0, 'card': serializer.data})
 
 
 @api_view(['POST'])
@@ -165,7 +222,6 @@ def bulk_toggle(request):
             if not c_id:
                 continue
             
-            # Extract market price
             m_price = 0.0
             cm_price = item.get('cardmarket', {}).get('prices', {}).get('averageSellPrice')
             tcg_price = item.get('tcgplayer', {}).get('prices', {}).get('holofoil', {}).get('market') or item.get('tcgplayer', {}).get('prices', {}).get('normal', {}).get('market')
@@ -181,11 +237,16 @@ def bulk_toggle(request):
                     'rarity': item.get('rarity', ''),
                     'image_url': item.get('images', {}).get('small', ''),
                     'market_price': float(m_price or 0.0),
-                    'quantity': 1
+                    'quantity': 1,
+                    'is_wanted': False
                 }
             )
             if created:
                 created_count += 1
+            else:
+                card.quantity = max(card.quantity, 1)
+                card.is_wanted = False
+                card.save()
         return Response({'message': f'Marked set {set_id} cards as collected (added {created_count})'})
 
     return Response({'error': 'Invalid action'}, status=status.HTTP_400_BAD_REQUEST)
@@ -193,15 +254,17 @@ def bulk_toggle(request):
 
 @api_view(['GET'])
 def get_stats(request):
-    all_collected = CollectedCard.objects.all()
-    total_cards = all_collected.count()
+    all_cards = CollectedCard.objects.all()
+    
+    owned_cards = all_cards.filter(quantity__gt=0)
+    wanted_cards = all_cards.filter(is_wanted=True)
 
     total_market_value = 0.0
     total_custom_value = 0.0
     set_counts = {}
     set_values = {}
 
-    for card in all_collected:
+    for card in owned_cards:
         qty = card.quantity or 1
         val_m = (card.market_price or 0.0) * qty
         val_c = (card.custom_price or card.market_price or 0.0) * qty
@@ -212,8 +275,12 @@ def get_stats(request):
         set_counts[card.set_id] = set_counts.get(card.set_id, 0) + 1
         set_values[card.set_id] = set_values.get(card.set_id, 0.0) + val_m
 
+    total_wanted_cost = sum((c.market_price or 0.0) for c in wanted_cards)
+
     return Response({
-        'total_collected': total_cards,
+        'total_collected': owned_cards.count(),
+        'total_wanted': wanted_cards.count(),
+        'total_wanted_cost': round(total_wanted_cost, 2),
         'total_sets_tracked': len(set_counts),
         'total_market_value': round(total_market_value, 2),
         'total_custom_value': round(total_custom_value, 2),
