@@ -34,14 +34,11 @@ def list_collection(request):
     set_id = request.query_params.get('set_id', None)
     wanted_only = request.query_params.get('wanted', None)
 
-    # One-time cleanup for legacy rows if needed
-    if request.query_params.get('cleanup', None) == 'true':
-        CollectedCard.objects.filter(quantity__gt=0).update(is_wanted=False)
-
     cards = CollectedCard.objects.all()
     if set_id:
         cards = cards.filter(set_id=set_id)
     if wanted_only == 'true':
+        # Strictly return cards marked as wanted that are not yet owned (or explicitly wanted)
         cards = cards.filter(is_wanted=True)
 
     serializer = CollectedCardSerializer(cards, many=True)
