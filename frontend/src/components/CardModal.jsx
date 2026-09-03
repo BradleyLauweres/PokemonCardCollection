@@ -43,7 +43,7 @@ export default function CardModal({ card, isOwned, isWanted, userCardEntry, onTo
                 width: '100%',
                 display: 'block',
                 borderRadius: 12,
-                filter: isOwned || isWanted ? 'none' : 'grayscale(100%) opacity(0.6)'
+                filter: isOwned ? 'none' : 'grayscale(100%) opacity(0.6)'
               }}
             />
           </div>

@@ -36,7 +36,7 @@ export default function PokemonCard({
   } else if (isOwned) {
     wrapperClass += ' owned';
   } else if (isWanted) {
-    wrapperClass += ' wanted-unowned';
+    wrapperClass += ' unowned wanted-unowned';
   } else {
     wrapperClass += ' unowned';
   }
@@ -51,7 +51,7 @@ export default function PokemonCard({
           : isOwned
           ? `${card.name} (#${card.number}) - OWNED`
           : isWanted
-          ? `${card.name} (#${card.number}) - ON WANTED LIST ❤️ (Click to mark as owned)`
+          ? `${card.name} (#${card.number}) - WANTED ❤️ (Grayscale until owned)`
           : `Click to mark ${card.name} (#${card.number}) as OWNED`
       }
     >
