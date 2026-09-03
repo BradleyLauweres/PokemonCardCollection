@@ -1,0 +1,35 @@
+# PokéTrack TCG Collection Backup
+# Source: https://pokemoncardcollection.onrender.com (Set: sv9)
+# Total Cards: 31
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+sv9-7 | sv9 | 7 | 1 | 0 | 0.05 | 0.00 | Lilligant | Common | https://images.pokemontcg.io/sv9/7.png | 
+sv9-119 | sv9 | 119 | 1 | 0 | 0.04 | 0.00 | Furret | Common | https://images.pokemontcg.io/sv9/119.png | 
+sv9-71 | sv9 | 71 | 1 | 0 | 0.03 | 0.00 | Impidimp | Common | https://images.pokemontcg.io/sv9/71.png | 
+sv9-74 | sv9 | 74 | 1 | 0 | 0.03 | 0.00 | Milcery | Common | https://images.pokemontcg.io/sv9/74.png | 
+sv9-153 | sv9 | 153 | 1 | 0 | 0.06 | 0.00 | N's PP Up | Uncommon | https://images.pokemontcg.io/sv9/153.png | 
+sv9-157 | sv9 | 157 | 1 | 0 | 0.04 | 0.00 | Ruffian | Uncommon | https://images.pokemontcg.io/sv9/157.png | 
+sv9-145 | sv9 | 145 | 1 | 0 | 0.04 | 0.00 | Black Belt's Training | Common | https://images.pokemontcg.io/sv9/145.png | 
+sv9-149 | sv9 | 149 | 1 | 0 | 0.03 | 0.00 | Iris's Fighting Spirit | Uncommon | https://images.pokemontcg.io/sv9/149.png | 
+sv9-47 | sv9 | 47 | 1 | 0 | 0.06 | 0.00 | Iono's Voltorb | Common | https://images.pokemontcg.io/sv9/47.png | 
+sv9-127 | sv9 | 127 | 1 | 0 | 0.03 | 0.00 | Noibat | Common | https://images.pokemontcg.io/sv9/127.png | 
+sv9-128 | sv9 | 128 | 1 | 0 | 0.07 | 0.00 | Noivern | Rare | https://images.pokemontcg.io/sv9/128.png | 
+sv9-105 | sv9 | 105 | 1 | 0 | 0.03 | 0.00 | N's Klinklang | Uncommon | https://images.pokemontcg.io/sv9/105.png | 
+sv9-102 | sv9 | 102 | 1 | 0 | 0.02 | 0.00 | Escavalier | Uncommon | https://images.pokemontcg.io/sv9/102.png | 
+sv9-28 | sv9 | 28 | 1 | 0 | 0.03 | 0.00 | Larvesta | Common | https://images.pokemontcg.io/sv9/28.png | 
+sv9-76 | sv9 | 76 | 1 | 0 | 0.04 | 0.00 | Cubone | Common | https://images.pokemontcg.io/sv9/76.png | 
+sv9-100 | sv9 | 100 | 1 | 0 | 0.03 | 0.00 | Lokix | Uncommon | https://images.pokemontcg.io/sv9/100.png | 
+sv9-39 | sv9 | 39 | 1 | 0 | 0.03 | 0.00 | Pelipper | Uncommon | https://images.pokemontcg.io/sv9/39.png | 
+sv9-33 | sv9 | 33 | 1 | 0 | 0.03 | 0.00 | Remoraid | Common | https://images.pokemontcg.io/sv9/33.png | 
+sv9-15 | sv9 | 15 | 1 | 0 | 0.03 | 0.00 | Virizion | Uncommon | https://images.pokemontcg.io/sv9/15.png | 
+sv9-113 | sv9 | 113 | 1 | 0 | 0.04 | 0.00 | Shelgon | Common | https://images.pokemontcg.io/sv9/113.png | 
+sv9-115 | sv9 | 115 | 1 | 0 | 0.04 | 0.00 | Druddigon | Common | https://images.pokemontcg.io/sv9/115.png | 
+sv9-23 | sv9 | 23 | 1 | 0 | 0.03 | 0.00 | Combusken | Uncommon | https://images.pokemontcg.io/sv9/23.png | 
+sv9-1 | sv9 | 1 | 1 | 0 | 0.03 | 0.00 | Caterpie | Common | https://images.pokemontcg.io/sv9/1.png | 
+sv9-2 | sv9 | 2 | 1 | 0 | 0.05 | 0.00 | Metapod | Common | https://images.pokemontcg.io/sv9/2.png | 
+sv9-3 | sv9 | 3 | 1 | 0 | 0.07 | 0.00 | Butterfree | Rare | https://images.pokemontcg.io/sv9/3.png | 
+sv9-45 | sv9 | 45 | 1 | 0 | 0.04 | 0.00 | Alolan Graveler | Common | https://images.pokemontcg.io/sv9/45.png | 
+sv9-46 | sv9 | 46 | 1 | 0 | 0.04 | 0.00 | Alolan Golem | Uncommon | https://images.pokemontcg.io/sv9/46.png | 
+sv9-62 | sv9 | 62 | 1 | 0 | 0.04 | 0.00 | Metang | Common | https://images.pokemontcg.io/sv9/62.png | 
+sv9-139 | sv9 | 139 | 1 | 0 | 0.03 | 0.00 | Lechonk | Common | https://images.pokemontcg.io/sv9/139.png | 
+sv9-26 | sv9 | 26 | 1 | 0 | 0.05 | 0.00 | N's Darumaka | Common | https://images.pokemontcg.io/sv9/26.png | 
+sv9-84 | sv9 | 84 | 1 | 0 | 0.03 | 0.00 | Rockruff | Common | https://images.pokemontcg.io/sv9/84.png | 

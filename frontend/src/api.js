@@ -126,3 +126,47 @@ export async function fetchCollectionStats() {
     return { total_collected: 0, total_wanted: 0, total_wanted_cost: 0, total_sets_tracked: 0, total_market_value: 0, total_custom_value: 0, set_counts: {} };
   }
 }
+
+export async function backupCollection(setId = null) {
+  try {
+    let url = `${API_BASE}/collection/backup/`;
+    if (setId && setId !== 'all' && setId !== 'all_owned' && setId !== 'wanted_list') {
+      url += `?set_id=${encodeURIComponent(setId)}`;
+    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to generate backup');
+    return await res.json();
+  } catch (err) {
+    console.error('Error generating backup:', err);
+    throw err;
+  }
+}
+
+export async function restoreCollection({ file = null, content = null, setId = null } = {}) {
+  try {
+    let res;
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      res = await fetch(`${API_BASE}/collection/restore/`, {
+        method: 'POST',
+        body: formData
+      });
+    } else {
+      res = await fetch(`${API_BASE}/collection/restore/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content, set_id: setId })
+      });
+    }
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.error || 'Failed to restore collection');
+    }
+    return await res.json();
+  } catch (err) {
+    console.error('Error restoring collection:', err);
+    throw err;
+  }
+}
+

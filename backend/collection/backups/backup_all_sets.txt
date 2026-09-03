@@ -1,0 +1,158 @@
+# PokéTrack TCG Collection Backup
+# Scope: all_sets
+# Total Cards: 154
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+me4-11 | me4 | 11 | 1 | 0 | 0.00 | 0.00 | Fennekin | Common | https://images.scrydex.com/pokemon/me4-11/small | 
+me4-12 | me4 | 12 | 1 | 0 | 0.00 | 0.00 | Braixen | Common | https://images.scrydex.com/pokemon/me4-12/small | 
+me4-20 | me4 | 20 | 1 | 0 | 0.00 | 0.00 | Froakie | Common | https://images.scrydex.com/pokemon/me4-20/small | 
+me4-24 | me4 | 24 | 1 | 0 | 0.00 | 0.00 | Avalugg | Uncommon | https://images.scrydex.com/pokemon/me4-24/small | 
+me4-29 | me4 | 29 | 1 | 0 | 0.00 | 0.00 | Ampharos | Rare | https://images.scrydex.com/pokemon/me4-29/small | 
+me4-5 | me4 | 5 | 1 | 0 | 0.00 | 0.00 | Chespin | Common | https://images.scrydex.com/pokemon/me4-5/small | 
+me4-6 | me4 | 6 | 1 | 0 | 0.00 | 0.00 | Quilladin | Common | https://images.scrydex.com/pokemon/me4-6/small | 
+me4-7 | me4 | 7 | 1 | 0 | 0.00 | 0.00 | Chesnaught | Rare | https://images.scrydex.com/pokemon/me4-7/small | 
+me4-8 | me4 | 8 | 1 | 0 | 0.00 | 0.00 | Vulpix | Common | https://images.scrydex.com/pokemon/me4-8/small | 
+me4-9 | me4 | 9 | 1 | 0 | 0.00 | 0.00 | Ninetales | Uncommon | https://images.scrydex.com/pokemon/me4-9/small | 
+me5-1 | me5 | 1 | 1 | 0 | 0.00 | 0.00 | Tropius | Common | https://images.scrydex.com/pokemon/me5-1/small | 
+me5-10 | me5 | 10 | 1 | 0 | 0.00 | 0.00 | Centiskorch | Common | https://images.scrydex.com/pokemon/me5-10/small | 
+me5-105 | me5 | 105 | 1 | 0 | 0.00 | 0.00 | Crushing Hammer | Ultra Rare | https://images.scrydex.com/pokemon/me5-105/small | 
+me5-11 | me5 | 11 | 1 | 0 | 0.00 | 0.00 | Charcadet | Common | https://images.scrydex.com/pokemon/me5-11/small | 
+me5-114 | me5 | 114 | 1 | 0 | 0.00 | 0.00 | Mega Zeraora ex | Special Illustration Rare | https://images.scrydex.com/pokemon/me5-114/small | 
+me5-12 | me5 | 12 | 1 | 0 | 0.00 | 0.00 | Armarouge | Rare | https://images.scrydex.com/pokemon/me5-12/small | 
+me5-13 | me5 | 13 | 1 | 0 | 0.00 | 0.00 | Goldeen | Common | https://images.scrydex.com/pokemon/me5-13/small | 
+me5-14 | me5 | 14 | 1 | 0 | 0.00 | 0.00 | Seaking | Uncommon | https://images.scrydex.com/pokemon/me5-14/small | 
+me5-15 | me5 | 15 | 1 | 0 | 0.00 | 0.00 | Wailmer | Common | https://images.scrydex.com/pokemon/me5-15/small | 
+me5-17 | me5 | 17 | 1 | 0 | 0.00 | 0.00 | Relicanth | Uncommon | https://images.scrydex.com/pokemon/me5-17/small | 
+me5-18 | me5 | 18 | 1 | 0 | 0.00 | 0.00 | Popplio | Common | https://images.scrydex.com/pokemon/me5-18/small | 
+me5-19 | me5 | 19 | 1 | 0 | 0.00 | 0.00 | Brionne | Common | https://images.scrydex.com/pokemon/me5-19/small | 
+me5-2 | me5 | 2 | 1 | 0 | 0.00 | 0.00 | Grubbin | Common | https://images.scrydex.com/pokemon/me5-2/small | 
+me5-20 | me5 | 20 | 1 | 0 | 0.00 | 0.00 | Primarina | Rare | https://images.scrydex.com/pokemon/me5-20/small | 
+me5-21 | me5 | 21 | 1 | 0 | 0.00 | 0.00 | Finizen | Common | https://images.scrydex.com/pokemon/me5-21/small | 
+me5-22 | me5 | 22 | 1 | 0 | 0.00 | 0.00 | Palafin | Uncommon | https://images.scrydex.com/pokemon/me5-22/small | 
+me5-23 | me5 | 23 | 1 | 0 | 0.00 | 0.00 | Electrike | Common | https://images.scrydex.com/pokemon/me5-23/small | 
+me5-24 | me5 | 24 | 1 | 0 | 0.00 | 0.00 | Manectric | Uncommon | https://images.scrydex.com/pokemon/me5-24/small | 
+me5-25 | me5 | 25 | 1 | 0 | 0.00 | 0.00 | Charjabug | Common | https://images.scrydex.com/pokemon/me5-25/small | 
+me5-26 | me5 | 26 | 1 | 0 | 0.00 | 0.00 | Vikavolt | Uncommon | https://images.scrydex.com/pokemon/me5-26/small | 
+me5-28 | me5 | 28 | 1 | 0 | 0.00 | 0.00 | Miraidon | Rare | https://images.scrydex.com/pokemon/me5-28/small | 
+me5-29 | me5 | 29 | 1 | 0 | 0.00 | 0.00 | Slowpoke | Common | https://images.scrydex.com/pokemon/me5-29/small | 
+me5-3 | me5 | 3 | 1 | 0 | 0.00 | 0.00 | Fomantis | Common | https://images.scrydex.com/pokemon/me5-3/small | 
+me5-30 | me5 | 30 | 1 | 0 | 0.00 | 0.00 | Slowbro | Uncommon | https://images.scrydex.com/pokemon/me5-30/small | 
+me5-32 | me5 | 32 | 1 | 0 | 0.00 | 0.00 | Jynx | Common | https://images.scrydex.com/pokemon/me5-32/small | 
+me5-33 | me5 | 33 | 1 | 0 | 0.00 | 0.00 | Shuppet | Common | https://images.scrydex.com/pokemon/me5-33/small | 
+me5-34 | me5 | 34 | 1 | 0 | 0.00 | 0.00 | Banette | Uncommon | https://images.scrydex.com/pokemon/me5-34/small | 
+me5-35 | me5 | 35 | 1 | 0 | 0.00 | 0.00 | Spiritomb | Rare | https://images.scrydex.com/pokemon/me5-35/small | 
+me5-36 | me5 | 36 | 1 | 0 | 0.00 | 0.00 | Litwick | Common | https://images.scrydex.com/pokemon/me5-36/small | 
+me5-37 | me5 | 37 | 1 | 0 | 0.00 | 0.00 | Lampent | Uncommon | https://images.scrydex.com/pokemon/me5-37/small | 
+me5-38 | me5 | 38 | 1 | 0 | 0.00 | 0.00 | Mega Chandelure ex | Double Rare | https://images.scrydex.com/pokemon/me5-38/small | 
+me5-39 | me5 | 39 | 1 | 0 | 0.00 | 0.00 | Dhelmise | Uncommon | https://images.scrydex.com/pokemon/me5-39/small | 
+me5-40 | me5 | 40 | 1 | 0 | 0.00 | 0.00 | Marshadow | Uncommon | https://images.scrydex.com/pokemon/me5-40/small | 
+me5-41 | me5 | 41 | 1 | 0 | 0.00 | 0.00 | Annihilape | Uncommon | https://images.scrydex.com/pokemon/me5-41/small | 
+me5-42 | me5 | 42 | 1 | 0 | 0.00 | 0.00 | Mankey | Common | https://images.scrydex.com/pokemon/me5-42/small | 
+me5-43 | me5 | 43 | 1 | 0 | 0.00 | 0.00 | Primeape | Common | https://images.scrydex.com/pokemon/me5-43/small | 
+me5-44 | me5 | 44 | 1 | 0 | 0.00 | 0.00 | Cranidos | Common | https://images.scrydex.com/pokemon/me5-44/small | 
+me5-45 | me5 | 45 | 1 | 0 | 0.00 | 0.00 | Rampardos ex | Double Rare | https://images.scrydex.com/pokemon/me5-45/small | 
+me5-46 | me5 | 46 | 1 | 0 | 0.00 | 0.00 | Drilbur | Common | https://images.scrydex.com/pokemon/me5-46/small | 
+me5-47 | me5 | 47 | 1 | 0 | 0.00 | 0.00 | Koraidon | Rare | https://images.scrydex.com/pokemon/me5-47/small | 
+me5-49 | me5 | 49 | 1 | 0 | 0.00 | 0.00 | Vullaby | Common | https://images.scrydex.com/pokemon/me5-49/small | 
+me5-5 | me5 | 5 | 1 | 0 | 0.00 | 0.00 | Poltchageist | Common | https://images.scrydex.com/pokemon/me5-5/small | 
+me5-50 | me5 | 50 | 1 | 0 | 0.00 | 0.00 | Mandibuzz | Common | https://images.scrydex.com/pokemon/me5-50/small | 
+me5-51 | me5 | 51 | 1 | 0 | 0.00 | 0.00 | Inkay | Common | https://images.scrydex.com/pokemon/me5-51/small | 
+me5-52 | me5 | 52 | 1 | 0 | 0.00 | 0.00 | Malamar | Uncommon | https://images.scrydex.com/pokemon/me5-52/small | 
+me5-53 | me5 | 53 | 1 | 0 | 0.00 | 0.00 | Nickit | Common | https://images.scrydex.com/pokemon/me5-53/small | 
+me5-54 | me5 | 54 | 1 | 0 | 0.00 | 0.00 | Thievul | Uncommon | https://images.scrydex.com/pokemon/me5-54/small | 
+me5-56 | me5 | 56 | 1 | 0 | 0.00 | 0.00 | Zarude | Rare | https://images.scrydex.com/pokemon/me5-56/small | 
+me5-57 | me5 | 57 | 1 | 0 | 0.00 | 0.00 | Maschiff | Common | https://images.scrydex.com/pokemon/me5-57/small | 
+me5-58 | me5 | 58 | 1 | 0 | 0.00 | 0.00 | Mabosstiff | Common | https://images.scrydex.com/pokemon/me5-58/small | 
+me5-59 | me5 | 59 | 1 | 0 | 0.00 | 0.00 | Chi-Yu | Rare | https://images.scrydex.com/pokemon/me5-59/small | 
+me5-6 | me5 | 6 | 1 | 0 | 0.00 | 0.00 | Sinistcha | Uncommon | https://images.scrydex.com/pokemon/me5-6/small | 
+me5-60 | me5 | 60 | 1 | 0 | 0.00 | 0.00 | Skarmory | Common | https://images.scrydex.com/pokemon/me5-60/small | 
+me5-61 | me5 | 61 | 1 | 0 | 0.00 | 0.00 | Shieldon | Common | https://images.scrydex.com/pokemon/me5-61/small | 
+me5-62 | me5 | 62 | 1 | 0 | 0.00 | 0.00 | Bastiodon | Rare | https://images.scrydex.com/pokemon/me5-62/small | 
+me5-63 | me5 | 63 | 1 | 0 | 0.00 | 0.00 | Bronzor | Common | https://images.scrydex.com/pokemon/me5-63/small | 
+me5-64 | me5 | 64 | 1 | 0 | 0.00 | 0.00 | Bronzong | Uncommon | https://images.scrydex.com/pokemon/me5-64/small | 
+me5-66 | me5 | 66 | 1 | 0 | 0.00 | 0.00 | Pikipek | Common | https://images.scrydex.com/pokemon/me5-66/small | 
+me5-67 | me5 | 67 | 1 | 0 | 0.00 | 0.00 | Trumbeak | Common | https://images.scrydex.com/pokemon/me5-67/small | 
+me5-68 | me5 | 68 | 1 | 0 | 0.00 | 0.00 | Toucannon | Uncommon | https://images.scrydex.com/pokemon/me5-68/small | 
+me5-69 | me5 | 69 | 1 | 0 | 0.00 | 0.00 | Type: Null | Common | https://images.scrydex.com/pokemon/me5-69/small | 
+me5-7 | me5 | 7 | 1 | 0 | 0.00 | 0.00 | Heatran | Uncommon | https://images.scrydex.com/pokemon/me5-7/small | 
+me5-70 | me5 | 70 | 1 | 0 | 0.00 | 0.00 | Silvally | Rare | https://images.scrydex.com/pokemon/me5-70/small | 
+me5-71 | me5 | 71 | 1 | 0 | 0.00 | 0.00 | Bombirdier | Common | https://images.scrydex.com/pokemon/me5-71/small | 
+me5-72 | me5 | 72 | 1 | 0 | 0.00 | 0.00 | Antique Armor Fossil | Common | https://images.scrydex.com/pokemon/me5-72/small | 
+me5-73 | me5 | 73 | 1 | 0 | 0.00 | 0.00 | Antique Skull Fossil | Common | https://images.scrydex.com/pokemon/me5-73/small | 
+me5-74 | me5 | 74 | 1 | 0 | 0.00 | 0.00 | Backtrack Badge | Uncommon | https://images.scrydex.com/pokemon/me5-74/small | 
+me5-75 | me5 | 75 | 1 | 0 | 0.00 | 0.00 | Dark Bell | Uncommon | https://images.scrydex.com/pokemon/me5-75/small | 
+me5-76 | me5 | 76 | 1 | 0 | 0.00 | 0.00 | Fossil Quarry | Uncommon | https://images.scrydex.com/pokemon/me5-76/small | 
+me5-77 | me5 | 77 | 1 | 0 | 0.00 | 0.00 | Gladion's Final Battle | Uncommon | https://images.scrydex.com/pokemon/me5-77/small | 
+me5-78 | me5 | 78 | 1 | 0 | 0.00 | 0.00 | Gwynn | Uncommon | https://images.scrydex.com/pokemon/me5-78/small | 
+me5-79 | me5 | 79 | 1 | 0 | 0.00 | 0.00 | Jett | Uncommon | https://images.scrydex.com/pokemon/me5-79/small | 
+me5-8 | me5 | 8 | 1 | 0 | 0.00 | 0.00 | Mega Delphox ex | Double Rare | https://images.scrydex.com/pokemon/me5-8/small | 
+me5-80 | me5 | 80 | 1 | 0 | 0.00 | 0.00 | Misty's Vitality | Uncommon | https://images.scrydex.com/pokemon/me5-80/small | 
+me5-81 | me5 | 81 | 1 | 0 | 0.00 | 0.00 | Rust Syndicate Grunt | Uncommon | https://images.scrydex.com/pokemon/me5-81/small | 
+me5-82 | me5 | 82 | 1 | 0 | 0.00 | 0.00 | Tremendous Bomb | Uncommon | https://images.scrydex.com/pokemon/me5-82/small | 
+me5-83 | me5 | 83 | 1 | 0 | 0.00 | 0.00 | Shadowy Darkness Energy | Rare | https://images.scrydex.com/pokemon/me5-83/small | 
+me5-84 | me5 | 84 | 1 | 0 | 0.00 | 0.00 | Voltaic Lightning Energy | Rare | https://images.scrydex.com/pokemon/me5-84/small | 
+me5-85 | me5 | 85 | 1 | 0 | 0.00 | 0.00 | Fomantis | Illustration Rare | https://images.scrydex.com/pokemon/me5-85/small | 
+me5-89 | me5 | 89 | 1 | 0 | 0.00 | 0.00 | Manectric | Illustration Rare | https://images.scrydex.com/pokemon/me5-89/small | 
+me5-9 | me5 | 9 | 1 | 0 | 0.00 | 0.00 | Sizzlipede | Common | https://images.scrydex.com/pokemon/me5-9/small | 
+sv6-113 | sv6 | 113 | 1 | 0 | 0.03 | 0.00 | Poochyena | Common | https://images.pokemontcg.io/sv6/113.png | 
+sv6-142 | sv6 | 142 | 1 | 0 | 0.08 | 0.00 | Accompanying Flute | Uncommon | https://images.pokemontcg.io/sv6/142.png | 
+sv6-145 | sv6 | 145 | 1 | 0 | 0.11 | 0.00 | Carmine | Uncommon | https://images.pokemontcg.io/sv6/145.png | 
+sv6-147 | sv6 | 147 | 1 | 0 | 0.04 | 0.00 | Cook | Uncommon | https://images.pokemontcg.io/sv6/147.png | 
+sv6-148 | sv6 | 148 | 1 | 0 | 0.08 | 0.00 | Enhanced Hammer | Uncommon | https://images.pokemontcg.io/sv6/148.png | 
+sv6-157 | sv6 | 157 | 1 | 0 | 0.03 | 0.00 | Lucian | Uncommon | https://images.pokemontcg.io/sv6/157.png | 
+sv6-166 | sv6 | 166 | 1 | 0 | 0.06 | 0.00 | Boomerang Energy | Uncommon | https://images.pokemontcg.io/sv6/166.png | 
+sv6-17 | sv6 | 17 | 1 | 0 | 0.06 | 0.00 | Applin | Common | https://images.pokemontcg.io/sv6/17.png | 
+sv6-44 | sv6 | 44 | 1 | 0 | 0.05 | 0.00 | Goldeen | Common | https://images.pokemontcg.io/sv6/44.png | 
+sv6-70 | sv6 | 70 | 1 | 0 | 0.02 | 0.00 | Helioptile | Common | https://images.pokemontcg.io/sv6/70.png | 
+sv6-76 | sv6 | 76 | 1 | 0 | 0.03 | 0.00 | Kilowattrel | Uncommon | https://images.pokemontcg.io/sv6/76.png | 
+sv6pt5-10 | sv6pt5 | 10 | 1 | 0 | 0.03 | 0.00 | Horsea | Common | https://images.pokemontcg.io/sv6pt5/10.png | 
+sv6pt5-11 | sv6pt5 | 11 | 1 | 0 | 0.05 | 0.00 | Seadra | Common | https://images.pokemontcg.io/sv6pt5/11.png | 
+sv6pt5-13 | sv6pt5 | 13 | 1 | 0 | 0.03 | 0.00 | Sneasel | Common | https://images.pokemontcg.io/sv6pt5/13.png | 
+sv6pt5-14 | sv6pt5 | 14 | 1 | 0 | 0.03 | 0.00 | Weavile | Uncommon | https://images.pokemontcg.io/sv6pt5/14.png | 
+sv6pt5-16 | sv6pt5 | 16 | 1 | 0 | 0.03 | 0.00 | Drowzee | Common | https://images.pokemontcg.io/sv6pt5/16.png | 
+sv6pt5-17 | sv6pt5 | 17 | 1 | 0 | 0.03 | 0.00 | Hypno | Uncommon | https://images.pokemontcg.io/sv6pt5/17.png | 
+sv6pt5-22 | sv6pt5 | 22 | 1 | 0 | 0.06 | 0.00 | Sylveon | Uncommon | https://images.pokemontcg.io/sv6pt5/22.png | 
+sv6pt5-27 | sv6pt5 | 27 | 1 | 0 | 0.03 | 0.00 | Zubat | Common | https://images.pokemontcg.io/sv6pt5/27.png | 
+sv6pt5-28 | sv6pt5 | 28 | 1 | 0 | 0.03 | 0.00 | Golbat | Common | https://images.pokemontcg.io/sv6pt5/28.png | 
+sv6pt5-30 | sv6pt5 | 30 | 1 | 0 | 0.03 | 0.00 | Absol | Common | https://images.pokemontcg.io/sv6pt5/30.png | 
+sv6pt5-37 | sv6pt5 | 37 | 1 | 0 | 0.49 | 0.00 | Munkidori ex | Double Rare | https://images.pokemontcg.io/sv6pt5/37.png | 
+sv6pt5-48 | sv6pt5 | 48 | 1 | 0 | 0.03 | 0.00 | Meowth | Common | https://images.pokemontcg.io/sv6pt5/48.png | 
+sv6pt5-49 | sv6pt5 | 49 | 1 | 0 | 0.03 | 0.00 | Persian | Common | https://images.pokemontcg.io/sv6pt5/49.png | 
+sv6pt5-50 | sv6pt5 | 50 | 1 | 0 | 0.05 | 0.00 | Eevee | Common | https://images.pokemontcg.io/sv6pt5/50.png | 
+sv6pt5-52 | sv6pt5 | 52 | 1 | 0 | 0.03 | 0.00 | Stufful | Common | https://images.pokemontcg.io/sv6pt5/52.png | 
+sv6pt5-53 | sv6pt5 | 53 | 1 | 0 | 0.03 | 0.00 | Bewear | Common | https://images.pokemontcg.io/sv6pt5/53.png | 
+sv6pt5-72 | sv6pt5 | 72 | 1 | 0 | 19.55 | 0.00 | Munkidori | Illustration Rare | https://images.pokemontcg.io/sv6pt5/72.png | 
+sv9-1 | sv9 | 1 | 1 | 0 | 0.03 | 0.00 | Caterpie | Common | https://images.pokemontcg.io/sv9/1.png | 
+sv9-100 | sv9 | 100 | 1 | 0 | 0.03 | 0.00 | Lokix | Uncommon | https://images.pokemontcg.io/sv9/100.png | 
+sv9-102 | sv9 | 102 | 1 | 0 | 0.02 | 0.00 | Escavalier | Uncommon | https://images.pokemontcg.io/sv9/102.png | 
+sv9-105 | sv9 | 105 | 1 | 0 | 0.03 | 0.00 | N's Klinklang | Uncommon | https://images.pokemontcg.io/sv9/105.png | 
+sv9-113 | sv9 | 113 | 1 | 0 | 0.04 | 0.00 | Shelgon | Common | https://images.pokemontcg.io/sv9/113.png | 
+sv9-115 | sv9 | 115 | 1 | 0 | 0.04 | 0.00 | Druddigon | Common | https://images.pokemontcg.io/sv9/115.png | 
+sv9-119 | sv9 | 119 | 1 | 0 | 0.04 | 0.00 | Furret | Common | https://images.pokemontcg.io/sv9/119.png | 
+sv9-127 | sv9 | 127 | 1 | 0 | 0.03 | 0.00 | Noibat | Common | https://images.pokemontcg.io/sv9/127.png | 
+sv9-128 | sv9 | 128 | 1 | 0 | 0.07 | 0.00 | Noivern | Rare | https://images.pokemontcg.io/sv9/128.png | 
+sv9-139 | sv9 | 139 | 1 | 0 | 0.03 | 0.00 | Lechonk | Common | https://images.pokemontcg.io/sv9/139.png | 
+sv9-145 | sv9 | 145 | 1 | 0 | 0.04 | 0.00 | Black Belt's Training | Common | https://images.pokemontcg.io/sv9/145.png | 
+sv9-149 | sv9 | 149 | 1 | 0 | 0.03 | 0.00 | Iris's Fighting Spirit | Uncommon | https://images.pokemontcg.io/sv9/149.png | 
+sv9-15 | sv9 | 15 | 1 | 0 | 0.03 | 0.00 | Virizion | Uncommon | https://images.pokemontcg.io/sv9/15.png | 
+sv9-153 | sv9 | 153 | 1 | 0 | 0.06 | 0.00 | N's PP Up | Uncommon | https://images.pokemontcg.io/sv9/153.png | 
+sv9-157 | sv9 | 157 | 1 | 0 | 0.04 | 0.00 | Ruffian | Uncommon | https://images.pokemontcg.io/sv9/157.png | 
+sv9-2 | sv9 | 2 | 1 | 0 | 0.05 | 0.00 | Metapod | Common | https://images.pokemontcg.io/sv9/2.png | 
+sv9-23 | sv9 | 23 | 1 | 0 | 0.03 | 0.00 | Combusken | Uncommon | https://images.pokemontcg.io/sv9/23.png | 
+sv9-26 | sv9 | 26 | 1 | 0 | 0.05 | 0.00 | N's Darumaka | Common | https://images.pokemontcg.io/sv9/26.png | 
+sv9-28 | sv9 | 28 | 1 | 0 | 0.03 | 0.00 | Larvesta | Common | https://images.pokemontcg.io/sv9/28.png | 
+sv9-3 | sv9 | 3 | 1 | 0 | 0.07 | 0.00 | Butterfree | Rare | https://images.pokemontcg.io/sv9/3.png | 
+sv9-33 | sv9 | 33 | 1 | 0 | 0.03 | 0.00 | Remoraid | Common | https://images.pokemontcg.io/sv9/33.png | 
+sv9-39 | sv9 | 39 | 1 | 0 | 0.03 | 0.00 | Pelipper | Uncommon | https://images.pokemontcg.io/sv9/39.png | 
+sv9-45 | sv9 | 45 | 1 | 0 | 0.04 | 0.00 | Alolan Graveler | Common | https://images.pokemontcg.io/sv9/45.png | 
+sv9-46 | sv9 | 46 | 1 | 0 | 0.04 | 0.00 | Alolan Golem | Uncommon | https://images.pokemontcg.io/sv9/46.png | 
+sv9-47 | sv9 | 47 | 1 | 0 | 0.06 | 0.00 | Iono's Voltorb | Common | https://images.pokemontcg.io/sv9/47.png | 
+sv9-62 | sv9 | 62 | 1 | 0 | 0.04 | 0.00 | Metang | Common | https://images.pokemontcg.io/sv9/62.png | 
+sv9-7 | sv9 | 7 | 1 | 0 | 0.05 | 0.00 | Lilligant | Common | https://images.pokemontcg.io/sv9/7.png | 
+sv9-71 | sv9 | 71 | 1 | 0 | 0.03 | 0.00 | Impidimp | Common | https://images.pokemontcg.io/sv9/71.png | 
+sv9-74 | sv9 | 74 | 1 | 0 | 0.03 | 0.00 | Milcery | Common | https://images.pokemontcg.io/sv9/74.png | 
+sv9-76 | sv9 | 76 | 1 | 0 | 0.04 | 0.00 | Cubone | Common | https://images.pokemontcg.io/sv9/76.png | 
+sv9-84 | sv9 | 84 | 1 | 0 | 0.03 | 0.00 | Rockruff | Common | https://images.pokemontcg.io/sv9/84.png | 
+svp-129 | svp | 129 | 1 | 0 | 44.50 | 0.00 | Pecharunt | Promo | https://images.pokemontcg.io/svp/129.png | 
+svp-163 | svp | 163 | 1 | 0 | 3.11 | 0.00 | Cinderace ex | Promo | https://images.pokemontcg.io/svp/163.png | 
+svp-164 | svp | 164 | 1 | 0 | 4.50 | 0.00 | Lapras ex | Promo | https://images.pokemontcg.io/svp/164.png | 
+svp-165 | svp | 165 | 1 | 0 | 3.32 | 0.00 | Terapagos ex | Promo | https://images.pokemontcg.io/svp/165.png | 

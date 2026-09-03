@@ -12,7 +12,7 @@ export default function PokemonCard({
   onQuantityChange,
   onInspectCard
 }) {
-  const imageUrl = card.images?.small || card.images?.large || '';
+  const imageUrl = card.images?.small || card.images?.large || card.image_url || '';
 
   const cmPrice = card.cardmarket?.prices?.averageSellPrice;
   const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
@@ -36,7 +36,7 @@ export default function PokemonCard({
   } else if (isOwned) {
     wrapperClass += ' owned';
   } else if (isWanted) {
-    wrapperClass += ' unowned wanted-unowned';
+    wrapperClass += ' wanted-unowned';
   } else {
     wrapperClass += ' unowned';
   }
@@ -51,7 +51,7 @@ export default function PokemonCard({
           : isOwned
           ? `${card.name} (#${card.number}) - OWNED`
           : isWanted
-          ? `${card.name} (#${card.number}) - WANTED ❤️ (Grayscale until owned)`
+          ? `${card.name} (#${card.number}) - ON WANTED LIST ❤️ (Click to mark as owned)`
           : `Click to mark ${card.name} (#${card.number}) as OWNED`
       }
     >
@@ -59,17 +59,6 @@ export default function PokemonCard({
       {isOwned && (
         <div className="owned-badge" title="Card Collected!">
           <Check size={18} strokeWidth={3} />
-        </div>
-      )}
-
-      {/* Wanted Heart Badge Top Right if not owned */}
-      {isWanted && !isOwned && (
-        <div
-          className="owned-badge"
-          style={{ background: 'linear-gradient(135deg, #ff007f, #ff4081)', boxShadow: '0 0 12px rgba(255, 0, 127, 0.6)' }}
-          title="On Wanted List ❤️"
-        >
-          <Heart size={16} fill="#ffffff" stroke="none" />
         </div>
       )}
 
@@ -89,25 +78,26 @@ export default function PokemonCard({
         }}
         style={{
           position: 'absolute',
-          top: isOwned || isWanted ? '42px' : '10px',
+          top: isOwned ? '42px' : '10px',
           right: '10px',
-          background: isWanted ? 'rgba(255, 0, 127, 0.85)' : 'rgba(9, 12, 21, 0.75)',
-          border: '1px solid rgba(255,255,255,0.15)',
+          background: isWanted ? 'linear-gradient(135deg, #ff007f, #ff4081)' : 'rgba(9, 12, 21, 0.75)',
+          border: isWanted ? '1px solid rgba(255, 255, 255, 0.35)' : '1px solid rgba(255, 255, 255, 0.15)',
           borderRadius: '50%',
-          width: '28px',
-          height: '28px',
+          width: '30px',
+          height: '30px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           color: isWanted ? '#fff' : 'var(--text-muted)',
           cursor: 'pointer',
-          zIndex: 7,
+          zIndex: 8,
+          boxShadow: isWanted ? '0 0 12px rgba(255, 0, 127, 0.7)' : 'none',
           backdropFilter: 'blur(4px)',
           transition: 'all 0.2s ease'
         }}
         title={isWanted ? 'Remove from Wanted List' : 'Add to Wanted List ❤️'}
       >
-        <Heart size={14} fill={isWanted ? '#ffffff' : 'none'} />
+        <Heart size={15} fill={isWanted ? '#ffffff' : 'none'} stroke={isWanted ? '#ffffff' : 'currentColor'} />
       </button>
 
       {/* Price Badge on Card */}

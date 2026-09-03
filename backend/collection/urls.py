@@ -10,6 +10,8 @@ urlpatterns = [
     path('collection/price/', views.update_card_price, name='update_card_price'),
     path('collection/bulk-toggle/', views.bulk_toggle, name='bulk_toggle'),
     path('collection/stats/', views.get_stats, name='get_stats'),
+    path('collection/backup/', views.backup_collection, name='backup_collection'),
+    path('collection/restore/', views.restore_collection, name='restore_collection'),
     path('pokemon-tcg/sets/', views.proxy_sets, name='proxy_sets'),
     path('pokemon-tcg/cards/', views.proxy_set_cards, name='proxy_set_cards'),
 ]

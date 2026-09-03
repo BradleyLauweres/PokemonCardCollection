@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.cache import cache
+from django.http import HttpResponse
 from .models import CollectedCard
 from .serializers import CollectedCardSerializer
 
@@ -78,10 +79,10 @@ def toggle_card(request):
                 return Response({'owned': False, 'wanted': False, 'card_id': card_id})
         else:
             existing.quantity = 1
-            existing.is_wanted = False
+            # Preserve existing is_wanted status
             existing.save()
             serializer = CollectedCardSerializer(existing)
-            return Response({'owned': True, 'wanted': False, 'card': serializer.data})
+            return Response({'owned': True, 'wanted': existing.is_wanted, 'card': serializer.data})
     else:
         card = CollectedCard.objects.create(
             card_id=card_id,
@@ -119,6 +120,21 @@ def toggle_wanted(request):
             card.delete()
             return Response({'wanted': False, 'card_id': card_id})
         else:
+            if name and not card.name:
+                card.name = name
+            if set_id and not card.set_id:
+                card.set_id = set_id
+            if number and not card.number:
+                card.number = number
+            if rarity and not card.rarity:
+                card.rarity = rarity
+            if image_url and not card.image_url:
+                card.image_url = image_url
+            if market_price and (card.market_price == 0.0 or not card.market_price):
+                try:
+                    card.market_price = float(market_price)
+                except (ValueError, TypeError):
+                    pass
             card.save()
             serializer = CollectedCardSerializer(card)
             return Response({'wanted': new_wanted, 'card': serializer.data})
@@ -220,8 +236,10 @@ def bulk_toggle(request):
         return Response({'error': 'set_id and action are required'}, status=status.HTTP_400_BAD_REQUEST)
 
     if action == 'clear_all':
-        count, _ = CollectedCard.objects.filter(set_id=set_id).delete()
-        return Response({'message': f'Cleared {count} cards for set {set_id}'})
+        # Preserve wishlist: set quantity to 0 for wanted cards, delete non-wanted cards
+        CollectedCard.objects.filter(set_id=set_id, is_wanted=True).update(quantity=0)
+        count, _ = CollectedCard.objects.filter(set_id=set_id, is_wanted=False).delete()
+        return Response({'message': f'Cleared collected cards for set {set_id}'})
     elif action == 'mark_all':
         created_count = 0
         for item in cards_data:
@@ -252,7 +270,7 @@ def bulk_toggle(request):
                 created_count += 1
             else:
                 card.quantity = max(card.quantity, 1)
-                card.is_wanted = False
+                # Keep card.is_wanted intact
                 card.save()
         return Response({'message': f'Marked set {set_id} cards as collected (added {created_count})'})
 
@@ -293,6 +311,188 @@ def get_stats(request):
         'total_custom_value': round(total_custom_value, 2),
         'set_counts': set_counts,
         'set_values': set_values
+    })
+
+
+def format_backup_txt(cards, scope='all_sets'):
+    lines = [
+        f"# PokéTrack TCG Collection Backup",
+        f"# Scope: {scope}",
+        f"# Total Cards: {len(cards)}",
+        f"# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes"
+    ]
+    for c in cards:
+        name = (c.name or '').replace('|', ' ')
+        rarity = (c.rarity or '').replace('|', ' ')
+        notes = (c.notes or '').replace('\n', ' ').replace('|', ' ')
+        img = c.image_url or ''
+        line = f"{c.card_id} | {c.set_id} | {c.number} | {c.quantity} | {1 if c.is_wanted else 0} | {c.market_price:.2f} | {c.custom_price:.2f} | {name} | {rarity} | {img} | {notes}"
+        lines.append(line)
+    return "\n".join(lines) + "\n"
+
+
+def parse_backup_txt(txt_content):
+    cards_to_save = []
+    lines = txt_content.strip().splitlines()
+    for raw_line in lines:
+        line = raw_line.strip()
+        if not line or line.startswith('#'):
+            continue
+
+        if line.startswith('{') and line.endswith('}'):
+            try:
+                data = json.loads(line)
+                if 'card_id' in data:
+                    cards_to_save.append(data)
+                    continue
+            except Exception:
+                pass
+
+        parts = [p.strip() for p in line.split('|')]
+        if len(parts) >= 1:
+            c_id = parts[0]
+            if not c_id:
+                continue
+
+            c_set_id = parts[1] if len(parts) > 1 else (c_id.split('-')[0] if '-' in c_id else '')
+            c_number = parts[2] if len(parts) > 2 else (c_id.split('-')[1] if '-' in c_id else '')
+
+            try:
+                c_qty = int(parts[3]) if len(parts) > 3 and parts[3] else 1
+            except ValueError:
+                c_qty = 1
+
+            c_wanted = False
+            if len(parts) > 4:
+                val = parts[4].lower()
+                c_wanted = val in ('1', 'true', 'yes', 'y')
+
+            try:
+                c_market = float(parts[5]) if len(parts) > 5 and parts[5] else 0.0
+            except ValueError:
+                c_market = 0.0
+
+            try:
+                c_custom = float(parts[6]) if len(parts) > 6 and parts[6] else 0.0
+            except ValueError:
+                c_custom = 0.0
+
+            c_name = parts[7] if len(parts) > 7 else ''
+            c_rarity = parts[8] if len(parts) > 8 else ''
+            c_img = parts[9] if len(parts) > 9 else ''
+            c_notes = parts[10] if len(parts) > 10 else ''
+
+            cards_to_save.append({
+                'card_id': c_id,
+                'set_id': c_set_id,
+                'number': c_number,
+                'quantity': c_qty,
+                'is_wanted': c_wanted,
+                'market_price': c_market,
+                'custom_price': c_custom,
+                'name': c_name,
+                'rarity': c_rarity,
+                'image_url': c_img,
+                'notes': c_notes
+            })
+    return cards_to_save
+
+
+def restore_cards_from_data(cards_data):
+    restored_count = 0
+    for item in cards_data:
+        c_id = item.get('card_id')
+        if not c_id:
+            continue
+        CollectedCard.objects.update_or_create(
+            card_id=c_id,
+            defaults={
+                'set_id': item.get('set_id', ''),
+                'name': item.get('name', ''),
+                'number': item.get('number', ''),
+                'rarity': item.get('rarity', ''),
+                'image_url': item.get('image_url', ''),
+                'quantity': item.get('quantity', 1),
+                'is_wanted': item.get('is_wanted', False),
+                'market_price': float(item.get('market_price', 0.0)),
+                'custom_price': float(item.get('custom_price', 0.0)),
+                'notes': item.get('notes', '')
+            }
+        )
+        restored_count += 1
+    return restored_count
+
+
+@api_view(['GET', 'POST'])
+def backup_collection(request):
+    set_id = request.query_params.get('set_id') or request.data.get('set_id')
+    download = request.query_params.get('download', '').lower() == 'true'
+
+    cards = CollectedCard.objects.all().order_by('set_id', 'number')
+    if set_id and set_id not in ('all', 'all_owned', 'wanted_list'):
+        cards = cards.filter(set_id=set_id)
+
+    scope_name = set_id if (set_id and set_id not in ('all', 'all_owned', 'wanted_list')) else 'all_sets'
+    card_list = list(cards)
+    txt_content = format_backup_txt(card_list, scope=scope_name)
+
+    backups_dir = BASE_DIR / 'backups'
+    backups_dir.mkdir(parents=True, exist_ok=True)
+    filename = f'backup_{scope_name}.txt'
+    file_path = backups_dir / filename
+    try:
+        file_path.write_text(txt_content, encoding='utf-8')
+    except Exception:
+        pass
+
+    if download:
+        response = HttpResponse(txt_content, content_type='text/plain; charset=utf-8')
+        response['Content-Disposition'] = f'attachment; filename="{filename}"'
+        return response
+
+    return Response({
+        'message': f'Backup created with {len(card_list)} cards for {scope_name}',
+        'filename': filename,
+        'file_path': str(file_path),
+        'total_cards': len(card_list),
+        'content': txt_content
+    })
+
+
+@api_view(['POST'])
+def restore_collection(request):
+    uploaded_file = request.FILES.get('file')
+    txt_content = None
+
+    if uploaded_file:
+        try:
+            txt_content = uploaded_file.read().decode('utf-8')
+        except Exception as e:
+            return Response({'error': f'Failed to read file: {str(e)}'}, status=status.HTTP_400_BAD_REQUEST)
+    elif 'content' in request.data:
+        txt_content = request.data.get('content', '')
+    else:
+        set_id = request.data.get('set_id') or 'all_sets'
+        backups_dir = BASE_DIR / 'backups'
+        file_path = backups_dir / f'backup_{set_id}.txt'
+        if not file_path.exists() and set_id != 'all_sets':
+            file_path = backups_dir / 'backup_all_sets.txt'
+        if file_path.exists():
+            txt_content = file_path.read_text(encoding='utf-8')
+        else:
+            return Response({'error': 'No file uploaded, content provided, or local backup found on server'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if not txt_content:
+        return Response({'error': 'Backup file or content is empty'}, status=status.HTTP_400_BAD_REQUEST)
+
+    parsed_cards = parse_backup_txt(txt_content)
+    if not parsed_cards:
+        return Response({'error': 'No valid card records found in backup'}, status=status.HTTP_400_BAD_REQUEST)
+
+    restored_count = restore_cards_from_data(parsed_cards)
+    return Response({
+        'message': f'Successfully restored {restored_count} cards into database',
+        'restored_count': restored_count
     })
 
 

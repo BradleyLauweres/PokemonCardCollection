@@ -15,7 +15,9 @@ import {
   updateCardQuantity,
   updateCardPrice,
   bulkToggleSet,
-  fetchCollectionStats
+  fetchCollectionStats,
+  backupCollection,
+  restoreCollection
 } from './api';
 
 export default function App() {
@@ -60,6 +62,8 @@ export default function App() {
   useEffect(() => {
     if (!selectedSetId) return;
 
+    setStatusFilter('all');
+
     async function loadSetData() {
       setIsLoadingCards(true);
 
@@ -72,6 +76,9 @@ export default function App() {
           number: c.number,
           rarity: c.rarity,
           supertype: 'Pokémon',
+          image_url: c.image_url,
+          market_price: c.market_price || 0,
+          custom_price: c.custom_price || 0,
           images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
           set: { id: c.set_id, name: c.set_id }
         }));
@@ -85,6 +92,9 @@ export default function App() {
           number: c.number,
           rarity: c.rarity,
           supertype: 'Pokémon',
+          image_url: c.image_url,
+          market_price: c.market_price || 0,
+          custom_price: c.custom_price || 0,
           images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
           set: { id: c.set_id, name: c.set_id }
         }));
@@ -136,48 +146,64 @@ export default function App() {
 
   // Toggle card ownership
   const handleToggleCard = async (card, marketPrice = 0) => {
-    const isCurrentlyOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
-    const cardSetId = card.set?.id || selectedSetId;
+    const existing = userCollectionMap[card.id];
+    const isCurrentlyOwned = !!(existing && existing.quantity > 0);
+    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : '');
+    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || '';
+    const cmPrice = card.cardmarket?.prices?.averageSellPrice;
+    const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
+    const mPrice = marketPrice || card.market_price || cmPrice || tcgPrice || existing?.market_price || 0;
 
     if (isCurrentlyOwned) {
-      setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0, is_wanted: false } : c));
+      // If the card is also wanted, keep it in collection with quantity 0 and is_wanted true
+      if (existing?.is_wanted) {
+        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0 } : c));
+      } else {
+        setUserCollection(prev => prev.filter(c => c.card_id !== card.id));
+      }
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== card.id));
       }
     } else {
-      const cmPrice = card.cardmarket?.prices?.averageSellPrice;
-      const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
-      const mPrice = marketPrice || cmPrice || tcgPrice || 0;
-
+      const wasWanted = !!(existing && existing.is_wanted);
       const newCardEntry = {
         card_id: card.id,
         set_id: cardSetId,
         name: card.name,
         number: card.number,
         rarity: card.rarity || '',
-        image_url: card.images?.small || '',
+        image_url: imgUrl,
         market_price: mPrice,
-        custom_price: 0,
+        custom_price: existing?.custom_price || 0,
+        notes: existing?.notes || '',
         quantity: 1,
-        is_wanted: false
+        is_wanted: wasWanted
       };
       setUserCollection(prev => [...prev.filter(c => c.card_id !== card.id), newCardEntry]);
     }
 
     try {
-      const cmPrice = card.cardmarket?.prices?.averageSellPrice;
-      const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
-      const mPrice = marketPrice || cmPrice || tcgPrice || 0;
-
-      await toggleCardOwnership({
+      const res = await toggleCardOwnership({
         card_id: card.id,
         set_id: cardSetId,
         name: card.name,
         number: card.number,
         rarity: card.rarity || '',
-        image_url: card.images?.small || '',
+        image_url: imgUrl,
         market_price: mPrice
       });
+
+      if (res?.card) {
+        setUserCollection(prev => {
+          const idx = prev.findIndex(c => c.card_id === card.id);
+          if (idx >= 0) {
+            const copy = [...prev];
+            copy[idx] = res.card;
+            return copy;
+          }
+          return prev;
+        });
+      }
 
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
@@ -190,44 +216,65 @@ export default function App() {
   const handleToggleWanted = async (card) => {
     const existing = userCollectionMap[card.id];
     const isWantedCurrently = !!(existing && existing.is_wanted === true);
-    const cardSetId = card.set?.id || selectedSetId;
+    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : '');
+    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || '';
+    const cmPrice = card.cardmarket?.prices?.averageSellPrice;
+    const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
+    const mPrice = card.market_price || cmPrice || tcgPrice || existing?.market_price || 0;
 
-    setUserCollection(prev => {
-      if (existing) {
-        return prev.map(c => c.card_id === card.id ? { ...c, is_wanted: !isWantedCurrently } : c);
+    if (isWantedCurrently) {
+      // Removing from wanted list
+      if (existing && existing.quantity > 0) {
+        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, is_wanted: false } : c));
       } else {
-        return [...prev, {
+        setUserCollection(prev => prev.filter(c => c.card_id !== card.id));
+      }
+      if (selectedSetId === 'wanted_list') {
+        setSetCards(prev => prev.filter(c => c.id !== card.id));
+      }
+    } else {
+      // Adding to wanted list
+      if (existing) {
+        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, is_wanted: true } : c));
+      } else {
+        const newEntry = {
           card_id: card.id,
           set_id: cardSetId,
           name: card.name,
           number: card.number,
           rarity: card.rarity || '',
-          image_url: card.images?.small || '',
-          market_price: card.cardmarket?.prices?.averageSellPrice || 0,
+          image_url: imgUrl,
+          market_price: mPrice,
+          custom_price: 0,
           quantity: 0,
           is_wanted: true
-        }];
+        };
+        setUserCollection(prev => [...prev.filter(c => c.card_id !== card.id), newEntry]);
       }
-    });
-
-    if (selectedSetId === 'wanted_list' && isWantedCurrently) {
-      setSetCards(prev => prev.filter(c => c.id !== card.id));
     }
 
     try {
-      const cmPrice = card.cardmarket?.prices?.averageSellPrice;
-      const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
-      const mPrice = cmPrice || tcgPrice || 0;
-
-      await toggleWantedCard({
+      const res = await toggleWantedCard({
         card_id: card.id,
         set_id: cardSetId,
         name: card.name,
         number: card.number,
         rarity: card.rarity || '',
-        image_url: card.images?.small || '',
+        image_url: imgUrl,
         market_price: mPrice
       });
+
+      if (res?.card) {
+        setUserCollection(prev => {
+          const idx = prev.findIndex(c => c.card_id === card.id);
+          if (idx >= 0) {
+            const copy = [...prev];
+            copy[idx] = res.card;
+            return copy;
+          }
+          return [...prev, res.card];
+        });
+      }
 
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
@@ -253,8 +300,13 @@ export default function App() {
 
   // Change quantity for owned card
   const handleQuantityChange = async (cardId, newQty) => {
+    const existing = userCollectionMap[cardId];
     if (newQty <= 0) {
-      setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0, is_wanted: false } : c));
+      if (existing?.is_wanted) {
+        setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0 } : c));
+      } else {
+        setUserCollection(prev => prev.filter(c => c.card_id !== cardId));
+      }
       if (selectedSetId === 'all_owned') {
         setSetCards(prev => prev.filter(c => c.id !== cardId));
       }
@@ -270,6 +322,78 @@ export default function App() {
       setStats(updatedStats);
     } catch (err) {
       console.error('Failed to update quantity', err);
+    }
+  };
+
+  // Backup collection (current set or all)
+  const handleBackup = async (setId = null) => {
+    const targetSet = setId || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : null);
+    try {
+      const data = await backupCollection(targetSet);
+      // Trigger download
+      const blob = new Blob([data.content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = data.filename || `backup_${targetSet || 'all_sets'}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      alert(`✓ Backup created!\nSaved on server: ${data.file_path}\nDownloaded: ${data.filename} (${data.total_cards} cards)`);
+    } catch (err) {
+      alert(`Failed to create backup: ${err.message}`);
+    }
+  };
+
+  // Restore collection (from file upload or server backup)
+  const handleRestore = async (file = null, setId = null) => {
+    try {
+      const res = await restoreCollection({ file, setId });
+      alert(`✓ ${res.message}!`);
+      const updatedStats = await fetchCollectionStats();
+      setStats(updatedStats);
+      if (selectedSetId === 'all_owned') {
+        const allUserCards = await fetchUserCollection();
+        const ownedOnly = allUserCards.filter(c => c.quantity > 0);
+        setSetCards(ownedOnly.map(c => ({
+          id: c.card_id,
+          name: c.name,
+          number: c.number,
+          rarity: c.rarity,
+          supertype: 'Pokémon',
+          image_url: c.image_url,
+          market_price: c.market_price || 0,
+          custom_price: c.custom_price || 0,
+          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+          set: { id: c.set_id, name: c.set_id }
+        })));
+        setUserCollection(allUserCards);
+      } else if (selectedSetId === 'wanted_list') {
+        const wantedCards = await fetchUserCollection(null, true);
+        setSetCards(wantedCards.map(c => ({
+          id: c.card_id,
+          name: c.name,
+          number: c.number,
+          rarity: c.rarity,
+          supertype: 'Pokémon',
+          image_url: c.image_url,
+          market_price: c.market_price || 0,
+          custom_price: c.custom_price || 0,
+          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+          set: { id: c.set_id, name: c.set_id }
+        })));
+        setUserCollection(wantedCards);
+      } else {
+        const [cardsData, userColData] = await Promise.all([
+          fetchSetCards(selectedSetId),
+          fetchUserCollection(selectedSetId)
+        ]);
+        setSetCards(cardsData);
+        setUserCollection(userColData);
+      }
+    } catch (err) {
+      alert(`Failed to restore collection: ${err.message}`);
     }
   };
 
@@ -339,9 +463,14 @@ export default function App() {
         const isOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
         const isWanted = !!(userCollectionMap[card.id] && userCollectionMap[card.id].is_wanted === true);
 
-        if (statusFilter === 'owned' && !isOwned) return false;
-        if (statusFilter === 'missing' && isOwned) return false;
-        if (statusFilter === 'wanted' && !isWanted) return false;
+        if (selectedSetId === 'wanted_list') {
+          if (statusFilter === 'owned' && !isOwned) return false;
+          if (statusFilter === 'unowned' && isOwned) return false;
+        } else {
+          if (statusFilter === 'owned' && !isOwned) return false;
+          if (statusFilter === 'missing' && isOwned) return false;
+          if (statusFilter === 'wanted' && !isWanted) return false;
+        }
 
         if (rarityFilter !== 'all' && card.rarity !== rarityFilter) return false;
 
@@ -358,11 +487,24 @@ export default function App() {
           return numA - numB;
         }
       });
-  }, [setCards, userCollectionMap, searchQuery, statusFilter, rarityFilter, sortBy]);
+  }, [setCards, userCollectionMap, searchQuery, statusFilter, rarityFilter, sortBy, selectedSetId]);
 
-  const ownedCountInSet = selectedSetId === 'all_owned' ? setCards.length : (selectedSetId === 'wanted_list' ? 0 : Object.keys(userCollectionMap).filter(k => userCollectionMap[k].quantity > 0 && userCollectionMap[k].set_id === selectedSetId).length);
+  const isWantedView = selectedSetId === 'wanted_list';
+  const isAllOwnedView = selectedSetId === 'all_owned';
+
+  const ownedCountInSet = isAllOwnedView
+    ? setCards.length
+    : isWantedView
+    ? setCards.filter(c => !!(userCollectionMap[c.id] && userCollectionMap[c.id].quantity > 0)).length
+    : Object.keys(userCollectionMap).filter(k => userCollectionMap[k].quantity > 0 && userCollectionMap[k].set_id === selectedSetId).length;
+
   const wantedCountInSet = setCards.filter(c => !!(userCollectionMap[c.id] && userCollectionMap[c.id].is_wanted === true)).length;
-  const missingCountInSet = (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') ? 0 : setCards.length - ownedCountInSet;
+
+  const missingCountInSet = isWantedView
+    ? setCards.filter(c => !(userCollectionMap[c.id] && userCollectionMap[c.id].quantity > 0)).length
+    : isAllOwnedView
+    ? 0
+    : setCards.length - ownedCountInSet;
 
   return (
     <div className="app-container">
@@ -386,6 +528,8 @@ export default function App() {
           isWantedMode={selectedSetId === 'wanted_list'}
           onMarkAll={handleMarkAllOwned}
           onClearAll={handleClearSet}
+          onBackup={handleBackup}
+          onRestore={handleRestore}
         />
 
         <FilterBar
@@ -402,6 +546,7 @@ export default function App() {
           ownedCount={ownedCountInSet}
           missingCount={missingCountInSet}
           wantedCount={wantedCountInSet}
+          isWantedMode={selectedSetId === 'wanted_list'}
         />
 
         <CardGrid
@@ -436,6 +581,8 @@ export default function App() {
           sets={sets}
           onClose={() => setShowStatsModal(false)}
           onSelectSet={setSelectedSetId}
+          onBackup={handleBackup}
+          onRestore={handleRestore}
         />
       )}
     </div>

@@ -1,0 +1,8 @@
+# PokéTrack TCG Collection Backup
+# Source: https://pokemoncardcollection.onrender.com (Set: svp)
+# Total Cards: 4
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+svp-164 | svp | 164 | 1 | 0 | 4.50 | 0.00 | Lapras ex | Promo | https://images.pokemontcg.io/svp/164.png | 
+svp-165 | svp | 165 | 1 | 0 | 3.32 | 0.00 | Terapagos ex | Promo | https://images.pokemontcg.io/svp/165.png | 
+svp-163 | svp | 163 | 1 | 0 | 3.11 | 0.00 | Cinderace ex | Promo | https://images.pokemontcg.io/svp/163.png | 
+svp-129 | svp | 129 | 1 | 0 | 44.50 | 0.00 | Pecharunt | Promo | https://images.pokemontcg.io/svp/129.png | 

@@ -447,8 +447,19 @@ body {
 }
 
 .pokemon-card-wrapper.wanted-unowned {
-  border-color: rgba(255, 0, 127, 0.5);
-  background: linear-gradient(145deg, rgba(30, 18, 28, 0.7), rgba(12, 17, 30, 0.7));
+  border-color: rgba(255, 0, 127, 0.6);
+  box-shadow: 0 4px 18px rgba(255, 0, 127, 0.25);
+  background: linear-gradient(145deg, rgba(34, 18, 30, 0.9), rgba(16, 20, 32, 0.9));
+}
+
+.pokemon-card-wrapper.wanted-unowned .card-img {
+  filter: grayscale(0%) opacity(1) contrast(1.02);
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.pokemon-card-wrapper.wanted-unowned:hover {
+  border-color: #ff007f;
+  box-shadow: 0 6px 24px rgba(255, 0, 127, 0.45);
 }
 
 .pokemon-card-wrapper.unowned .unowned-overlay {

@@ -1,0 +1,14 @@
+# PokéTrack TCG Collection Backup
+# Source: https://pokemoncardcollection.onrender.com (Set: me4)
+# Total Cards: 10
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+me4-5 | me4 | 5 | 1 | 0 | 0.00 | 0.00 | Chespin | Common | https://images.scrydex.com/pokemon/me4-5/small | 
+me4-6 | me4 | 6 | 1 | 0 | 0.00 | 0.00 | Quilladin | Common | https://images.scrydex.com/pokemon/me4-6/small | 
+me4-7 | me4 | 7 | 1 | 0 | 0.00 | 0.00 | Chesnaught | Rare | https://images.scrydex.com/pokemon/me4-7/small | 
+me4-8 | me4 | 8 | 1 | 0 | 0.00 | 0.00 | Vulpix | Common | https://images.scrydex.com/pokemon/me4-8/small | 
+me4-9 | me4 | 9 | 1 | 0 | 0.00 | 0.00 | Ninetales | Uncommon | https://images.scrydex.com/pokemon/me4-9/small | 
+me4-11 | me4 | 11 | 1 | 0 | 0.00 | 0.00 | Fennekin | Common | https://images.scrydex.com/pokemon/me4-11/small | 
+me4-12 | me4 | 12 | 1 | 0 | 0.00 | 0.00 | Braixen | Common | https://images.scrydex.com/pokemon/me4-12/small | 
+me4-24 | me4 | 24 | 1 | 0 | 0.00 | 0.00 | Avalugg | Uncommon | https://images.scrydex.com/pokemon/me4-24/small | 
+me4-20 | me4 | 20 | 1 | 0 | 0.00 | 0.00 | Froakie | Common | https://images.scrydex.com/pokemon/me4-20/small | 
+me4-29 | me4 | 29 | 1 | 0 | 0.00 | 0.00 | Ampharos | Rare | https://images.scrydex.com/pokemon/me4-29/small | 

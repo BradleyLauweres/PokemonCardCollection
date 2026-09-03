@@ -1,0 +1,15 @@
+# PokéTrack TCG Collection Backup
+# Source: https://pokemoncardcollection.onrender.com (Set: sv6)
+# Total Cards: 11
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+sv6-157 | sv6 | 157 | 1 | 0 | 0.03 | 0.00 | Lucian | Uncommon | https://images.pokemontcg.io/sv6/157.png | 
+sv6-44 | sv6 | 44 | 1 | 0 | 0.05 | 0.00 | Goldeen | Common | https://images.pokemontcg.io/sv6/44.png | 
+sv6-17 | sv6 | 17 | 1 | 0 | 0.06 | 0.00 | Applin | Common | https://images.pokemontcg.io/sv6/17.png | 
+sv6-113 | sv6 | 113 | 1 | 0 | 0.03 | 0.00 | Poochyena | Common | https://images.pokemontcg.io/sv6/113.png | 
+sv6-76 | sv6 | 76 | 1 | 0 | 0.03 | 0.00 | Kilowattrel | Uncommon | https://images.pokemontcg.io/sv6/76.png | 
+sv6-142 | sv6 | 142 | 1 | 0 | 0.08 | 0.00 | Accompanying Flute | Uncommon | https://images.pokemontcg.io/sv6/142.png | 
+sv6-148 | sv6 | 148 | 1 | 0 | 0.08 | 0.00 | Enhanced Hammer | Uncommon | https://images.pokemontcg.io/sv6/148.png | 
+sv6-145 | sv6 | 145 | 1 | 0 | 0.11 | 0.00 | Carmine | Uncommon | https://images.pokemontcg.io/sv6/145.png | 
+sv6-147 | sv6 | 147 | 1 | 0 | 0.04 | 0.00 | Cook | Uncommon | https://images.pokemontcg.io/sv6/147.png | 
+sv6-166 | sv6 | 166 | 1 | 0 | 0.06 | 0.00 | Boomerang Energy | Uncommon | https://images.pokemontcg.io/sv6/166.png | 
+sv6-70 | sv6 | 70 | 1 | 0 | 0.02 | 0.00 | Helioptile | Common | https://images.pokemontcg.io/sv6/70.png | 
