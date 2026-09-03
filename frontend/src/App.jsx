@@ -339,8 +339,7 @@ export default function App() {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      alert(`✓ Backup created!\nSaved on server: ${data.file_path}\nDownloaded: ${data.filename} (${data.total_cards} cards)`);
+      alert(`✓ Backup created successfully!\nDownloaded: ${data.filename} (${data.total_cards} cards)`);
     } catch (err) {
       alert(`Failed to create backup: ${err.message}`);
     }
