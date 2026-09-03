@@ -45,6 +45,13 @@ def list_collection(request):
 
 
 @api_view(['POST'])
+def reset_wanted_status(request):
+    """Reset is_wanted to False for all cards or owned cards"""
+    count = CollectedCard.objects.filter(is_wanted=True).update(is_wanted=False)
+    return Response({'message': f'Successfully reset wanted status for {count} cards', 'reset_count': count})
+
+
+@api_view(['POST'])
 def toggle_card(request):
     card_id = request.data.get('card_id')
     set_id = request.data.get('set_id', '')
@@ -61,7 +68,6 @@ def toggle_card(request):
     if existing:
         if existing.quantity > 0:
             if existing.is_wanted:
-                # Keep record as wanted only
                 existing.quantity = 0
                 existing.save()
                 serializer = CollectedCardSerializer(existing)
@@ -70,7 +76,6 @@ def toggle_card(request):
                 existing.delete()
                 return Response({'owned': False, 'wanted': False, 'card_id': card_id})
         else:
-            # Re-own
             existing.quantity = 1
             existing.is_wanted = False
             existing.save()
@@ -170,7 +175,8 @@ def update_quantity(request):
             rarity=request.data.get('rarity', ''),
             image_url=request.data.get('image_url', ''),
             market_price=float(request.data.get('market_price', 0.0)),
-            quantity=quantity
+            quantity=quantity,
+            is_wanted=False
         )
     serializer = CollectedCardSerializer(card)
     return Response({'owned': True, 'card': serializer.data})
