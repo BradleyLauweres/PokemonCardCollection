@@ -443,7 +443,12 @@ body {
 }
 
 .pokemon-card-wrapper.unowned:hover .card-img {
-  filter: grayscale(70%) opacity(0.7) contrast(0.95);
+  filter: grayscale(75%) opacity(0.7) contrast(0.95);
+}
+
+.pokemon-card-wrapper.wanted-unowned {
+  border-color: rgba(255, 0, 127, 0.5);
+  background: linear-gradient(145deg, rgba(30, 18, 28, 0.7), rgba(12, 17, 30, 0.7));
 }
 
 .pokemon-card-wrapper.unowned .unowned-overlay {
@@ -477,6 +482,13 @@ body {
   border-color: rgba(0, 230, 118, 0.5);
   box-shadow: 0 4px 20px rgba(0, 230, 118, 0.15);
   background: linear-gradient(145deg, rgba(18, 28, 38, 0.9), rgba(12, 22, 24, 0.9));
+}
+
+/* Owned AND Wanted Glow Effect */
+.pokemon-card-wrapper.wanted-owned-glow {
+  border-color: #ff007f;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.65), 0 0 12px rgba(0, 230, 118, 0.4);
+  animation: pulse-glow-wanted 2.5s infinite alternate;
 }
 
 .pokemon-card-wrapper.owned .card-img {
@@ -808,6 +820,11 @@ body {
 @keyframes pulse-glow {
   0% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.4); }
   100% { box-shadow: 0 0 25px rgba(255, 0, 127, 0.7); }
+}
+
+@keyframes pulse-glow-wanted {
+  0% { box-shadow: 0 0 15px rgba(255, 0, 127, 0.5); }
+  100% { box-shadow: 0 0 30px rgba(255, 0, 127, 0.85), 0 0 15px rgba(0, 230, 118, 0.6); }
 }
 
 @keyframes shine-sweep {

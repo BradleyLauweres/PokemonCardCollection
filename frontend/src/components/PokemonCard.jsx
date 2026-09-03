@@ -29,14 +29,33 @@ export default function PokemonCard({
     onToggle(card, apiPrice);
   };
 
+  // Determine wrapper class
+  let wrapperClass = 'pokemon-card-wrapper';
+  if (isOwned && isWanted) {
+    wrapperClass += ' owned wanted-owned-glow';
+  } else if (isOwned) {
+    wrapperClass += ' owned';
+  } else if (isWanted) {
+    wrapperClass += ' unowned wanted-unowned';
+  } else {
+    wrapperClass += ' unowned';
+  }
+
   return (
     <div
-      className={`pokemon-card-wrapper ${isOwned ? 'owned' : (isWanted ? 'wanted' : 'unowned')}`}
+      className={wrapperClass}
       onClick={handleWrapperClick}
-      title={isOwned ? `${card.name} (#${card.number}) - Owned` : (isWanted ? `${card.name} (#${card.number}) - On Wanted List ❤️` : `Click to mark ${card.name} (#${card.number}) as OWNED`)}
-      style={isWanted && !isOwned ? { borderColor: '#ff007f', boxShadow: '0 0 15px rgba(255, 0, 127, 0.4)' } : {}}
+      title={
+        isOwned && isWanted
+          ? `${card.name} (#${card.number}) - OWNED & WANTED ❤️ (GLOWING)`
+          : isOwned
+          ? `${card.name} (#${card.number}) - OWNED`
+          : isWanted
+          ? `${card.name} (#${card.number}) - WANTED ❤️ (Grayscale until owned)`
+          : `Click to mark ${card.name} (#${card.number}) as OWNED`
+      }
     >
-      {/* Owned Badge */}
+      {/* Owned Checkmark Badge */}
       {isOwned && (
         <div className="owned-badge" title="Card Collected!">
           <Check size={18} strokeWidth={3} />
@@ -61,7 +80,7 @@ export default function PokemonCard({
         </div>
       )}
 
-      {/* Wanted Heart Toggle Button Top Right */}
+      {/* Wanted Heart Toggle Button */}
       <button
         className="no-toggle"
         onClick={(e) => {
@@ -100,7 +119,7 @@ export default function PokemonCard({
           right: '8px',
           background: hasCustomPrice
             ? 'linear-gradient(135deg, #ffcc00, #ff9900)'
-            : (isOwned ? 'rgba(0, 230, 118, 0.9)' : (isWanted ? 'rgba(255, 0, 127, 0.9)' : 'rgba(9, 12, 21, 0.85)')),
+            : (isOwned ? 'rgba(0, 230, 118, 0.9)' : (isWanted ? 'rgba(255, 0, 127, 0.85)' : 'rgba(9, 12, 21, 0.85)')),
           color: hasCustomPrice ? '#090c15' : (isOwned || isWanted ? '#ffffff' : 'var(--color-primary)'),
           padding: '0.2rem 0.5rem',
           borderRadius: '9999px',
@@ -156,7 +175,6 @@ export default function PokemonCard({
           alt={card.name}
           className="card-img"
           loading="lazy"
-          style={isWanted && !isOwned ? { filter: 'grayscale(0%) opacity(0.95)' } : {}}
         />
       </div>
 
