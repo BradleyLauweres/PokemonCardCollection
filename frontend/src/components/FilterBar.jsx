@@ -1,0 +1,86 @@
+import React from 'react';
+import { Search, Filter, ArrowUpDown } from 'lucide-react';
+
+export default function FilterBar({
+  searchQuery,
+  onSearchChange,
+  statusFilter,
+  onStatusFilterChange,
+  rarityFilter,
+  onRarityFilterChange,
+  sortBy,
+  onSortByChange,
+  rarities,
+  totalCount,
+  ownedCount,
+  missingCount
+}) {
+  return (
+    <div className="toolbar">
+      <div className="search-box">
+        <Search className="search-icon" size={18} />
+        <input
+          type="text"
+          placeholder="Search card by name or number (e.g., Pikachu, 025)..."
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+      </div>
+
+      <div className="filter-btn-group">
+        <button
+          className={`filter-btn ${statusFilter === 'all' ? 'active' : ''}`}
+          onClick={() => onStatusFilterChange('all')}
+        >
+          All ({totalCount})
+        </button>
+        <button
+          className={`filter-btn ${statusFilter === 'owned' ? 'active' : ''}`}
+          onClick={() => onStatusFilterChange('owned')}
+          style={statusFilter === 'owned' ? { background: '#00e676', color: '#090c15' } : {}}
+        >
+          Owned ({ownedCount})
+        </button>
+        <button
+          className={`filter-btn ${statusFilter === 'missing' ? 'active' : ''}`}
+          onClick={() => onStatusFilterChange('missing')}
+        >
+          Missing ({missingCount})
+        </button>
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <Filter size={16} color="var(--text-muted)" />
+          <select
+            className="set-dropdown"
+            style={{ fontSize: '0.85rem', padding: '0.4rem 0.6rem', borderRadius: 8 }}
+            value={rarityFilter}
+            onChange={(e) => onRarityFilterChange(e.target.value)}
+          >
+            <option value="all">All Rarities</option>
+            {rarities.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <ArrowUpDown size={16} color="var(--text-muted)" />
+          <select
+            className="set-dropdown"
+            style={{ fontSize: '0.85rem', padding: '0.4rem 0.6rem', borderRadius: 8 }}
+            value={sortBy}
+            onChange={(e) => onSortByChange(e.target.value)}
+          >
+            <option value="number">Sort by Card #</option>
+            <option value="name">Sort by Name</option>
+            <option value="rarity">Sort by Rarity</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  );
+}
