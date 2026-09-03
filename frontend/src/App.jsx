@@ -337,8 +337,11 @@ export default function App() {
         }
 
         const isOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
+        const isWanted = !!(userCollectionMap[card.id] && userCollectionMap[card.id].is_wanted === true);
+
         if (statusFilter === 'owned' && !isOwned) return false;
         if (statusFilter === 'missing' && isOwned) return false;
+        if (statusFilter === 'wanted' && !isWanted) return false;
 
         if (rarityFilter !== 'all' && card.rarity !== rarityFilter) return false;
 
@@ -358,6 +361,7 @@ export default function App() {
   }, [setCards, userCollectionMap, searchQuery, statusFilter, rarityFilter, sortBy]);
 
   const ownedCountInSet = selectedSetId === 'all_owned' ? setCards.length : (selectedSetId === 'wanted_list' ? 0 : Object.keys(userCollectionMap).filter(k => userCollectionMap[k].quantity > 0 && userCollectionMap[k].set_id === selectedSetId).length);
+  const wantedCountInSet = setCards.filter(c => !!(userCollectionMap[c.id] && userCollectionMap[c.id].is_wanted === true)).length;
   const missingCountInSet = (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') ? 0 : setCards.length - ownedCountInSet;
 
   return (
@@ -397,6 +401,7 @@ export default function App() {
           totalCount={setCards.length}
           ownedCount={ownedCountInSet}
           missingCount={missingCountInSet}
+          wantedCount={wantedCountInSet}
         />
 
         <CardGrid

@@ -13,7 +13,8 @@ export default function FilterBar({
   rarities,
   totalCount,
   ownedCount,
-  missingCount
+  missingCount,
+  wantedCount = 0
 }) {
   return (
     <div className="toolbar">
@@ -46,6 +47,13 @@ export default function FilterBar({
           onClick={() => onStatusFilterChange('missing')}
         >
           Missing ({missingCount})
+        </button>
+        <button
+          className={`filter-btn ${statusFilter === 'wanted' ? 'active' : ''}`}
+          onClick={() => onStatusFilterChange('wanted')}
+          style={statusFilter === 'wanted' ? { background: '#ff007f', color: '#ffffff' } : {}}
+        >
+          ❤️ Wanted ({wantedCount})
         </button>
       </div>
 
