@@ -34,6 +34,10 @@ def list_collection(request):
     set_id = request.query_params.get('set_id', None)
     wanted_only = request.query_params.get('wanted', None)
 
+    # One-time cleanup for legacy rows if needed
+    if request.query_params.get('cleanup', None) == 'true':
+        CollectedCard.objects.filter(quantity__gt=0).update(is_wanted=False)
+
     cards = CollectedCard.objects.all()
     if set_id:
         cards = cards.filter(set_id=set_id)
@@ -46,8 +50,8 @@ def list_collection(request):
 
 @api_view(['POST'])
 def reset_wanted_status(request):
-    """Reset is_wanted to False for all cards or owned cards"""
-    count = CollectedCard.objects.filter(is_wanted=True).update(is_wanted=False)
+    """Reset is_wanted to False for all cards"""
+    count = CollectedCard.objects.all().update(is_wanted=False)
     return Response({'message': f'Successfully reset wanted status for {count} cards', 'reset_count': count})
 
 
