@@ -50,7 +50,7 @@ export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, 
             <option value="all_owned">🌟 MY BINDER (All Owned Cards)</option>
             <option value="wanted_list">❤️ MY WANTED LIST (Wishlist)</option>
             {Object.entries(seriesMap).map(([series, setGroup]) => (
-              <optgroup key={series} label={`-- ${series} --`}>
+              <optgroup key={series} label={`─── ${series.toUpperCase()} ───`}>
                 {setGroup.map((set) => (
                   <option key={set.id} value={set.id}>
                     {set.name} ({set.total} cards)

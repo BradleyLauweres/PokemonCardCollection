@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
+  color-scheme: dark;
   --bg-dark: #090c15;
   --bg-card: rgba(18, 24, 40, 0.75);
   --bg-card-border: rgba(255, 255, 255, 0.08);
@@ -128,6 +129,7 @@ body {
 }
 
 .set-dropdown {
+  color-scheme: dark;
   background: transparent;
   color: var(--text-main);
   border: none;
@@ -139,9 +141,19 @@ body {
   max-width: 260px;
 }
 
-.set-dropdown option {
+.set-dropdown optgroup,
+optgroup {
+  background-color: #162238;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+.set-dropdown option,
+option {
   background-color: #0d1322;
-  color: #fff;
+  color: var(--text-main);
   padding: 8px;
 }
 
