@@ -5430,5 +5430,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-80",
+    "set_id": "sv10",
+    "name": "Team Rocket's Hypno",
+    "number": "80",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/80.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
