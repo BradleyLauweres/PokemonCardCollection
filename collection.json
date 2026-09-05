@@ -5878,5 +5878,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-83",
+    "set_id": "me4",
+    "name": "Transformation Tome",
+    "number": "83",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-83/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
