@@ -5556,5 +5556,19 @@
     "market_price": 7.41,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-193",
+    "set_id": "sv10",
+    "name": "Misty's Psyduck",
+    "number": "193",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/193.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 53.31,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
