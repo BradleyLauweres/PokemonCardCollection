@@ -2238,5 +2238,19 @@
     "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-37",
+    "set_id": "sv10",
+    "name": "Team Rocket's Houndour",
+    "number": "37",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/37.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
