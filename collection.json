@@ -5808,5 +5808,47 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-74",
+    "set_id": "me4",
+    "name": "Adversity Policy",
+    "number": "74",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-74/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me4-75",
+    "set_id": "me4",
+    "name": "Ange Floette",
+    "number": "75",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-75/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me4-76",
+    "set_id": "me4",
+    "name": "AZ's Tranquility",
+    "number": "76",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-76/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
