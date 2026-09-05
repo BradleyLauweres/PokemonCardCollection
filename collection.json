@@ -2280,5 +2280,19 @@
     "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-56",
+    "set_id": "sv10",
+    "name": "Gorebyss",
+    "number": "56",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/56.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.07,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
