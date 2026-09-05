@@ -315,23 +315,40 @@ export async function performGitHubCommit() {
 
   try {
     const config = getGitHubConfig();
+
+    // Fetch latest remote file first to get current SHA and perform safe merge
+    let targetSha = currentSha;
+    let remoteCards = null;
+    try {
+      const remote = await fetchRemoteGitHubFile();
+      if (remote) {
+        targetSha = remote.sha;
+        currentSha = remote.sha;
+        remoteCards = remote.cards;
+      }
+    } catch {
+      // file may be new or offline
+    }
+
+    // SAFE MERGE: If remote contains cards that aren't in local memory, preserve them!
+    if (remoteCards && Array.isArray(remoteCards) && remoteCards.length > 0) {
+      const localMap = new Map((currentCards || []).map(c => [c.card_id, c]));
+      let mergedAny = false;
+      for (const rCard of remoteCards) {
+        if (!localMap.has(rCard.card_id)) {
+          localMap.set(rCard.card_id, rCard);
+          mergedAny = true;
+        }
+      }
+      if (mergedAny) {
+        currentCards = Array.from(localMap.values());
+        localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
+      }
+    }
+
     const cardsToCommit = currentCards || [];
     const contentString = JSON.stringify(cardsToCommit, null, 2);
     const base64Content = utf8ToBase64(contentString);
-
-    // If we don't have current SHA, fetch it first to avoid 409 conflict
-    let targetSha = currentSha;
-    if (!targetSha) {
-      try {
-        const remote = await fetchRemoteGitHubFile();
-        if (remote && remote.sha) {
-          targetSha = remote.sha;
-          currentSha = remote.sha;
-        }
-      } catch {
-        // file may be new
-      }
-    }
 
     const commitPayload = {
       message: `Update Pokémon collection (${cardsToCommit.length} cards)`,
