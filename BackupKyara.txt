@@ -1,0 +1,101 @@
+# PokéTrack TCG Collection Backup
+# Scope: all_sets
+# Total Cards: 97
+# Format: card_id | set_id | number | quantity | is_wanted | market_price | custom_price | name | rarity | image_url | notes
+sv10-11 | sv10 | 11 | 1 | 0 | 0.10 | 0.00 | Dwebble | Common | https://images.pokemontcg.io/sv10/11.png | 
+sv10-112 | sv10 | 112 | 1 | 0 | 0.03 | 0.00 | Team Rocket's Ekans | Common | https://images.pokemontcg.io/sv10/112.png | 
+sv10-12 | sv10 | 12 | 1 | 0 | 0.14 | 0.00 | Crustle | Rare | https://images.pokemontcg.io/sv10/12.png | 
+sv10-143 | sv10 | 143 | 1 | 0 | 0.03 | 0.00 | Steven's Beldum | Common | https://images.pokemontcg.io/sv10/143.png | 
+sv10-168 | sv10 | 168 | 1 | 0 | 0.09 | 0.00 | Sacred Ash | Uncommon | https://images.pokemontcg.io/sv10/168.png | 
+sv10-26 | sv10 | 26 | 1 | 0 | 0.05 | 0.00 | Teal Mask Ogerpon | Uncommon | https://images.pokemontcg.io/sv10/26.png | 
+sv10-30 | sv10 | 30 | 1 | 0 | 0.04 | 0.00 | Rapidash | Uncommon | https://images.pokemontcg.io/sv10/30.png | 
+sv10-32 | sv10 | 32 | 1 | 0 | 0.06 | 0.00 | Ethan's Cyndaquil | Common | https://images.pokemontcg.io/sv10/32.png | 
+sv10-42 | sv10 | 42 | 1 | 0 | 0.09 | 0.00 | Blaziken | Rare | https://images.pokemontcg.io/sv10/42.png | 
+sv3-105 | sv3 | 105 | 1 | 0 | 0.03 | 0.00 | Larvitar | Common | https://images.pokemontcg.io/sv3/105.png | 
+sv3-108 | sv3 | 108 | 1 | 0 | 0.04 | 0.00 | Barboach | Common | https://images.pokemontcg.io/sv3/108.png | 
+sv3-111 | sv3 | 111 | 1 | 0 | 0.07 | 0.00 | Drilbur | Common | https://images.pokemontcg.io/sv3/111.png | 
+sv3-133 | sv3 | 133 | 1 | 0 | 0.04 | 0.00 | Houndoom | Uncommon | https://images.pokemontcg.io/sv3/133.png | 
+sv3-136 | sv3 | 136 | 1 | 0 | 0.08 | 0.00 | Darkrai | Rare | https://images.pokemontcg.io/sv3/136.png | 
+sv3-139 | sv3 | 139 | 1 | 0 | 0.04 | 0.00 | Salandit | Common | https://images.pokemontcg.io/sv3/139.png | 
+sv3-140 | sv3 | 140 | 1 | 0 | 0.03 | 0.00 | Salazzle | Uncommon | https://images.pokemontcg.io/sv3/140.png | 
+sv3-157 | sv3 | 157 | 1 | 0 | 0.04 | 0.00 | Dratini | Common | https://images.pokemontcg.io/sv3/157.png | 
+sv3-169 | sv3 | 169 | 1 | 0 | 0.06 | 0.00 | Swablu | Common | https://images.pokemontcg.io/sv3/169.png | 
+sv3-176 | sv3 | 176 | 1 | 0 | 0.04 | 0.00 | Yungoos | Common | https://images.pokemontcg.io/sv3/176.png | 
+sv3-183 | sv3 | 183 | 1 | 0 | 0.05 | 0.00 | Oinkologne | Uncommon | https://images.pokemontcg.io/sv3/183.png | 
+sv3-19 | sv3 | 19 | 1 | 0 | 0.03 | 0.00 | Smoliv | Common | https://images.pokemontcg.io/sv3/19.png | 
+sv3-214 | sv3 | 214 | 0 | 1 | 2.07 | 0.00 | Absol ex | Ultra Rare | https://images.pokemontcg.io/sv3/214.png | 
+sv3-26 | sv3 | 26 | 1 | 0 | 0.69 | 0.00 | Charmander | Common | https://images.pokemontcg.io/sv3/26.png | 
+sv3-47 | sv3 | 47 | 1 | 0 | 0.03 | 0.00 | Sharpedo | Uncommon | https://images.pokemontcg.io/sv3/47.png | 
+sv3-53 | sv3 | 53 | 1 | 0 | 0.04 | 0.00 | Cubchoo | Common | https://images.pokemontcg.io/sv3/53.png | 
+sv3-6 | sv3 | 6 | 1 | 0 | 0.03 | 0.00 | Surskit | Common | https://images.pokemontcg.io/sv3/6.png | 
+sv3-62 | sv3 | 62 | 1 | 0 | 0.20 | 0.00 | Palafin | Rare | https://images.pokemontcg.io/sv3/62.png | 
+sv3-88 | sv3 | 88 | 1 | 0 | 0.04 | 0.00 | Granbull | Uncommon | https://images.pokemontcg.io/sv3/88.png | 
+sv3-9 | sv3 | 9 | 1 | 0 | 0.03 | 0.00 | Foongus | Common | https://images.pokemontcg.io/sv3/9.png | 
+sv3-90 | sv3 | 90 | 1 | 0 | 0.04 | 0.00 | Spoink | Common | https://images.pokemontcg.io/sv3/90.png | 
+sv3-93 | sv3 | 93 | 1 | 0 | 0.04 | 0.00 | Solrock | Uncommon | https://images.pokemontcg.io/sv3/93.png | 
+sv3-99 | sv3 | 99 | 1 | 0 | 0.05 | 0.00 | Greavard | Common | https://images.pokemontcg.io/sv3/99.png | 
+sv4-128 | sv4 | 128 | 1 | 0 | 0.03 | 0.00 | Ferrothorn | Uncommon | https://images.pokemontcg.io/sv4/128.png | 
+sv4-129 | sv4 | 129 | 1 | 0 | 0.03 | 0.00 | Durant | Uncommon | https://images.pokemontcg.io/sv4/129.png | 
+sv4-90 | sv4 | 90 | 1 | 0 | 0.03 | 0.00 | Onix | Common | https://images.pokemontcg.io/sv4/90.png | 
+sv6-1 | sv6 | 1 | 1 | 0 | 0.03 | 0.00 | Tangela | Common | https://images.pokemontcg.io/sv6/1.png | 
+sv6-101 | sv6 | 101 | 1 | 0 | 0.03 | 0.00 | Nosepass | Common | https://images.pokemontcg.io/sv6/101.png | 
+sv6-110 | sv6 | 110 | 1 | 0 | 0.07 | 0.00 | Ting-Lu | Rare | https://images.pokemontcg.io/sv6/110.png | 
+sv6-111 | sv6 | 111 | 1 | 0 | 0.06 | 0.00 | Okidogi | Rare | https://images.pokemontcg.io/sv6/111.png | 
+sv6-113 | sv6 | 113 | 1 | 0 | 0.03 | 0.00 | Poochyena | Common | https://images.pokemontcg.io/sv6/113.png | 
+sv6-128 | sv6 | 128 | 1 | 0 | 0.07 | 0.00 | Dreepy | Common | https://images.pokemontcg.io/sv6/128.png | 
+sv6-129 | sv6 | 129 | 1 | 0 | 0.15 | 0.00 | Drakloak | Common | https://images.pokemontcg.io/sv6/129.png | 
+sv6-131 | sv6 | 131 | 1 | 0 | 0.06 | 0.00 | Tatsugiri | Uncommon | https://images.pokemontcg.io/sv6/131.png | 
+sv6-14 | sv6 | 14 | 1 | 0 | 0.10 | 0.00 | Grookey | Common | https://images.pokemontcg.io/sv6/14.png | 
+sv6-142 | sv6 | 142 | 1 | 0 | 0.08 | 0.00 | Accompanying Flute | Uncommon | https://images.pokemontcg.io/sv6/142.png | 
+sv6-145 | sv6 | 145 | 1 | 0 | 0.11 | 0.00 | Carmine | Uncommon | https://images.pokemontcg.io/sv6/145.png | 
+sv6-147 | sv6 | 147 | 1 | 0 | 0.04 | 0.00 | Cook | Uncommon | https://images.pokemontcg.io/sv6/147.png | 
+sv6-148 | sv6 | 148 | 1 | 0 | 0.08 | 0.00 | Enhanced Hammer | Uncommon | https://images.pokemontcg.io/sv6/148.png | 
+sv6-157 | sv6 | 157 | 1 | 0 | 0.03 | 0.00 | Lucian | Uncommon | https://images.pokemontcg.io/sv6/157.png | 
+sv6-16 | sv6 | 16 | 1 | 0 | 0.06 | 0.00 | Rillaboom | Uncommon | https://images.pokemontcg.io/sv6/16.png | 
+sv6-166 | sv6 | 166 | 1 | 0 | 0.06 | 0.00 | Boomerang Energy | Uncommon | https://images.pokemontcg.io/sv6/166.png | 
+sv6-17 | sv6 | 17 | 1 | 0 | 0.06 | 0.00 | Applin | Common | https://images.pokemontcg.io/sv6/17.png | 
+sv6-173 | sv6 | 173 | 0 | 1 | 13.69 | 0.00 | Infernape | Illustration Rare | https://images.pokemontcg.io/sv6/173.png | 
+sv6-33 | sv6 | 33 | 1 | 0 | 0.08 | 0.00 | Infernape | Rare | https://images.pokemontcg.io/sv6/33.png | 
+sv6-35 | sv6 | 35 | 1 | 0 | 0.03 | 0.00 | Darmanitan | Uncommon | https://images.pokemontcg.io/sv6/35.png | 
+sv6-44 | sv6 | 44 | 1 | 0 | 0.05 | 0.00 | Goldeen | Common | https://images.pokemontcg.io/sv6/44.png | 
+sv6-47 | sv6 | 47 | 1 | 0 | 0.03 | 0.00 | Corphish | Common | https://images.pokemontcg.io/sv6/47.png | 
+sv6-52 | sv6 | 52 | 1 | 0 | 0.05 | 0.00 | Glalie | Uncommon | https://images.pokemontcg.io/sv6/52.png | 
+sv6-59 | sv6 | 59 | 1 | 0 | 0.03 | 0.00 | Finizen | Common | https://images.pokemontcg.io/sv6/59.png | 
+sv6-6 | sv6 | 6 | 1 | 0 | 0.04 | 0.00 | Sunkern | Common | https://images.pokemontcg.io/sv6/6.png | 
+sv6-60 | sv6 | 60 | 1 | 0 | 0.04 | 0.00 | Palafin | Uncommon | https://images.pokemontcg.io/sv6/60.png | 
+sv6-70 | sv6 | 70 | 1 | 0 | 0.02 | 0.00 | Helioptile | Common | https://images.pokemontcg.io/sv6/70.png | 
+sv6-73 | sv6 | 73 | 1 | 0 | 0.02 | 0.00 | Tadbulb | Common | https://images.pokemontcg.io/sv6/73.png | 
+sv6-74 | sv6 | 74 | 1 | 0 | 0.03 | 0.00 | Bellibolt | Uncommon | https://images.pokemontcg.io/sv6/74.png | 
+sv6-75 | sv6 | 75 | 1 | 0 | 0.04 | 0.00 | Wattrel | Common | https://images.pokemontcg.io/sv6/75.png | 
+sv6-76 | sv6 | 76 | 1 | 0 | 0.03 | 0.00 | Kilowattrel | Uncommon | https://images.pokemontcg.io/sv6/76.png | 
+sv6-79 | sv6 | 79 | 1 | 0 | 0.04 | 0.00 | Clefable | Uncommon | https://images.pokemontcg.io/sv6/79.png | 
+sv6-86 | sv6 | 86 | 1 | 0 | 0.03 | 0.00 | Flabébé | Common | https://images.pokemontcg.io/sv6/86.png | 
+sv6-87 | sv6 | 87 | 1 | 0 | 0.04 | 0.00 | Floette | Common | https://images.pokemontcg.io/sv6/87.png | 
+sv6-89 | sv6 | 89 | 1 | 0 | 0.03 | 0.00 | Swirlix | Common | https://images.pokemontcg.io/sv6/89.png | 
+sv6-9 | sv6 | 9 | 1 | 0 | 0.04 | 0.00 | Volbeat | Common | https://images.pokemontcg.io/sv6/9.png | 
+sv6-91 | sv6 | 91 | 1 | 0 | 0.03 | 0.00 | Sandygast | Common | https://images.pokemontcg.io/sv6/91.png | 
+sv9-1 | sv9 | 1 | 1 | 0 | 0.03 | 0.00 | Caterpie | Common | https://images.pokemontcg.io/sv9/1.png | 
+sv9-100 | sv9 | 100 | 1 | 0 | 0.03 | 0.00 | Lokix | Uncommon | https://images.pokemontcg.io/sv9/100.png | 
+sv9-127 | sv9 | 127 | 1 | 0 | 0.03 | 0.00 | Noibat | Common | https://images.pokemontcg.io/sv9/127.png | 
+sv9-128 | sv9 | 128 | 1 | 0 | 0.07 | 0.00 | Noivern | Rare | https://images.pokemontcg.io/sv9/128.png | 
+sv9-145 | sv9 | 145 | 1 | 0 | 0.04 | 0.00 | Black Belt's Training | Common | https://images.pokemontcg.io/sv9/145.png | 
+sv9-149 | sv9 | 149 | 1 | 0 | 0.03 | 0.00 | Iris's Fighting Spirit | Uncommon | https://images.pokemontcg.io/sv9/149.png | 
+sv9-15 | sv9 | 15 | 1 | 0 | 0.03 | 0.00 | Virizion | Uncommon | https://images.pokemontcg.io/sv9/15.png | 
+sv9-153 | sv9 | 153 | 1 | 0 | 0.06 | 0.00 | N's PP Up | Uncommon | https://images.pokemontcg.io/sv9/153.png | 
+sv9-157 | sv9 | 157 | 1 | 0 | 0.04 | 0.00 | Ruffian | Uncommon | https://images.pokemontcg.io/sv9/157.png | 
+sv9-2 | sv9 | 2 | 1 | 0 | 0.05 | 0.00 | Metapod | Common | https://images.pokemontcg.io/sv9/2.png | 
+sv9-23 | sv9 | 23 | 1 | 0 | 0.03 | 0.00 | Combusken | Uncommon | https://images.pokemontcg.io/sv9/23.png | 
+sv9-26 | sv9 | 26 | 1 | 0 | 0.05 | 0.00 | N's Darumaka | Common | https://images.pokemontcg.io/sv9/26.png | 
+sv9-28 | sv9 | 28 | 1 | 0 | 0.03 | 0.00 | Larvesta | Common | https://images.pokemontcg.io/sv9/28.png | 
+sv9-3 | sv9 | 3 | 1 | 0 | 0.07 | 0.00 | Butterfree | Rare | https://images.pokemontcg.io/sv9/3.png | 
+sv9-33 | sv9 | 33 | 1 | 0 | 0.03 | 0.00 | Remoraid | Common | https://images.pokemontcg.io/sv9/33.png | 
+sv9-39 | sv9 | 39 | 1 | 0 | 0.03 | 0.00 | Pelipper | Uncommon | https://images.pokemontcg.io/sv9/39.png | 
+sv9-45 | sv9 | 45 | 1 | 0 | 0.04 | 0.00 | Alolan Graveler | Common | https://images.pokemontcg.io/sv9/45.png | 
+sv9-46 | sv9 | 46 | 1 | 0 | 0.04 | 0.00 | Alolan Golem | Uncommon | https://images.pokemontcg.io/sv9/46.png | 
+sv9-47 | sv9 | 47 | 1 | 0 | 0.06 | 0.00 | Iono's Voltorb | Common | https://images.pokemontcg.io/sv9/47.png | 
+sv9-7 | sv9 | 7 | 1 | 0 | 0.05 | 0.00 | Lilligant | Common | https://images.pokemontcg.io/sv9/7.png | 
+sv9-71 | sv9 | 71 | 1 | 0 | 0.03 | 0.00 | Impidimp | Common | https://images.pokemontcg.io/sv9/71.png | 
+sv9-74 | sv9 | 74 | 1 | 0 | 0.03 | 0.00 | Milcery | Common | https://images.pokemontcg.io/sv9/74.png | 
+sv9-76 | sv9 | 76 | 1 | 0 | 0.04 | 0.00 | Cubone | Common | https://images.pokemontcg.io/sv9/76.png | 
+sv9-84 | sv9 | 84 | 1 | 0 | 0.03 | 0.00 | Rockruff | Common | https://images.pokemontcg.io/sv9/84.png | 
+sv9-95 | sv9 | 95 | 1 | 0 | 0.10 | 0.00 | Tyranitar | Rare | https://images.pokemontcg.io/sv9/95.png | 
