@@ -5444,5 +5444,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-81",
+    "set_id": "sv10",
+    "name": "Team Rocket's Mewtwo ex",
+    "number": "81",
+    "rarity": "Double Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/81.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 1.02,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
