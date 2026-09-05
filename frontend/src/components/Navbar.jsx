@@ -1,7 +1,24 @@
-import React from 'react';
-import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart, Cloud, RefreshCw, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { subscribeSyncState, getSyncState } from '../api';
 
-export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, totalOwnedCount, totalWantedCount, totalMarketValue }) {
+export default function Navbar({
+  sets,
+  selectedSetId,
+  onSelectSet,
+  onOpenStats,
+  onOpenGitHubSettings,
+  totalOwnedCount,
+  totalWantedCount,
+  totalMarketValue
+}) {
+  const [syncState, setSyncState] = useState(getSyncState());
+
+  useEffect(() => {
+    const unsub = subscribeSyncState((st) => setSyncState(st));
+    return () => unsub();
+  }, []);
+
   const seriesMap = sets.reduce((acc, set) => {
     const series = set.series || 'Other';
     if (!acc[series]) acc[series] = [];
@@ -63,7 +80,56 @@ export default function Navbar({ sets, selectedSetId, onSelectSet, onOpenStats, 
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-        <button className="btn btn-primary" onClick={onOpenStats} style={{ background: 'linear-gradient(135deg, #00e676, #00b0ff)' }} title="Total Collection Portfolio Value in Euro">
+        {/* GitHub Cloud Sync Button */}
+        <button
+          className="btn btn-secondary"
+          onClick={onOpenGitHubSettings}
+          title={
+            syncState.status === 'synced'
+              ? 'Synced with GitHub repository. Click to manage settings.'
+              : syncState.status === 'syncing'
+              ? 'Saving changes to GitHub...'
+              : syncState.status === 'error'
+              ? `Sync Error: ${syncState.lastError || ''}. Click to check settings.`
+              : 'Configure GitHub Cloud Sync'
+          }
+          style={{
+            borderColor:
+              syncState.status === 'synced'
+                ? 'rgba(0, 230, 118, 0.4)'
+                : syncState.status === 'error'
+                ? 'rgba(255, 82, 82, 0.4)'
+                : undefined,
+            background:
+              syncState.status === 'synced'
+                ? 'rgba(0, 230, 118, 0.08)'
+                : syncState.status === 'error'
+                ? 'rgba(255, 82, 82, 0.08)'
+                : undefined
+          }}
+        >
+          {syncState.status === 'synced' && <CheckCircle2 size={16} color="var(--color-success)" />}
+          {(syncState.status === 'syncing' || syncState.status === 'pending') && (
+            <RefreshCw size={16} color="var(--color-accent)" className="spin-animation" />
+          )}
+          {syncState.status === 'error' && <AlertCircle size={16} color="var(--color-danger)" />}
+          {syncState.status === 'unconfigured' && <Cloud size={16} color="var(--color-primary)" />}
+
+          <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>
+            {syncState.status === 'synced' && 'GitHub Synced'}
+            {syncState.status === 'syncing' && 'Syncing...'}
+            {syncState.status === 'pending' && 'Saving...'}
+            {syncState.status === 'error' && 'Sync Failed'}
+            {syncState.status === 'unconfigured' && 'Cloud Sync'}
+          </span>
+        </button>
+
+        <button
+          className="btn btn-primary"
+          onClick={onOpenStats}
+          style={{ background: 'linear-gradient(135deg, #00e676, #00b0ff)' }}
+          title="Total Collection Portfolio Value in Euro"
+        >
           <Euro size={18} color="#090c15" />
           <span style={{ fontWeight: 800, color: '#090c15' }}>
             €{(totalMarketValue || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Total Value

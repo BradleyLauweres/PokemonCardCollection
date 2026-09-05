@@ -2,14 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { X, Check, Euro, Save, Heart } from 'lucide-react';
 
 export default function CardModal({ card, isOwned, isWanted, userCardEntry, onToggle, onToggleWanted, onSavePrice, onClose }) {
-  if (!card) return null;
-
-  const largeImg = card.images?.large || card.images?.small;
-  
-  const cmPrice = card.cardmarket?.prices?.averageSellPrice;
-  const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
-  const apiPrice = cmPrice || tcgPrice || 0.0;
-
   const [customPriceInput, setCustomPriceInput] = useState(userCardEntry?.custom_price || '');
   const [notesInput, setNotesInput] = useState(userCardEntry?.notes || '');
   const [isSavedMsg, setIsSavedMsg] = useState(false);
@@ -18,6 +10,14 @@ export default function CardModal({ card, isOwned, isWanted, userCardEntry, onTo
     setCustomPriceInput(userCardEntry?.custom_price || '');
     setNotesInput(userCardEntry?.notes || '');
   }, [userCardEntry]);
+
+  if (!card) return null;
+
+  const largeImg = card.images?.large || card.images?.small;
+  
+  const cmPrice = card.cardmarket?.prices?.averageSellPrice;
+  const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
+  const apiPrice = cmPrice || tcgPrice || 0.0;
 
   const handleSaveCustomPrice = (e) => {
     e.preventDefault();

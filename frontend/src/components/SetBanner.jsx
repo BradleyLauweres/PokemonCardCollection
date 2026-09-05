@@ -56,11 +56,11 @@ export default function SetBanner({
               <span>Restore (.txt)</span>
               <input
                 type="file"
-                accept=".txt"
+                accept=".txt,.json"
                 style={{ display: 'none' }}
                 onChange={(e) => {
                   if (e.target.files && e.target.files[0]) {
-                    onRestore && onRestore(e.target.files[0]);
+                    if (onRestore) onRestore(e.target.files[0]);
                     e.target.value = '';
                   }
                 }}
@@ -127,11 +127,11 @@ export default function SetBanner({
               <span>Restore (.txt)</span>
               <input
                 type="file"
-                accept=".txt"
+                accept=".txt,.json"
                 style={{ display: 'none' }}
                 onChange={(e) => {
                   if (e.target.files && e.target.files[0]) {
-                    onRestore && onRestore(e.target.files[0]);
+                    if (onRestore) onRestore(e.target.files[0]);
                     e.target.value = '';
                   }
                 }}
@@ -214,11 +214,11 @@ export default function SetBanner({
             <span>Restore Set (.txt)</span>
             <input
               type="file"
-              accept=".txt"
+              accept=".txt,.json"
               style={{ display: 'none' }}
               onChange={(e) => {
                 if (e.target.files && e.target.files[0]) {
-                  onRestore && onRestore(e.target.files[0], set?.id);
+                  if (onRestore) onRestore(e.target.files[0], set?.id);
                   e.target.value = '';
                 }
               }}

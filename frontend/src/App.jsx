@@ -6,6 +6,7 @@ import FilterBar from './components/FilterBar';
 import CardGrid from './components/CardGrid';
 import CardModal from './components/CardModal';
 import StatsModal from './components/StatsModal';
+import GitHubSettingsModal from './components/GitHubSettingsModal';
 import {
   fetchSets,
   fetchSetCards,
@@ -39,6 +40,7 @@ export default function App() {
   // Modal states
   const [inspectedCard, setInspectedCard] = useState(null);
   const [showStatsModal, setShowStatsModal] = useState(false);
+  const [showGitHubSettings, setShowGitHubSettings] = useState(false);
 
   // Load sets & initial user stats on mount
   useEffect(() => {
@@ -58,11 +60,59 @@ export default function App() {
     init();
   }, []);
 
+  const handleSelectSet = (id) => {
+    setStatusFilter('all');
+    setSelectedSetId(id);
+  };
+
+  const refreshCurrentView = async () => {
+    const updatedStats = await fetchCollectionStats();
+    setStats(updatedStats);
+
+    if (selectedSetId === 'all_owned') {
+      const allUserCards = await fetchUserCollection();
+      const ownedOnly = allUserCards.filter(c => c.quantity > 0);
+      setSetCards(ownedOnly.map(c => ({
+        id: c.card_id,
+        name: c.name,
+        number: c.number,
+        rarity: c.rarity,
+        supertype: 'Pokémon',
+        image_url: c.image_url,
+        market_price: c.market_price || 0,
+        custom_price: c.custom_price || 0,
+        images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+        set: { id: c.set_id, name: c.set_id }
+      })));
+      setUserCollection(allUserCards);
+    } else if (selectedSetId === 'wanted_list') {
+      const wantedCards = await fetchUserCollection(null, true);
+      setSetCards(wantedCards.map(c => ({
+        id: c.card_id,
+        name: c.name,
+        number: c.number,
+        rarity: c.rarity,
+        supertype: 'Pokémon',
+        image_url: c.image_url,
+        market_price: c.market_price || 0,
+        custom_price: c.custom_price || 0,
+        images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+        set: { id: c.set_id, name: c.set_id }
+      })));
+      setUserCollection(wantedCards);
+    } else {
+      const [cardsData, userColData] = await Promise.all([
+        fetchSetCards(selectedSetId),
+        fetchUserCollection(selectedSetId)
+      ]);
+      setSetCards(cardsData);
+      setUserCollection(userColData);
+    }
+  };
+
   // Load cards and user collection when selectedSetId changes
   useEffect(() => {
     if (!selectedSetId) return;
-
-    setStatusFilter('all');
 
     async function loadSetData() {
       setIsLoadingCards(true);
@@ -512,8 +562,9 @@ export default function App() {
       <Navbar
         sets={sets}
         selectedSetId={selectedSetId}
-        onSelectSet={setSelectedSetId}
+        onSelectSet={handleSelectSet}
         onOpenStats={() => setShowStatsModal(true)}
+        onOpenGitHubSettings={() => setShowGitHubSettings(true)}
         totalOwnedCount={stats?.total_collected || 0}
         totalWantedCount={stats?.total_wanted || 0}
         totalMarketValue={stats?.total_market_value || 0}
@@ -581,9 +632,17 @@ export default function App() {
           stats={stats}
           sets={sets}
           onClose={() => setShowStatsModal(false)}
-          onSelectSet={setSelectedSetId}
+          onSelectSet={handleSelectSet}
           onBackup={handleBackup}
           onRestore={handleRestore}
+        />
+      )}
+
+      {/* GitHub Cloud Sync & Settings Modal */}
+      {showGitHubSettings && (
+        <GitHubSettingsModal
+          onClose={() => setShowGitHubSettings(false)}
+          onCollectionUpdated={refreshCurrentView}
         />
       )}
     </div>

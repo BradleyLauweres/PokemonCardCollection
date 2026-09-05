@@ -20,7 +20,7 @@ export default function StatsModal({ stats, sets, onClose, onSelectSet, onBackup
           </div>
           <div>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff' }}>Collection Portfolio & Valuation</h2>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Synced live with your Django database</p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Synced live with your GitHub repository</p>
           </div>
         </div>
 
@@ -106,7 +106,7 @@ export default function StatsModal({ stats, sets, onClose, onSelectSet, onBackup
                 style={{ display: 'none' }}
                 onChange={(e) => {
                   if (e.target.files && e.target.files[0]) {
-                    onRestore && onRestore(e.target.files[0]);
+                    if (onRestore) onRestore(e.target.files[0]);
                     e.target.value = '';
                   }
                 }}

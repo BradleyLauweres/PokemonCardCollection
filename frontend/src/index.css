@@ -674,6 +674,10 @@ option {
   animation: spin 1s linear infinite;
 }
 
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
