@@ -5668,5 +5668,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-49",
+    "set_id": "me4",
+    "name": "Zubat",
+    "number": "49",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-49/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
