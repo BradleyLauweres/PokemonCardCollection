@@ -5864,5 +5864,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-82",
+    "set_id": "me4",
+    "name": "Special Red Card",
+    "number": "82",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-82/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
