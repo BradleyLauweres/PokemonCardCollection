@@ -5528,5 +5528,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-185",
+    "set_id": "sv10",
+    "name": "Shaymin",
+    "number": "185",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/185.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 8.35,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
