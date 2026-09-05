@@ -18,7 +18,8 @@ import {
   bulkToggleSet,
   fetchCollectionStats,
   backupCollection,
-  restoreCollection
+  restoreCollection,
+  startBackgroundSync
 } from './api';
 
 export default function App() {
@@ -105,6 +106,14 @@ export default function App() {
       setUserCollection(userColData);
     }
   };
+
+  // Auto-sync background updates from remote (e.g. when another user adds cards)
+  useEffect(() => {
+    const cleanup = startBackgroundSync(() => {
+      refreshCurrentView();
+    });
+    return cleanup;
+  }, [selectedSetId]);
 
   // Load cards and user collection when selectedSetId changes
   useEffect(() => {

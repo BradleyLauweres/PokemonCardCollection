@@ -14,8 +14,10 @@ import {
   saveGitHubConfig,
   getSyncState,
   subscribeSyncState,
+  subscribeRemoteUpdates,
   pushToGitHub,
   pullFromGitHub,
+  startBackgroundSync,
   testGitHubConnection,
   isGitHubConfigured
 } from './githubStorage';
@@ -25,8 +27,10 @@ export {
   saveGitHubConfig,
   getSyncState,
   subscribeSyncState,
+  subscribeRemoteUpdates,
   pushToGitHub,
   pullFromGitHub,
+  startBackgroundSync,
   testGitHubConnection,
   isGitHubConfigured
 };
@@ -244,7 +248,13 @@ export async function toggleCardOwnership(cardData) {
     isOwned = true;
   }
 
-  saveCards(cards);
+  saveCards(cards, {
+    modifications: [{
+      card_id: cardId,
+      action: isOwned ? 'set' : (updatedCard?.is_wanted ? 'set' : 'delete'),
+      card: updatedCard
+    }]
+  });
   return {
     owned: isOwned,
     wanted: updatedCard?.is_wanted || false,
@@ -305,7 +315,13 @@ export async function toggleWantedCard(cardData) {
     cards.push(updatedCard);
   }
 
-  saveCards(cards);
+  saveCards(cards, {
+    modifications: [{
+      card_id: cardId,
+      action: updatedCard ? 'set' : 'delete',
+      card: updatedCard
+    }]
+  });
   return {
     wanted: isWanted,
     card: updatedCard,
@@ -335,11 +351,7 @@ export async function updateCardQuantity(cardId, quantity, cardData = {}) {
         cards.splice(existingIdx, 1);
       }
     }
-    saveCards(cards);
-    return { owned: false, wanted: updatedCard?.is_wanted || false, card: updatedCard, card_id: cardId };
-  }
-
-  if (existingIdx >= 0) {
+  } else if (existingIdx >= 0) {
     cards[existingIdx].quantity = qty;
     updatedCard = { ...cards[existingIdx] };
   } else {
@@ -360,8 +372,14 @@ export async function updateCardQuantity(cardId, quantity, cardData = {}) {
     cards.push(updatedCard);
   }
 
-  saveCards(cards);
-  return { owned: true, card: updatedCard };
+  saveCards(cards, {
+    modifications: [{
+      card_id: cardId,
+      action: qty <= 0 && (!updatedCard || !updatedCard.is_wanted) ? 'delete' : 'set',
+      card: updatedCard
+    }]
+  });
+  return { owned: qty > 0, wanted: updatedCard?.is_wanted || false, card: updatedCard, card_id: cardId };
 }
 
 /**
@@ -383,7 +401,13 @@ export async function updateCardPrice(cardId, customPrice, notes = '') {
   }
 
   const updatedCard = { ...cards[existingIdx] };
-  saveCards(cards);
+  saveCards(cards, {
+    modifications: [{
+      card_id: cardId,
+      action: 'set',
+      card: updatedCard
+    }]
+  });
   return { owned: (updatedCard.quantity || 0) > 0, card: updatedCard };
 }
 
@@ -395,16 +419,21 @@ export async function bulkToggleSet(setId, action, setCards = []) {
 
   if (action === 'clear_all') {
     const updated = [];
+    const modifications = [];
     for (const c of cards) {
       if (c.set_id === setId) {
         if (c.is_wanted) {
-          updated.push({ ...c, quantity: 0 });
+          const zeroCard = { ...c, quantity: 0 };
+          updated.push(zeroCard);
+          modifications.push({ card_id: c.card_id, action: 'set', card: zeroCard });
+        } else {
+          modifications.push({ card_id: c.card_id, action: 'delete' });
         }
       } else {
         updated.push(c);
       }
     }
-    saveCards(updated);
+    saveCards(updated, { modifications });
     return { message: `Cleared collected cards for set ${setId}` };
   } else if (action === 'mark_all') {
     const cardMap = new Map(cards.map(c => [c.card_id, c]));
@@ -442,7 +471,10 @@ export async function bulkToggleSet(setId, action, setCards = []) {
     }
 
     const updated = Array.from(cardMap.values());
-    saveCards(updated);
+    const modifications = updated
+      .filter(c => c.set_id === setId)
+      .map(c => ({ card_id: c.card_id, action: 'set', card: c }));
+    saveCards(updated, { modifications });
     return { message: `Marked set ${setId} cards as collected` };
   }
 
