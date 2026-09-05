@@ -5962,5 +5962,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-105",
+    "set_id": "me4",
+    "name": "Cinccino ex",
+    "number": "105",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me4-105/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
