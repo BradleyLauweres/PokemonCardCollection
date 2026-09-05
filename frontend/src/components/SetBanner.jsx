@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, CheckCircle2, Trash2, Trophy, Flame, Euro, BookOpen, Heart, Download, Upload } from 'lucide-react';
+import { Calendar, CheckCircle2, Trophy, Flame, Euro, BookOpen, Heart } from 'lucide-react';
 
 export default function SetBanner({
   set,
@@ -8,10 +8,7 @@ export default function SetBanner({
   setValue = 0,
   isAllOwnedMode = false,
   isWantedMode = false,
-  onMarkAll,
-  onClearAll,
-  onBackup,
-  onRestore
+  onMarkAll
 }) {
   if (isWantedMode) {
     return (
@@ -35,37 +32,6 @@ export default function SetBanner({
                 )}
               </div>
             </div>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <button
-              className="btn btn-secondary"
-              onClick={() => onBackup && onBackup('wanted_list')}
-              title="Download text backup file for your wanted cards"
-              style={{ background: 'rgba(255, 0, 127, 0.15)', borderColor: '#ff007f', color: '#ff4081' }}
-            >
-              <Download size={15} />
-              <span>Backup Wishlist (.txt)</span>
-            </button>
-            <label
-              className="btn btn-secondary"
-              style={{ cursor: 'pointer', background: 'rgba(255, 255, 255, 0.08)' }}
-              title="Restore wishlist from a .txt backup file"
-            >
-              <Upload size={15} />
-              <span>Restore (.txt)</span>
-              <input
-                type="file"
-                accept=".txt,.json"
-                style={{ display: 'none' }}
-                onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    if (onRestore) onRestore(e.target.files[0]);
-                    e.target.value = '';
-                  }
-                }}
-              />
-            </label>
           </div>
         </div>
 
@@ -107,36 +73,6 @@ export default function SetBanner({
                 )}
               </div>
             </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <button
-              className="btn btn-secondary"
-              onClick={() => onBackup && onBackup('all')}
-              title="Download full collection text backup (.txt)"
-              style={{ background: 'rgba(0, 229, 255, 0.12)', borderColor: 'rgba(0, 229, 255, 0.35)', color: 'var(--color-primary)' }}
-            >
-              <Download size={15} />
-              <span>Backup Collection (.txt)</span>
-            </button>
-            <label
-              className="btn btn-secondary"
-              style={{ cursor: 'pointer', background: 'rgba(255, 255, 255, 0.08)' }}
-              title="Restore full collection from a .txt backup file"
-            >
-              <Upload size={15} />
-              <span>Restore (.txt)</span>
-              <input
-                type="file"
-                accept=".txt,.json"
-                style={{ display: 'none' }}
-                onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    if (onRestore) onRestore(e.target.files[0]);
-                    e.target.value = '';
-                  }
-                }}
-              />
-            </label>
           </div>
         </div>
 
@@ -197,49 +133,11 @@ export default function SetBanner({
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
           <button
             className="btn btn-secondary"
-            onClick={() => onBackup && onBackup(set?.id)}
-            title={`Download text backup of cards collected for ${set?.name}`}
-            style={{ background: 'rgba(0, 229, 255, 0.1)', borderColor: 'rgba(0, 229, 255, 0.3)', color: 'var(--color-primary)' }}
-          >
-            <Download size={15} />
-            <span>Backup Set (.txt)</span>
-          </button>
-
-          <label
-            className="btn btn-secondary"
-            style={{ cursor: 'pointer', background: 'rgba(255, 204, 0, 0.1)', borderColor: 'rgba(255, 204, 0, 0.3)', color: 'var(--color-accent)' }}
-            title="Restore set cards from a .txt backup file"
-          >
-            <Upload size={15} />
-            <span>Restore Set (.txt)</span>
-            <input
-              type="file"
-              accept=".txt,.json"
-              style={{ display: 'none' }}
-              onChange={(e) => {
-                if (e.target.files && e.target.files[0]) {
-                  if (onRestore) onRestore(e.target.files[0], set?.id);
-                  e.target.value = '';
-                }
-              }}
-            />
-          </label>
-
-          <button
-            className="btn btn-secondary"
             onClick={onMarkAll}
             title="Mark all cards in this set as owned"
           >
             <CheckCircle2 size={16} color="var(--color-success)" />
             <span>Mark All Owned</span>
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={onClearAll}
-            title="Reset ownership for this set"
-          >
-            <Trash2 size={16} />
-            <span>Clear Set</span>
           </button>
         </div>
       </div>

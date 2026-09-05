@@ -486,23 +486,6 @@ export default function App() {
     }
   };
 
-  // Bulk action: Clear Set
-  const handleClearSet = async () => {
-    if (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') return;
-    if (!window.confirm(`Are you sure you want to clear all collected cards for ${currentSet?.name}?`)) {
-      return;
-    }
-
-    setUserCollection([]);
-    try {
-      await bulkToggleSet(selectedSetId, 'clear_all');
-      const updatedStats = await fetchCollectionStats();
-      setStats(updatedStats);
-    } catch (err) {
-      console.error('Failed clear set', err);
-    }
-  };
-
   // Filtered & Sorted Cards
   const filteredCards = useMemo(() => {
     return setCards
@@ -584,9 +567,6 @@ export default function App() {
           isAllOwnedMode={selectedSetId === 'all_owned'}
           isWantedMode={selectedSetId === 'wanted_list'}
           onMarkAll={handleMarkAllOwned}
-          onClearAll={handleClearSet}
-          onBackup={handleBackup}
-          onRestore={handleRestore}
         />
 
         <FilterBar
