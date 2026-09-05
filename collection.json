@@ -2182,5 +2182,19 @@
     "market_price": 0.14,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-16",
+    "set_id": "sv10",
+    "name": "Applin",
+    "number": "16",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/16.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
