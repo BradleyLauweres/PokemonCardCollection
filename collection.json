@@ -2210,5 +2210,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-30",
+    "set_id": "sv10",
+    "name": "Rapidash",
+    "number": "30",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/30.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
