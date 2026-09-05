@@ -5472,5 +5472,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-121",
+    "set_id": "sv10",
+    "name": "Team Rocket's Golbat",
+    "number": "121",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/121.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
