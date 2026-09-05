@@ -5738,5 +5738,47 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-69",
+    "set_id": "me4",
+    "name": "Tauros",
+    "number": "69",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-69/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me4-70",
+    "set_id": "me4",
+    "name": "Patrat",
+    "number": "70",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-70/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me4-71",
+    "set_id": "me4",
+    "name": "Watchog",
+    "number": "71",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-71/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
