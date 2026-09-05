@@ -5640,5 +5640,33 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-53",
+    "set_id": "me4",
+    "name": "Stunky",
+    "number": "53",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-53/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me4-54",
+    "set_id": "me4",
+    "name": "Skuntank",
+    "number": "54",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-54/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
