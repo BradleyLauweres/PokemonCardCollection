@@ -5612,5 +5612,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-18",
+    "set_id": "me4",
+    "name": "Delibird",
+    "number": "18",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-18/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
