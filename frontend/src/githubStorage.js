@@ -178,7 +178,7 @@ export async function loadCollection() {
     }
   }
 
-  // If still no cards, load initial seed from ./data/collection.json
+  // If still no cards, load initial seed from ./data/collection.json or raw GitHub
   if (currentCards === null) {
     try {
       const res = await fetch('./data/collection.json');
@@ -187,10 +187,26 @@ export async function loadCollection() {
         const initial = Array.isArray(seed) ? seed : (seed.cards || []);
         currentCards = initial;
         localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
+      } else {
+        const rawRes = await fetch(`https://raw.githubusercontent.com/${encodeURIComponent(DEFAULT_GH_CONFIG.owner)}/${encodeURIComponent(DEFAULT_GH_CONFIG.repo)}/${encodeURIComponent(DEFAULT_GH_CONFIG.branch)}/${encodeURIComponent(DEFAULT_GH_CONFIG.path)}`);
+        if (rawRes.ok) {
+          const rawSeed = await rawRes.json();
+          currentCards = Array.isArray(rawSeed) ? rawSeed : (rawSeed.cards || []);
+          localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
+        }
       }
     } catch (err) {
       console.warn('Could not load bundled seed collection:', err);
-      currentCards = [];
+      try {
+        const rawRes = await fetch(`https://raw.githubusercontent.com/${encodeURIComponent(DEFAULT_GH_CONFIG.owner)}/${encodeURIComponent(DEFAULT_GH_CONFIG.repo)}/${encodeURIComponent(DEFAULT_GH_CONFIG.branch)}/${encodeURIComponent(DEFAULT_GH_CONFIG.path)}`);
+        if (rawRes.ok) {
+          const rawSeed = await rawRes.json();
+          currentCards = Array.isArray(rawSeed) ? rawSeed : (rawSeed.cards || []);
+          localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
+        }
+      } catch {
+        currentCards = [];
+      }
     }
   }
 
