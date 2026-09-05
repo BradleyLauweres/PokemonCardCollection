@@ -5514,5 +5514,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-147",
+    "set_id": "sv10",
+    "name": "Team Rocket's Rattata",
+    "number": "147",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/147.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
