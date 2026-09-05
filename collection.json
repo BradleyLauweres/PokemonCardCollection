@@ -2252,5 +2252,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-42",
+    "set_id": "sv10",
+    "name": "Blaziken",
+    "number": "42",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/42.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.09,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
