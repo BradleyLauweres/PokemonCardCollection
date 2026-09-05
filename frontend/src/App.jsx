@@ -23,7 +23,7 @@ import {
 
 export default function App() {
   const [sets, setSets] = useState([]);
-  const [selectedSetId, setSelectedSetId] = useState('sv3');
+  const [selectedSetId, setSelectedSetId] = useState('all_owned');
   const [setCards, setSetCards] = useState([]);
   const [userCollection, setUserCollection] = useState([]);
   const [stats, setStats] = useState(null);
@@ -48,10 +48,6 @@ export default function App() {
       setIsLoadingSets(true);
       const fetchedSets = await fetchSets();
       setSets(fetchedSets);
-      if (fetchedSets.length > 0) {
-        const defaultSet = fetchedSets.find(s => s.id === 'sv3') || fetchedSets[0];
-        setSelectedSetId(defaultSet.id);
-      }
       setIsLoadingSets(false);
       
       const initialStats = await fetchCollectionStats();
