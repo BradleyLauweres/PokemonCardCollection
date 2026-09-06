@@ -6340,5 +6340,33 @@
     "market_price": 8.25,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-152",
+    "set_id": "rsv10pt5",
+    "name": "Patrat",
+    "number": "152",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/152.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.07,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-157",
+    "set_id": "rsv10pt5",
+    "name": "Whimsicott ex",
+    "number": "157",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/157.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 1.06,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
