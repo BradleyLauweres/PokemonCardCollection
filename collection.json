@@ -6326,5 +6326,19 @@
     "market_price": 29.65,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-109",
+    "set_id": "rsv10pt5",
+    "name": "Ducklett",
+    "number": "109",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/109.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 8.25,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
