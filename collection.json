@@ -6956,5 +6956,19 @@
     "market_price": 19.58,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-RC6",
+    "set_id": "g1",
+    "name": "Flareon-EX",
+    "number": "RC6",
+    "rarity": "Rare Holo EX",
+    "image_url": "https://images.pokemontcg.io/g1/RC6.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 32.84,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
