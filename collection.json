@@ -6032,5 +6032,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-5",
+    "set_id": "sv6pt5",
+    "name": "Decidueye",
+    "number": "5",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/5.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
