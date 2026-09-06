@@ -6452,5 +6452,19 @@
     "market_price": 0.59,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-95",
+    "set_id": "sv6",
+    "name": "Munkidori",
+    "number": "95",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv6/95.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0.63,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
