@@ -6032,5 +6032,33 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-55",
+    "set_id": "me5",
+    "name": "Morpeko ex",
+    "number": "55",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-55/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-65",
+    "set_id": "me5",
+    "name": "Mega Excadrill ex",
+    "number": "65",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-65/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
