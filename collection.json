@@ -6200,5 +6200,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-92",
+    "set_id": "me5",
+    "name": "Thievul",
+    "number": "92",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-92/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
