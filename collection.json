@@ -6396,5 +6396,19 @@
     "market_price": 16.61,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-11",
+    "set_id": "sv6",
+    "name": "Leafeon",
+    "number": "11",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv6/11.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.11,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
