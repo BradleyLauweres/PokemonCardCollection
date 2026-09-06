@@ -6014,7 +6014,7 @@
     "image_url": "https://images.scrydex.com/pokemon/me5-87/small",
     "quantity": 1,
     "is_foil": false,
-    "is_wanted": true,
+    "is_wanted": false,
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
