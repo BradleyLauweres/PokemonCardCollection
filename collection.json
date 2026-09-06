@@ -6536,5 +6536,19 @@
     "market_price": 0.1,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-12",
+    "set_id": "sv6pt5",
+    "name": "Kingdra ex",
+    "number": "12",
+    "rarity": "Double Rare",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/12.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0.66,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
