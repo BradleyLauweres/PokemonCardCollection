@@ -6368,5 +6368,19 @@
     "market_price": 1.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-159",
+    "set_id": "rsv10pt5",
+    "name": "Keldeo ex",
+    "number": "159",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/159.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 1.23,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
