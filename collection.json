@@ -6214,5 +6214,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-99",
+    "set_id": "me5",
+    "name": "Mega Chandelure ex",
+    "number": "99",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-99/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
