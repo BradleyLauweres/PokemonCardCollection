@@ -6102,5 +6102,33 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-27",
+    "set_id": "me5",
+    "name": "Mega Zeraora ex",
+    "number": "27",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-27/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-16",
+    "set_id": "me5",
+    "name": "Wailord ex",
+    "number": "16",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-16/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
