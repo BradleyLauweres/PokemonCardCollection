@@ -6704,5 +6704,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-79",
+    "set_id": "sv6pt5",
+    "name": "Bewear",
+    "number": "79",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/79.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.78,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
