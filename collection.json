@@ -6970,5 +6970,19 @@
     "market_price": 32.84,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-RC28",
+    "set_id": "g1",
+    "name": "Flareon-EX",
+    "number": "RC28",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/g1/RC28.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 74.79,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
