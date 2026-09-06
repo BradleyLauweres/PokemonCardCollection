@@ -6760,5 +6760,19 @@
     "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-76",
+    "set_id": "sv6pt5",
+    "name": "Cufant",
+    "number": "76",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/76.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 7.25,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
