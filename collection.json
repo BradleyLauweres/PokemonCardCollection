@@ -6872,5 +6872,19 @@
     "market_price": 24.46,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-12",
+    "set_id": "g1",
+    "name": "M Charizard-EX",
+    "number": "12",
+    "rarity": "Rare Holo EX",
+    "image_url": "https://images.pokemontcg.io/g1/12.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 98.19,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
