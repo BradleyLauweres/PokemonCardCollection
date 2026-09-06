@@ -6914,5 +6914,47 @@
     "market_price": 19.95,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-RC3",
+    "set_id": "g1",
+    "name": "Charmander",
+    "number": "RC3",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/g1/RC3.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.07,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "g1-RC4",
+    "set_id": "g1",
+    "name": "Charmeleon",
+    "number": "RC4",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/g1/RC4.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 5.93,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "g1-RC5",
+    "set_id": "g1",
+    "name": "Charizard",
+    "number": "RC5",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/g1/RC5.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 19.58,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
