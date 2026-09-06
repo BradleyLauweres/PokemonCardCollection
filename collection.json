@@ -6550,5 +6550,33 @@
     "market_price": 0.66,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-23",
+    "set_id": "sv6pt5",
+    "name": "Croagunk",
+    "number": "23",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/23.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.02,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-24",
+    "set_id": "sv6pt5",
+    "name": "Toxicroak",
+    "number": "24",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/24.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.02,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
