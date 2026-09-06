@@ -6088,5 +6088,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-48",
+    "set_id": "me5",
+    "name": "Mega Darkrai ex",
+    "number": "48",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-48/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
