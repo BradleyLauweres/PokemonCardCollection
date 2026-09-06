@@ -6424,5 +6424,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-54",
+    "set_id": "sv6",
+    "name": "Glaceon",
+    "number": "54",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv6/54.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0.07,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
