@@ -6662,5 +6662,19 @@
     "market_price": 0.08,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-61",
+    "set_id": "sv6pt5",
+    "name": "Night Stretcher",
+    "number": "61",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/61.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.65,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
