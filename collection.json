@@ -6466,5 +6466,19 @@
     "market_price": 0.63,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-175",
+    "set_id": "sv6",
+    "name": "Phione",
+    "number": "175",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6/175.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.32,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
