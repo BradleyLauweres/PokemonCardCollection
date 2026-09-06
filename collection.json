@@ -6270,5 +6270,47 @@
     "market_price": 14.82,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-99",
+    "set_id": "rsv10pt5",
+    "name": "Pansear",
+    "number": "99",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/99.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.44,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-101",
+    "set_id": "rsv10pt5",
+    "name": "Litwick",
+    "number": "101",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/101.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 7.3,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-105",
+    "set_id": "rsv10pt5",
+    "name": "Oshawott",
+    "number": "105",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/105.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 25.16,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
