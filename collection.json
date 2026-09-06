@@ -6438,5 +6438,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-94",
+    "set_id": "sv6",
+    "name": "Scream Tail ex",
+    "number": "94",
+    "rarity": "Double Rare",
+    "image_url": "https://images.pokemontcg.io/sv6/94.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0.59,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
