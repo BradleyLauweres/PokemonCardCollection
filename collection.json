@@ -6410,5 +6410,19 @@
     "market_price": 0.11,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-46",
+    "set_id": "sv6",
+    "name": "Jynx",
+    "number": "46",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv6/46.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
