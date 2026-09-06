@@ -6900,5 +6900,19 @@
     "market_price": 174.1,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-28",
+    "set_id": "g1",
+    "name": "Jolteon-EX",
+    "number": "28",
+    "rarity": "Rare Holo EX",
+    "image_url": "https://images.pokemontcg.io/g1/28.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 19.95,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
