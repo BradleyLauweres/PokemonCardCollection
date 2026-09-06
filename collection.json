@@ -6984,5 +6984,19 @@
     "market_price": 74.79,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-RC29",
+    "set_id": "g1",
+    "name": "Pikachu",
+    "number": "RC29",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/g1/RC29.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 60.61,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
