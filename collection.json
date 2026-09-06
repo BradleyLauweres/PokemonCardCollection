@@ -6494,5 +6494,19 @@
     "market_price": 63.1,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-187",
+    "set_id": "sv6",
+    "name": "Chansey",
+    "number": "187",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6/187.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 25.72,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
