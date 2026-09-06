@@ -238,20 +238,6 @@
     "is_foil": false
   },
   {
-    "card_id": "me5-4",
-    "set_id": "me5",
-    "number": "4",
-    "quantity": 1,
-    "is_wanted": false,
-    "market_price": 0,
-    "custom_price": 0,
-    "name": "Lurantis ex",
-    "rarity": "Double Rare",
-    "image_url": "https://images.scrydex.com/pokemon/me5-4/small",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "me5-5",
     "set_id": "me5",
     "number": "5",
