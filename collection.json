@@ -6018,5 +6018,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-31",
+    "set_id": "me5",
+    "name": "Mega Slowbro ex",
+    "number": "31",
+    "rarity": "Double Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-31/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
