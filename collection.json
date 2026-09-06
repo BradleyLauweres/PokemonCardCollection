@@ -6844,5 +6844,19 @@
     "market_price": 6.73,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh7-169",
+    "set_id": "swsh7",
+    "name": "Flareon V",
+    "number": "169",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/swsh7/169.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 24.74,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
