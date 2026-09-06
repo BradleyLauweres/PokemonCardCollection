@@ -6718,5 +6718,33 @@
     "market_price": 6.78,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-19",
+    "set_id": "sv6pt5",
+    "name": "Dusclops",
+    "number": "19",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/19.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.08,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-20",
+    "set_id": "sv6pt5",
+    "name": "Dusknoir",
+    "number": "20",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/20.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.14,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
