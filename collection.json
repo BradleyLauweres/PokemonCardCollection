@@ -6886,5 +6886,19 @@
     "market_price": 98.19,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-28a",
+    "set_id": "g1",
+    "name": "Jolteon-EX",
+    "number": "28a",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/g1/28a.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 174.1,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
