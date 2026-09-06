@@ -6382,5 +6382,19 @@
     "market_price": 1.23,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-142",
+    "set_id": "rsv10pt5",
+    "name": "Zorua",
+    "number": "142",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/142.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 16.61,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
