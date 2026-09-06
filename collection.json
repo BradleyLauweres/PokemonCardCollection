@@ -6998,5 +6998,33 @@
     "market_price": 60.61,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "g1-RC32",
+    "set_id": "g1",
+    "name": "Sylveon-EX",
+    "number": "RC32",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/g1/RC32.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 68.38,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "g1-RC30",
+    "set_id": "g1",
+    "name": "Gardevoir-EX",
+    "number": "RC30",
+    "rarity": "Rare Ultra",
+    "image_url": "https://images.pokemontcg.io/g1/RC30.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 41.33,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
