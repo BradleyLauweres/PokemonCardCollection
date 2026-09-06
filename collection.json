@@ -6158,5 +6158,47 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-98",
+    "set_id": "me5",
+    "name": "Mega Zeraora ex",
+    "number": "98",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-98/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-90",
+    "set_id": "me5",
+    "name": "Slowbro",
+    "number": "90",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-90/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-86",
+    "set_id": "me5",
+    "name": "Armarouge",
+    "number": "86",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-86/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
