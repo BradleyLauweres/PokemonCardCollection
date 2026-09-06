@@ -6830,5 +6830,19 @@
     "market_price": 0.31,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh7-18",
+    "set_id": "swsh7",
+    "name": "Flareon VMAX",
+    "number": "18",
+    "rarity": "Rare Holo VMAX",
+    "image_url": "https://images.pokemontcg.io/swsh7/18.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 6.73,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
