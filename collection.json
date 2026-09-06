@@ -6004,5 +6004,33 @@
     "market_price": 19.97,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-87",
+    "set_id": "me5",
+    "name": "Goldeen",
+    "number": "87",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-87/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-88",
+    "set_id": "me5",
+    "name": "Primarina",
+    "number": "88",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-88/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
