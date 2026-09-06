@@ -6242,5 +6242,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-117",
+    "set_id": "me5",
+    "name": "Morpeko ex",
+    "number": "117",
+    "rarity": "Special Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-117/small",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
