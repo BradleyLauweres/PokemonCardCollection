@@ -6060,5 +6060,33 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me5-94",
+    "set_id": "me5",
+    "name": "Toucannon",
+    "number": "94",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-94/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "me5-91",
+    "set_id": "me5",
+    "name": "Dhelmise",
+    "number": "91",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.scrydex.com/pokemon/me5-91/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
