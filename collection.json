@@ -6256,5 +6256,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-96",
+    "set_id": "rsv10pt5",
+    "name": "Tepig",
+    "number": "96",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/96.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 14.82,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
