@@ -56,20 +56,6 @@
     "is_foil": false
   },
   {
-    "card_id": "me4-5",
-    "set_id": "me4",
-    "number": "5",
-    "quantity": 1,
-    "is_wanted": false,
-    "market_price": 0,
-    "custom_price": 0,
-    "name": "Chespin",
-    "rarity": "Common",
-    "image_url": "https://images.scrydex.com/pokemon/me4-5/small",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "me4-6",
     "set_id": "me4",
     "number": "6",
@@ -3580,20 +3566,6 @@
     "name": "Exeggcute",
     "rarity": "Common",
     "image_url": "https://images.pokemontcg.io/sv8pt5/1.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
-    "card_id": "sv8pt5-4",
-    "set_id": "sv8pt5",
-    "number": "4",
-    "quantity": 1,
-    "is_wanted": false,
-    "market_price": 0.18,
-    "custom_price": 0,
-    "name": "Budew",
-    "rarity": "Common",
-    "image_url": "https://images.pokemontcg.io/sv8pt5/4.png",
     "notes": "",
     "is_foil": false
   },
