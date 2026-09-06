@@ -6816,5 +6816,19 @@
     "market_price": 2.47,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh7-16",
+    "set_id": "swsh7",
+    "name": "Eldegoss",
+    "number": "16",
+    "rarity": "Rare Holo",
+    "image_url": "https://images.pokemontcg.io/swsh7/16.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.31,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
