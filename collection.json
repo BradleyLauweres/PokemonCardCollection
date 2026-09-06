@@ -6634,5 +6634,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-59",
+    "set_id": "sv6pt5",
+    "name": "Janine's Secret Art",
+    "number": "59",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/59.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
