@@ -6774,5 +6774,19 @@
     "market_price": 7.25,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6pt5-78",
+    "set_id": "sv6pt5",
+    "name": "Persian",
+    "number": "78",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6pt5/78.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 39.32,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
