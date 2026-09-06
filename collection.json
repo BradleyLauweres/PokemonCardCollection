@@ -6312,5 +6312,19 @@
     "market_price": 25.16,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "rsv10pt5-107",
+    "set_id": "rsv10pt5",
+    "name": "Samurott",
+    "number": "107",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/rsv10pt5/107.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 29.65,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
