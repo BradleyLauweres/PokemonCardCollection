@@ -6480,5 +6480,19 @@
     "market_price": 6.32,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv6-188",
+    "set_id": "sv6",
+    "name": "Eevee",
+    "number": "188",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv6/188.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 63.1,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
