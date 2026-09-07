@@ -4970,20 +4970,6 @@
     "is_foil": false
   },
   {
-    "card_id": "svp-163",
-    "set_id": "svp",
-    "number": "163",
-    "quantity": 1,
-    "is_wanted": false,
-    "market_price": 3.11,
-    "custom_price": 0,
-    "name": "Cinderace ex",
-    "rarity": "Promo",
-    "image_url": "https://images.pokemontcg.io/svp/163.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "svp-164",
     "set_id": "svp",
     "number": "164",
