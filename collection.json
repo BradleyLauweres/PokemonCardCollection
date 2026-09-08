@@ -8020,5 +8020,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-78",
+    "set_id": "sv8",
+    "name": "Uxie",
+    "number": "78",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/78.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
