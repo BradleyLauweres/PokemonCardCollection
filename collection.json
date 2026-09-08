@@ -8524,5 +8524,19 @@
     "market_price": 2.14,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv3-64",
+    "set_id": "sv3",
+    "name": "Magneton",
+    "number": "64",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv3/64.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
