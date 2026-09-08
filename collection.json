@@ -8132,5 +8132,33 @@
     "market_price": 0.05,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-104",
+    "set_id": "sv8",
+    "name": "Trapinch",
+    "number": "104",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/104.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8-105",
+    "set_id": "sv8",
+    "name": "Vibrava",
+    "number": "105",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/105.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
