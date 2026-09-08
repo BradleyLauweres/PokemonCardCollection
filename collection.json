@@ -8454,5 +8454,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-173",
+    "set_id": "sv8",
+    "name": "Drasna",
+    "number": "173",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/173.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
