@@ -8426,5 +8426,19 @@
     "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-174",
+    "set_id": "sv8",
+    "name": "Drayton",
+    "number": "174",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/174.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
