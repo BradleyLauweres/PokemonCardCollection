@@ -8244,5 +8244,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-137",
+    "set_id": "sv8",
+    "name": "Turtonator",
+    "number": "137",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/137.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
