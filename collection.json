@@ -8566,5 +8566,19 @@
     "market_price": 0.05,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-2",
+    "set_id": "sv8pt5",
+    "name": "Exeggutor",
+    "number": "2",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/2.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.07,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
