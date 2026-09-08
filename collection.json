@@ -8286,5 +8286,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-144",
+    "set_id": "sv8",
+    "name": "Snorlax",
+    "number": "144",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/144.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
