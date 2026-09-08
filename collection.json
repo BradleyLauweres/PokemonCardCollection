@@ -7474,5 +7474,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-50",
+    "set_id": "me4",
+    "name": "Golbat",
+    "number": "50",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-50/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
