@@ -8692,5 +8692,19 @@
     "market_price": 0.35,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-44",
+    "set_id": "sv8pt5",
+    "name": "Munkidori",
+    "number": "44",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/44.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.25,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
