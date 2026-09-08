@@ -8482,5 +8482,19 @@
     "market_price": 0.08,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-234",
+    "set_id": "sv8",
+    "name": "Lisia's Appeal",
+    "number": "234",
+    "rarity": "Ultra Rare",
+    "image_url": "https://images.pokemontcg.io/sv8/234.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 3.57,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
