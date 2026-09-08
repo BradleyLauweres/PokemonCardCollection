@@ -1638,20 +1638,6 @@
     "is_foil": false
   },
   {
-    "card_id": "sv3-99",
-    "set_id": "sv3",
-    "number": "99",
-    "quantity": 1,
-    "is_wanted": false,
-    "market_price": 0.05,
-    "custom_price": 0,
-    "name": "Greavard",
-    "rarity": "Common",
-    "image_url": "https://images.pokemontcg.io/sv3/99.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "sv3-105",
     "set_id": "sv3",
     "number": "105",
