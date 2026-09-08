@@ -8832,5 +8832,19 @@
     "market_price": 0.1,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-83",
+    "set_id": "sv8pt5",
+    "name": "Buneary",
+    "number": "83",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/83.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.1,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
