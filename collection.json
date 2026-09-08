@@ -8902,5 +8902,19 @@
     "market_price": 0.19,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-103",
+    "set_id": "sv8pt5",
+    "name": "Carmine",
+    "number": "103",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/103.png",
+    "quantity": 2,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.17,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
