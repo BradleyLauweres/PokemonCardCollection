@@ -7334,5 +7334,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv7-72",
+    "set_id": "sv7",
+    "name": "Cubone",
+    "number": "72",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv7/72.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
