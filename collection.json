@@ -7390,5 +7390,19 @@
     "market_price": 0.13,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv7-131",
+    "set_id": "sv7",
+    "name": "Area Zero Underdepths",
+    "number": "131",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv7/131.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
