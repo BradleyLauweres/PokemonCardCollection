@@ -8818,5 +8818,19 @@
     "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-77",
+    "set_id": "sv8pt5",
+    "name": "Hoothoot",
+    "number": "77",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/77.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.1,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
