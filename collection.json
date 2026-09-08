@@ -8664,5 +8664,19 @@
     "market_price": 0.17,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-36",
+    "set_id": "sv8pt5",
+    "name": "Dusclops",
+    "number": "36",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/36.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.21,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
