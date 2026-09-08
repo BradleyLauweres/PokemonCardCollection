@@ -8412,5 +8412,19 @@
     "market_price": 0.14,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-175",
+    "set_id": "sv8",
+    "name": "Dusk Ball",
+    "number": "175",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/175.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
