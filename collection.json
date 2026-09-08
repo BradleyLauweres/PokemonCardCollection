@@ -8496,5 +8496,19 @@
     "market_price": 3.57,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-48",
+    "set_id": "sv8",
+    "name": "Black Kyurem ex",
+    "number": "48",
+    "rarity": "Double Rare",
+    "image_url": "https://images.pokemontcg.io/sv8/48.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.59,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
