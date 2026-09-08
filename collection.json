@@ -7012,5 +7012,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-29",
+    "set_id": "sv10",
+    "name": "Ponyta",
+    "number": "29",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/29.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
