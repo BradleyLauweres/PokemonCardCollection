@@ -7824,5 +7824,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-43",
+    "set_id": "sv8",
+    "name": "Spheal",
+    "number": "43",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/43.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
