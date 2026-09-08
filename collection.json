@@ -7838,5 +7838,33 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-44",
+    "set_id": "sv8",
+    "name": "Sealeo",
+    "number": "44",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/44.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8-45",
+    "set_id": "sv8",
+    "name": "Walrein",
+    "number": "45",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/45.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
