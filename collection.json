@@ -9028,5 +9028,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-13",
+    "set_id": "sv8pt5",
+    "name": "Flareon",
+    "number": "13",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/13.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0.33,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
