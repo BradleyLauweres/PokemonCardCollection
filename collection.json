@@ -8538,5 +8538,47 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv3-67",
+    "set_id": "sv3",
+    "name": "Tynamo",
+    "number": "67",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv3/67.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv3-68",
+    "set_id": "sv3",
+    "name": "Eelektrik",
+    "number": "68",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv3/68.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv3-69",
+    "set_id": "sv3",
+    "name": "Eelektross",
+    "number": "69",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv3/69.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
