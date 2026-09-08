@@ -7866,5 +7866,33 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-52",
+    "set_id": "sv8",
+    "name": "Quaquaval",
+    "number": "52",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/52.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8-54",
+    "set_id": "sv8",
+    "name": "Cetitan",
+    "number": "54",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/54.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
