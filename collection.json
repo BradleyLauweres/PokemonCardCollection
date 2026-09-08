@@ -7418,5 +7418,19 @@
     "market_price": 0.13,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-27",
+    "set_id": "me4",
+    "name": "Mareep",
+    "number": "27",
+    "rarity": "Common",
+    "image_url": "https://images.scrydex.com/pokemon/me4-27/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
