@@ -8342,5 +8342,19 @@
     "market_price": 0.07,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-184",
+    "set_id": "sv8",
+    "name": "Passho Berry",
+    "number": "184",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/184.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
