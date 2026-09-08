@@ -4147,7 +4147,7 @@
     "card_id": "sv8pt5-118",
     "set_id": "sv8pt5",
     "number": "118",
-    "quantity": 1,
+    "quantity": 2,
     "is_wanted": false,
     "market_price": 0.11,
     "custom_price": 0,
@@ -8998,6 +8998,20 @@
     "is_foil": false,
     "is_wanted": false,
     "market_price": 0.16,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-119",
+    "set_id": "sv8pt5",
+    "name": "Prime Catcher",
+    "number": "119",
+    "rarity": "ACE SPEC Rare",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/119.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.64,
     "custom_price": 0,
     "notes": ""
   }
