@@ -8958,5 +8958,33 @@
     "market_price": 0.13,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-110",
+    "set_id": "sv8pt5",
+    "name": "Glass Trumpet",
+    "number": "110",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/110.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.13,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-112",
+    "set_id": "sv8pt5",
+    "name": "Janine's Secret Art",
+    "number": "112",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/112.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.25,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
