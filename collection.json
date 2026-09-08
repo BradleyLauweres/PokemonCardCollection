@@ -8370,5 +8370,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-179",
+    "set_id": "sv8",
+    "name": "Lisia's Appeal",
+    "number": "179",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv8/179.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
