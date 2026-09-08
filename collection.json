@@ -7460,5 +7460,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me4-43",
+    "set_id": "me4",
+    "name": "Sudowoodo",
+    "number": "43",
+    "rarity": "Uncommon",
+    "image_url": "https://images.scrydex.com/pokemon/me4-43/small",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
