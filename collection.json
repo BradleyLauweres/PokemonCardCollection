@@ -8734,5 +8734,19 @@
     "market_price": 0.16,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-47",
+    "set_id": "sv8pt5",
+    "name": "Larvitar",
+    "number": "47",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/47.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.07,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
