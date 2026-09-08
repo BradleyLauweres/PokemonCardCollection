@@ -8594,5 +8594,33 @@
     "market_price": 0.24,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-7",
+    "set_id": "sv8pt5",
+    "name": "Cottonee",
+    "number": "7",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/7.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8pt5-8",
+    "set_id": "sv8pt5",
+    "name": "Whimsicott",
+    "number": "8",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv8pt5/8.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.16,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
