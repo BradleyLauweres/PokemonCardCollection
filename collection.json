@@ -7950,5 +7950,47 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv8-70",
+    "set_id": "sv8",
+    "name": "Togepi",
+    "number": "70",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/70.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8-71",
+    "set_id": "sv8",
+    "name": "Togetic",
+    "number": "71",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv8/71.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv8-72",
+    "set_id": "sv8",
+    "name": "Togekiss",
+    "number": "72",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv8/72.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.07,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
