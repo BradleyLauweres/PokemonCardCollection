@@ -9126,5 +9126,33 @@
     "market_price": 23.8,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-161",
+    "set_id": "sv10",
+    "name": "Arven's Sandwich",
+    "number": "161",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/161.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-205",
+    "set_id": "sv10",
+    "name": "Arven's Greedent",
+    "number": "205",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/205.png",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 3.82,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
