@@ -9182,5 +9182,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-90",
+    "set_id": "sv10",
+    "name": "Mankey",
+    "number": "90",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/90.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
