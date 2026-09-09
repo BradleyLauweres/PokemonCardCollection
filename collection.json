@@ -9112,5 +9112,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-194",
+    "set_id": "sv10",
+    "name": "Misty's Lapras",
+    "number": "194",
+    "rarity": "Illustration Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/194.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 23.8,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
