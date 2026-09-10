@@ -3710,20 +3710,6 @@
     "is_foil": false
   },
   {
-    "card_id": "sv8pt5-30",
-    "set_id": "sv8pt5",
-    "number": "30",
-    "quantity": 0,
-    "is_wanted": true,
-    "market_price": 4.79,
-    "custom_price": 0,
-    "name": "Jolteon ex",
-    "rarity": "Double Rare",
-    "image_url": "https://images.pokemontcg.io/sv8pt5/30.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "sv8pt5-33",
     "set_id": "sv8pt5",
     "number": "33",
