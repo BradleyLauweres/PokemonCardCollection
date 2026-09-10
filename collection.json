@@ -5012,20 +5012,6 @@
     "is_foil": false
   },
   {
-    "card_id": "svp-173",
-    "set_id": "svp",
-    "number": "173",
-    "quantity": 0,
-    "is_wanted": true,
-    "market_price": 137.85,
-    "custom_price": 0,
-    "name": "Eevee",
-    "rarity": "Promo",
-    "image_url": "https://images.pokemontcg.io/svp/173.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "svp-174",
     "set_id": "svp",
     "number": "174",
