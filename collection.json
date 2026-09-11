@@ -9840,5 +9840,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-142",
+    "set_id": "sv10",
+    "name": "Steven's Skarmory",
+    "number": "142",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/142.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
