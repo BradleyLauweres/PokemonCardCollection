@@ -9868,5 +9868,47 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-155",
+    "set_id": "sv10",
+    "name": "Team Rocket's Porygon-Z",
+    "number": "155",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/155.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-154",
+    "set_id": "sv10",
+    "name": "Team Rocket's Porygon2",
+    "number": "154",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/154.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-153",
+    "set_id": "sv10",
+    "name": "Team Rocket's Porygon",
+    "number": "153",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/153.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
