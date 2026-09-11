@@ -10008,5 +10008,19 @@
     "market_price": 0.05,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-175",
+    "set_id": "sv10",
+    "name": "Team Rocket's Great Ball",
+    "number": "175",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/175.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
