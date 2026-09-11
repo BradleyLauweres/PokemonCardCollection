@@ -9602,5 +9602,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-84",
+    "set_id": "sv10",
+    "name": "Steven's Claydol",
+    "number": "84",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/84.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
