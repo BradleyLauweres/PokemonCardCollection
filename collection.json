@@ -9672,5 +9672,19 @@
     "market_price": 0.05,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-103",
+    "set_id": "sv10",
+    "name": "Cynthia's Gabite",
+    "number": "103",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/103.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.18,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
