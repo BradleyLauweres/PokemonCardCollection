@@ -10022,5 +10022,19 @@
     "market_price": 0.05,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-174",
+    "set_id": "sv10",
+    "name": "Team Rocket's Giovanni",
+    "number": "174",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/174.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
