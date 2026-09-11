@@ -9630,5 +9630,33 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-107",
+    "set_id": "sv10",
+    "name": "Mudbray",
+    "number": "107",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/107.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-106",
+    "set_id": "sv10",
+    "name": "Hippowdon",
+    "number": "106",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/106.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
