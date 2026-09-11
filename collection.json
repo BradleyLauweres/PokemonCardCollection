@@ -9406,5 +9406,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-54",
+    "set_id": "sv10",
+    "name": "Clamperl",
+    "number": "54",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/54.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
