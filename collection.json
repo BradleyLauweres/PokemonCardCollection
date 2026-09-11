@@ -10176,5 +10176,19 @@
     "market_price": 2.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv7-173",
+    "set_id": "sv7",
+    "name": "Terapagos ex",
+    "number": "173",
+    "rarity": "Hyper Rare",
+    "image_url": "https://images.pokemontcg.io/sv7/173.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 13.63,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
