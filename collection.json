@@ -10078,5 +10078,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv7-23",
+    "set_id": "sv7",
+    "name": "Salandit",
+    "number": "23",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv7/23.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.02,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
