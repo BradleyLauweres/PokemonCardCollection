@@ -9910,5 +9910,33 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-156",
+    "set_id": "sv10",
+    "name": "Taillow",
+    "number": "156",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/156.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-157",
+    "set_id": "sv10",
+    "name": "Swellow",
+    "number": "157",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/157.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.04,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
