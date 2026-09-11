@@ -9308,5 +9308,19 @@
     "market_price": 0.04,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-21",
+    "set_id": "sv10",
+    "name": "Smoliv",
+    "number": "21",
+    "rarity": "Common",
+    "image_url": "https://images.pokemontcg.io/sv10/21.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.05,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
