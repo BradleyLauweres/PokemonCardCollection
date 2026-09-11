@@ -9378,5 +9378,19 @@
     "market_price": 0.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv10-58",
+    "set_id": "sv10",
+    "name": "Floatzel",
+    "number": "58",
+    "rarity": "Uncommon",
+    "image_url": "https://images.pokemontcg.io/sv10/58.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
