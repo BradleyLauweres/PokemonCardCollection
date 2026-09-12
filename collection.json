@@ -5858,9 +5858,9 @@
     "number": "88",
     "rarity": "Illustration Rare",
     "image_url": "https://images.scrydex.com/pokemon/me5-88/small",
-    "quantity": 0,
+    "quantity": 1,
     "is_foil": false,
-    "is_wanted": true,
+    "is_wanted": false,
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
