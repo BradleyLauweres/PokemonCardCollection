@@ -5096,20 +5096,6 @@
     "is_foil": false
   },
   {
-    "card_id": "swsh12pt5-38",
-    "set_id": "swsh12pt5",
-    "number": "38",
-    "quantity": 0,
-    "is_wanted": true,
-    "market_price": 1.39,
-    "custom_price": 0,
-    "name": "Glaceon V",
-    "rarity": "Rare Holo V",
-    "image_url": "https://images.pokemontcg.io/swsh12pt5/38.png",
-    "notes": "",
-    "is_foil": false
-  },
-  {
     "card_id": "swsh12pt5-108",
     "set_id": "swsh12pt5",
     "number": "108",
