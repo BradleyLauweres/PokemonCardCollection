@@ -9078,9 +9078,9 @@
     "number": "205",
     "rarity": "Illustration Rare",
     "image_url": "https://images.pokemontcg.io/sv10/205.png",
-    "quantity": 0,
+    "quantity": 1,
     "is_foil": false,
-    "is_wanted": true,
+    "is_wanted": false,
     "market_price": 3.82,
     "custom_price": 0,
     "notes": ""
