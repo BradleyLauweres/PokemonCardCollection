@@ -9232,7 +9232,7 @@
     "number": "17",
     "rarity": "Common",
     "image_url": "https://images.pokemontcg.io/sv10/17.png",
-    "quantity": 1,
+    "quantity": 2,
     "is_foil": false,
     "is_wanted": false,
     "market_price": 0.03,
@@ -10160,6 +10160,20 @@
     "is_foil": false,
     "is_wanted": false,
     "market_price": 13.63,
+    "custom_price": 0,
+    "notes": ""
+  },
+  {
+    "card_id": "sv10-18",
+    "set_id": "sv10",
+    "name": "Hydrapple",
+    "number": "18",
+    "rarity": "Rare",
+    "image_url": "https://images.pokemontcg.io/sv10/18.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0.06,
     "custom_price": 0,
     "notes": ""
   }
