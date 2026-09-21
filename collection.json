@@ -10414,5 +10414,19 @@
     "market_price": 3.57,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "30th-155",
+    "set_id": "30th",
+    "name": "Jirachi ex",
+    "number": "155",
+    "rarity": "Special illustration rare",
+    "image_url": "https://assets.tcgdex.net/en/me/30th/155/low.webp",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
