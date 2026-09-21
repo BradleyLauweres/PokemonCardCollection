@@ -70,6 +70,28 @@ export default function App() {
     init();
   }, []);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleScrollOrTouch = () => {
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+        const currentScrollY = window.scrollY;
+        if (Math.abs(currentScrollY - lastScrollY) > 15) {
+          activeEl.blur();
+          lastScrollY = currentScrollY;
+        }
+      } else {
+        lastScrollY = window.scrollY;
+      }
+    };
+    window.addEventListener('scroll', handleScrollOrTouch, { passive: true });
+    window.addEventListener('touchmove', handleScrollOrTouch, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScrollOrTouch);
+      window.removeEventListener('touchmove', handleScrollOrTouch);
+    };
+  }, []);
+
   const handleSelectSet = (id) => {
     setSearchQuery('');
     setSearchScope('set');

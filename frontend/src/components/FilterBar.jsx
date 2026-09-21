@@ -43,6 +43,11 @@ export default function FilterBar({
             }
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.target.blur();
+              }
+            }}
           />
           {searchQuery && (
             <button
