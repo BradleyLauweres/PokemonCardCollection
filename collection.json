@@ -10442,5 +10442,19 @@
     "market_price": 5.86,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swshp-SWSH260",
+    "set_id": "swshp",
+    "name": "Charizard V",
+    "number": "SWSH260",
+    "rarity": "Promo",
+    "image_url": "https://assets.tcgdex.net/en/swsh/swshp/SWSH260/low.webp",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 55.57,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
