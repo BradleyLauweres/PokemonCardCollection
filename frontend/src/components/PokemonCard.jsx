@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Check, Lock, Eye, Plus, Minus, Tag, Heart } from 'lucide-react';
+import placeholderImg from '../assets/placeholder.png';
 
 export default function PokemonCard({
   card,
@@ -12,11 +13,15 @@ export default function PokemonCard({
   onQuantityChange,
   onInspectCard
 }) {
-  const imageUrl = card.images?.small || card.images?.large || card.image_url || '';
+  const touchStartY = useRef(0);
+  const touchStartX = useRef(0);
+  const isTouchScrolling = useRef(false);
+
+  const imageUrl = card.images?.small || card.images?.large || card.image_url || placeholderImg;
 
   const cmPrice = card.cardmarket?.prices?.averageSellPrice;
   const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market || card.tcgplayer?.prices?.reverseHolofoil?.market;
-  const apiPrice = cmPrice || tcgPrice || 0;
+  const apiPrice = cmPrice || tcgPrice || card.market_price || 0;
 
   const displayPrice = userEntry?.custom_price > 0
     ? userEntry.custom_price
@@ -24,12 +29,26 @@ export default function PokemonCard({
 
   const hasCustomPrice = userEntry?.custom_price > 0;
 
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+    touchStartX.current = e.touches[0].clientX;
+    isTouchScrolling.current = false;
+  };
+
+  const handleTouchMove = (e) => {
+    const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
+    const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
+    if (dy > 8 || dx > 8) {
+      isTouchScrolling.current = true;
+    }
+  };
+
   const handleWrapperClick = (e) => {
+    if (isTouchScrolling.current) return;
     if (e.target.closest('.no-toggle')) return;
     onToggle(card, apiPrice);
   };
 
-  // Determine wrapper class
   let wrapperClass = 'pokemon-card-wrapper';
   if (isOwned && isWanted) {
     wrapperClass += ' owned wanted-owned-glow';
@@ -45,83 +64,56 @@ export default function PokemonCard({
     <div
       className={wrapperClass}
       onClick={handleWrapperClick}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
       title={
         isOwned && isWanted
-          ? `${card.name} (#${card.number}) - OWNED & WANTED ❤️ (GLOWING)`
+          ? `${card.name} (#${card.number}) - OWNED & WANTED (GLOWING)`
           : isOwned
           ? `${card.name} (#${card.number}) - OWNED`
           : isWanted
-          ? `${card.name} (#${card.number}) - WANTED ❤️ (Grayscale until owned)`
+          ? `${card.name} (#${card.number}) - WANTED (Grayscale until owned)`
           : `Click to mark ${card.name} (#${card.number}) as OWNED`
       }
     >
-      {/* Owned Checkmark Badge */}
       {isOwned && (
         <div className="owned-badge" title="Card Collected!">
           <Check size={18} strokeWidth={3} />
         </div>
       )}
 
-      {/* Unowned Lock Overlay Icon */}
       {!isOwned && !isWanted && (
         <div className="unowned-overlay" title="Click card to mark as owned">
           <Lock size={20} />
         </div>
       )}
 
-      {/* Wanted Heart Toggle Button */}
       <button
-        className="no-toggle"
+        type="button"
+        className="no-toggle card-action-btn card-heart-btn"
         onClick={(e) => {
           e.stopPropagation();
           onToggleWanted(card);
         }}
         style={{
-          position: 'absolute',
-          top: isOwned ? '42px' : '10px',
-          right: '10px',
+          top: isOwned ? '42px' : '8px',
           background: isWanted ? 'linear-gradient(135deg, #ff007f, #ff4081)' : 'rgba(9, 12, 21, 0.75)',
-          border: isWanted ? '1px solid rgba(255, 255, 255, 0.35)' : '1px solid rgba(255, 255, 255, 0.15)',
-          borderRadius: '50%',
-          width: '30px',
-          height: '30px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: isWanted ? '#fff' : 'var(--text-muted)',
-          cursor: 'pointer',
-          zIndex: 8,
+          borderColor: isWanted ? 'rgba(255, 255, 255, 0.35)' : 'rgba(255, 255, 255, 0.15)',
           boxShadow: isWanted ? '0 0 12px rgba(255, 0, 127, 0.7)' : 'none',
-          backdropFilter: 'blur(4px)',
-          transition: 'all 0.2s ease'
+          color: isWanted ? '#fff' : 'var(--text-muted)'
         }}
-        title={isWanted ? 'Remove from Wanted List' : 'Add to Wanted List ❤️'}
+        title={isWanted ? 'Remove from Wanted List' : 'Add to Wanted List'}
       >
         <Heart size={15} fill={isWanted ? '#ffffff' : 'none'} stroke={isWanted ? '#ffffff' : 'currentColor'} />
       </button>
 
-      {/* Price Badge on Card */}
       <div
-        className="no-toggle"
+        className="no-toggle card-price-pill"
         style={{
-          position: 'absolute',
-          bottom: '54px',
-          right: '8px',
           background: hasCustomPrice
             ? 'linear-gradient(135deg, #ffcc00, #ff9900)'
             : (isOwned ? 'rgba(0, 230, 118, 0.9)' : (isWanted ? 'rgba(255, 0, 127, 0.85)' : 'rgba(9, 12, 21, 0.85)')),
-          color: hasCustomPrice ? '#090c15' : (isOwned || isWanted ? '#ffffff' : 'var(--color-primary)'),
-          padding: '0.2rem 0.5rem',
-          borderRadius: '9999px',
-          fontSize: '0.75rem',
-          fontWeight: 800,
-          border: '1px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-          zIndex: 6,
-          backdropFilter: 'blur(4px)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '2px'
+          color: hasCustomPrice ? '#090c15' : (isOwned || isWanted ? '#ffffff' : 'var(--color-primary)')
         }}
         title={hasCustomPrice ? `Custom Price: €${displayPrice.toFixed(2)}` : `Est. Market Price: €${displayPrice.toFixed(2)}`}
       >
@@ -129,57 +121,60 @@ export default function PokemonCard({
         {displayPrice > 0 ? `€${displayPrice.toFixed(2)}` : 'N/A'}
       </div>
 
-      {/* Inspect Button Top Left */}
       <button
-        className="no-toggle"
+        type="button"
+        className="no-toggle card-action-btn card-inspect-btn"
         onClick={(e) => {
           e.stopPropagation();
           onInspectCard(card);
-        }}
-        style={{
-          position: 'absolute',
-          top: '10px',
-          left: '10px',
-          background: 'rgba(9, 12, 21, 0.75)',
-          border: '1px solid rgba(255,255,255,0.15)',
-          borderRadius: '50%',
-          width: '28px',
-          height: '28px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#fff',
-          cursor: 'pointer',
-          zIndex: 7,
-          backdropFilter: 'blur(4px)'
         }}
         title="Inspect card details & edit price"
       >
         <Eye size={14} />
       </button>
 
-      {/* Card Image */}
       <div className="card-img-container">
         <img
-          src={imageUrl}
+          src={imageUrl || placeholderImg}
           alt={card.name}
           className="card-img"
           loading="lazy"
+          onError={(e) => {
+            if (e.currentTarget.src !== placeholderImg) {
+              e.currentTarget.src = placeholderImg;
+            }
+          }}
         />
       </div>
 
-      {/* Card Footer Info */}
       <div className="card-footer">
         <div className="card-name-group">
-          <span className="card-number">#{card.number}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', overflow: 'hidden' }}>
+            <span className="card-number">#{card.number}</span>
+            {card.set?.name && (
+              <span
+                style={{
+                  fontSize: '0.68rem',
+                  color: 'var(--color-accent)',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxWidth: '100px'
+                }}
+                title={card.set.name}
+              >
+                • {card.set.name}
+              </span>
+            )}
+          </div>
           <span className="card-name">{card.name}</span>
-          <span className="card-rarity">{card.rarity || card.supertype}</span>
+          <span className="card-rarity">{card.rarity || userEntry?.rarity || card.supertype}</span>
         </div>
 
-        {/* Quantity Controls when owned */}
         {isOwned && (
           <div className="quantity-controls no-toggle" onClick={(e) => e.stopPropagation()}>
             <button
+              type="button"
               className="qty-btn"
               onClick={() => onQuantityChange(card.id, quantity - 1)}
               title="Decrease quantity"
@@ -188,6 +183,7 @@ export default function PokemonCard({
             </button>
             <span className="qty-val">x{quantity}</span>
             <button
+              type="button"
               className="qty-btn"
               onClick={() => onQuantityChange(card.id, quantity + 1)}
               title="Increase quantity"

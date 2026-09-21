@@ -27,7 +27,10 @@ import {
   restoreCollection
 } from '../api';
 
-export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
+export default function GitHubSettingsModal({
+  onClose,
+  onCollectionUpdated
+}) {
   const [config, setConfig] = useState(getGitHubConfig());
   const [syncState, setSyncState] = useState(getSyncState());
   const [showToken, setShowToken] = useState(false);
@@ -79,7 +82,7 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
     try {
       saveGitHubConfig(config);
       await pushToGitHub();
-      alert('✓ Successfully pushed collection to your GitHub repository!');
+      alert('Successfully pushed collection to your GitHub repository!');
     } catch (err) {
       alert(`Failed to push to GitHub: ${err.message}`);
     } finally {
@@ -95,7 +98,7 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
     try {
       saveGitHubConfig(config);
       await pullFromGitHub();
-      alert('✓ Successfully pulled and updated collection from GitHub!');
+      alert('Successfully pulled and updated collection from GitHub!');
       if (onCollectionUpdated) onCollectionUpdated();
     } catch (err) {
       alert(`Failed to pull from GitHub: ${err.message}`);
@@ -125,7 +128,7 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
     if (!file) return;
     try {
       const res = await restoreCollection({ file });
-      alert(`✓ ${res.message}!`);
+      alert(`${res.message}!`);
       if (onCollectionUpdated) onCollectionUpdated();
     } catch (err) {
       alert(`Upload failed: ${err.message}`);
@@ -134,118 +137,144 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
     }
   };
 
-  const isConfigured = !!(config.token && config.token.trim());
+  const isConfigured = !!(config.token && config.owner && config.repo);
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
         className="modal-content"
-        style={{ gridTemplateColumns: '1fr', maxWidth: 680, maxHeight: '90vh', overflowY: 'auto' }}
+        style={{ gridTemplateColumns: '1fr', maxWidth: 620 }}
         onClick={(e) => e.stopPropagation()}
       >
         <button className="modal-close-btn" onClick={onClose}>
           <X size={20} />
         </button>
 
-        {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.5rem' }}>
-          <div className="brand-icon" style={{ background: 'linear-gradient(135deg, #24292e, #1f2328)' }}>
-            <Cloud size={22} color="var(--color-primary)" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div
+            className="brand-icon"
+            style={{
+              background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))'
+            }}
+          >
+            <GitBranch size={22} color="#090c15" />
           </div>
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff' }}>GitHub Cloud Sync</h2>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              Store your card collection in your GitHub repository — no database or backend server needed.
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', margin: 0 }}>
+              GitHub Cloud Sync Settings
+            </h2>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0.2rem 0 0' }}>
+              Seamlessly persist and sync your collection to your personal GitHub repository
             </p>
           </div>
         </div>
 
-        {/* Current Live Status Banner */}
         <div
           style={{
-            padding: '0.85rem 1rem',
+            background: 'rgba(255, 255, 255, 0.04)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: 12,
-            marginBottom: '1.25rem',
+            padding: '1rem',
+            margin: '0.8rem 0',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '0.75rem',
-            background:
-              syncState.status === 'synced'
-                ? 'rgba(0, 230, 118, 0.1)'
-                : syncState.status === 'syncing' || syncState.status === 'pending'
-                ? 'rgba(255, 204, 0, 0.1)'
-                : syncState.status === 'error'
-                ? 'rgba(255, 82, 82, 0.12)'
-                : 'rgba(255, 255, 255, 0.05)',
-            border: `1px solid ${
-              syncState.status === 'synced'
-                ? 'rgba(0, 230, 118, 0.3)'
-                : syncState.status === 'syncing' || syncState.status === 'pending'
-                ? 'rgba(255, 204, 0, 0.3)'
-                : syncState.status === 'error'
-                ? 'rgba(255, 82, 82, 0.35)'
-                : 'rgba(255, 255, 255, 0.1)'
-            }`
+            flexDirection: 'column',
+            gap: '0.75rem'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            {syncState.status === 'synced' && <CheckCircle2 size={22} color="var(--color-success)" />}
-            {(syncState.status === 'syncing' || syncState.status === 'pending') && (
-              <RefreshCw size={22} color="var(--color-accent)" className="spin-animation" />
-            )}
-            {syncState.status === 'error' && <AlertCircle size={22} color="var(--color-danger)" />}
-            {syncState.status === 'unconfigured' && <GitBranch size={22} color="var(--text-muted)" />}
-
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#fff' }}>
-                {syncState.status === 'synced' && 'Synced with GitHub'}
-                {syncState.status === 'syncing' && 'Saving collection to GitHub...'}
-                {syncState.status === 'pending' && 'Unsaved changes pending commit...'}
-                {syncState.status === 'error' && 'Sync Error'}
-                {syncState.status === 'unconfigured' && 'Local Storage Mode (GitHub not configured)'}
-              </div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                {syncState.status === 'synced' && syncState.lastSyncedAt && (
-                  <>Last synced: {new Date(syncState.lastSyncedAt).toLocaleTimeString()}</>
-                )}
-                {syncState.status === 'error' && syncState.lastError && (
-                  <span style={{ color: 'var(--color-danger)' }}>{syncState.lastError}</span>
-                )}
-                {syncState.status === 'unconfigured' && (
-                  <>Your cards are safely saved in your browser. Configure GitHub below to sync across devices.</>
-                )}
-              </div>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+              Current Sync Status
+            </span>
+            <span
+              className="badge"
+              style={{
+                background:
+                  syncState.status === 'synced'
+                    ? 'rgba(0, 230, 118, 0.15)'
+                    : syncState.status === 'syncing'
+                    ? 'rgba(0, 229, 255, 0.15)'
+                    : syncState.status === 'error'
+                    ? 'rgba(255, 82, 82, 0.15)'
+                    : syncState.status === 'pending'
+                    ? 'rgba(255, 204, 0, 0.15)'
+                    : 'rgba(255, 255, 255, 0.08)',
+                color:
+                  syncState.status === 'synced'
+                    ? 'var(--color-success)'
+                    : syncState.status === 'syncing'
+                    ? 'var(--color-primary)'
+                    : syncState.status === 'error'
+                    ? 'var(--color-danger)'
+                    : syncState.status === 'pending'
+                    ? 'var(--color-accent)'
+                    : 'var(--text-muted)',
+                borderColor:
+                  syncState.status === 'synced'
+                    ? 'var(--color-success)'
+                    : syncState.status === 'error'
+                    ? 'var(--color-danger)'
+                    : undefined
+              }}
+            >
+              {syncState.status === 'synced' && 'Synced with GitHub'}
+              {syncState.status === 'syncing' && 'Saving to GitHub...'}
+              {syncState.status === 'pending' && `Changes Pending (${syncState.pendingChangesCount || 1})`}
+              {syncState.status === 'error' && 'Sync Error'}
+              {syncState.status === 'unconfigured' && 'Not Configured'}
+              {syncState.status === 'idle' && 'Ready to Sync'}
+            </span>
           </div>
 
+          {syncState.lastSyncedAt && (
+            <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+              Last synced: {new Date(syncState.lastSyncedAt).toLocaleString()}
+            </div>
+          )}
+
+          {syncState.lastError && (
+            <div
+              style={{
+                fontSize: '0.8rem',
+                color: 'var(--color-danger)',
+                background: 'rgba(255, 82, 82, 0.1)',
+                padding: '0.5rem 0.75rem',
+                borderRadius: 8,
+                border: '1px solid rgba(255, 82, 82, 0.2)'
+              }}
+            >
+              {syncState.lastError}
+            </div>
+          )}
+
           {isConfigured && (
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem' }}>
               <button
+                type="button"
                 className="btn btn-secondary"
-                style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
+                onClick={handlePushNow}
+                disabled={isPushing}
+                style={{ flex: 1, fontSize: '0.82rem', padding: '0.45rem 0.8rem' }}
+                title="Force push current local cards to GitHub"
+              >
+                <Cloud size={14} />
+                <span>{isPushing ? 'Pushing...' : 'Push Now'}</span>
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-secondary"
                 onClick={handlePullNow}
-                disabled={isPulling || isPushing}
-                title="Download newest collection from GitHub"
+                disabled={isPulling}
+                style={{ flex: 1, fontSize: '0.82rem', padding: '0.45rem 0.8rem' }}
+                title="Pull and merge cards from your GitHub repository"
               >
                 <RefreshCw size={14} className={isPulling ? 'spin-animation' : ''} />
-                <span>Pull</span>
-              </button>
-              <button
-                className="btn btn-primary"
-                style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
-                onClick={handlePushNow}
-                disabled={isPushing || isPulling}
-                title="Upload local collection to GitHub"
-              >
-                <Upload size={14} className={isPushing ? 'spin-animation' : ''} />
-                <span>Push</span>
+                <span>{isPulling ? 'Pulling...' : 'Pull Now'}</span>
               </button>
             </div>
           )}
         </div>
 
-        {/* Configuration Form */}
         <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             <div>
@@ -339,7 +368,6 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
             </div>
           </div>
 
-          {/* Personal Access Token */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
               <label style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)' }}>
@@ -404,48 +432,6 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
             </p>
           </div>
 
-          {/* Optional Pokémon TCG API Key */}
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-              <label style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)' }}>
-                Pokémon TCG API Key <span style={{ opacity: 0.6 }}>(Optional)</span>
-              </label>
-              <a
-                href="https://pokemontcg.io"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  fontSize: '0.78rem',
-                  color: 'var(--color-primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.25rem',
-                  textDecoration: 'none'
-                }}
-              >
-                <span>Get Free Key (20,000 req/day)</span>
-                <ExternalLink size={12} />
-              </a>
-            </div>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Optional: Enter API key for faster card loading"
-              value={config.tcgApiKey}
-              onChange={(e) => handleChange('tcgApiKey', e.target.value.trim())}
-              style={{
-                width: '100%',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: 8,
-                padding: '0.6rem 0.85rem',
-                color: '#fff',
-                fontSize: '0.9rem'
-              }}
-            />
-          </div>
-
-          {/* Security Notice */}
           <div
             style={{
               padding: '0.75rem',
@@ -464,7 +450,6 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
             </div>
           </div>
 
-          {/* Test Connection Result Alert */}
           {testResult && (
             <div
               style={{
@@ -484,7 +469,6 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
             </div>
           )}
 
-          {/* Buttons */}
           <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
             <button
               type="button"
@@ -513,7 +497,6 @@ export default function GitHubSettingsModal({ onClose, onCollectionUpdated }) {
           </div>
         </form>
 
-        {/* Offline File Backup & Restore Options */}
         <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
           <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
             Offline File Backup & Restore

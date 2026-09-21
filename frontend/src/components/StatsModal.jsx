@@ -1,5 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, PieChart, Trophy, Layers, Euro, CheckCircle, Heart, Download, Upload, ShieldCheck } from 'lucide-react';
+
+function SetSymbolIcon({ src }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return <CheckCircle size={16} color="var(--color-primary)" />;
+  }
+  return (
+    <img
+      src={src}
+      alt="set"
+      style={{ width: 20, height: 20, objectFit: 'contain' }}
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function StatsModal({ stats, sets, onClose, onSelectSet, onBackup, onRestore }) {
   if (!stats) return null;
@@ -54,14 +69,13 @@ export default function StatsModal({ stats, sets, onClose, onSelectSet, onBackup
 
         {stats.total_wanted > 0 && (
           <div style={{ background: 'rgba(255, 0, 127, 0.1)', border: '1px solid rgba(255, 0, 127, 0.3)', padding: '0.75rem 1rem', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-            <span style={{ fontSize: '0.85rem', color: '#fff', fontWeight: 600 }}>❤️ Wishlist Estimated Total Cost:</span>
+            <span style={{ fontSize: '0.85rem', color: '#fff', fontWeight: 600 }}>Wishlist Estimated Total Cost:</span>
             <span style={{ fontSize: '1rem', fontWeight: 800, color: '#ff4081' }}>
               €{(stats.total_wanted_cost || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </span>
           </div>
         )}
 
-        {/* Database Backup & Disaster Recovery Section */}
         <div style={{
           background: 'rgba(0, 229, 255, 0.05)',
           border: '1px solid rgba(0, 229, 255, 0.2)',
@@ -148,11 +162,7 @@ export default function StatsModal({ stats, sets, onClose, onSelectSet, onBackup
                   onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.04)'}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    {setObj?.images?.symbol ? (
-                      <img src={setObj.images.symbol} alt="set" style={{ width: 20, height: 20, objectFit: 'contain' }} />
-                    ) : (
-                      <CheckCircle size={16} color="var(--color-primary)" />
-                    )}
+                    <SetSymbolIcon src={setObj?.images?.symbol} />
                     <span style={{ fontWeight: 600, color: '#fff' }}>{setName}</span>
                   </div>
                   <div style={{ textAlign: 'right' }}>
