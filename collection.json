@@ -10400,5 +10400,19 @@
     "market_price": 3.57,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "me02-100",
+    "set_id": "me02",
+    "name": "Zacian",
+    "number": "100",
+    "rarity": "Illustration rare",
+    "image_url": "https://assets.tcgdex.net/en/me/me02/100/low.webp",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 3.57,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
