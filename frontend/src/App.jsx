@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import Navbar from './components/Navbar';
 import SetBanner from './components/SetBanner';
@@ -7,9 +7,13 @@ import CardGrid from './components/CardGrid';
 import CardModal from './components/CardModal';
 import StatsModal from './components/StatsModal';
 import GitHubSettingsModal from './components/GitHubSettingsModal';
+import SetSelectorModal from './components/SetSelectorModal';
+import MobileBottomNav from './components/MobileBottomNav';
+import placeholderImg from './assets/placeholder.png';
 import {
   fetchSets,
   fetchSetCards,
+  searchGlobalCards,
   fetchUserCollection,
   toggleCardOwnership,
   toggleWantedCard,
@@ -19,7 +23,10 @@ import {
   fetchCollectionStats,
   backupCollection,
   restoreCollection,
-  startBackgroundSync
+  startBackgroundSync,
+  canonicalSetId,
+  getCardMatchKey,
+  findUserCardEntry
 } from './api';
 
 export default function App() {
@@ -31,19 +38,23 @@ export default function App() {
   
   const [isLoadingSets, setIsLoadingSets] = useState(true);
   const [isLoadingCards, setIsLoadingCards] = useState(false);
+  const [isLoadingGlobal, setIsLoadingGlobal] = useState(false);
   
-  // Filter & Search states
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchScope, setSearchScope] = useState('set');
+  const [globalCards, setGlobalCards] = useState([]);
   const [statusFilter, setStatusFilter] = useState('all');
   const [rarityFilter, setRarityFilter] = useState('all');
   const [sortBy, setSortBy] = useState('number');
   
-  // Modal states
   const [inspectedCard, setInspectedCard] = useState(null);
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [showGitHubSettings, setShowGitHubSettings] = useState(false);
+  const [showSetSelector, setShowSetSelector] = useState(false);
 
-  // Load sets & initial user stats on mount
+  const searchInputRef = useRef(null);
+  const isSearchingGlobal = searchScope === 'all' && searchQuery.trim().length >= 2;
+
   useEffect(() => {
     async function init() {
       setIsLoadingSets(true);
@@ -58,11 +69,22 @@ export default function App() {
   }, []);
 
   const handleSelectSet = (id) => {
+    setSearchQuery('');
+    setSearchScope('set');
     setStatusFilter('all');
     setSelectedSetId(id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const refreshCurrentView = async () => {
+  const handleFocusSearch = () => {
+    setSearchScope('all');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      searchInputRef.current?.focus();
+    }, 150);
+  };
+
+  const refreshCurrentView = useCallback(async () => {
     const updatedStats = await fetchCollectionStats();
     setStats(updatedStats);
 
@@ -75,10 +97,10 @@ export default function App() {
         number: c.number,
         rarity: c.rarity,
         supertype: 'Pokémon',
-        image_url: c.image_url,
+        image_url: c.image_url || placeholderImg,
         market_price: c.market_price || 0,
         custom_price: c.custom_price || 0,
-        images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+        images: { small: c.image_url || placeholderImg, large: c.image_url || placeholderImg },
         set: { id: c.set_id, name: c.set_id }
       })));
       setUserCollection(allUserCards);
@@ -90,32 +112,32 @@ export default function App() {
         number: c.number,
         rarity: c.rarity,
         supertype: 'Pokémon',
-        image_url: c.image_url,
+        image_url: c.image_url || placeholderImg,
         market_price: c.market_price || 0,
         custom_price: c.custom_price || 0,
-        images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+        images: { small: c.image_url || placeholderImg, large: c.image_url || placeholderImg },
         set: { id: c.set_id, name: c.set_id }
       })));
       setUserCollection(wantedCards);
     } else {
       const [cardsData, userColData] = await Promise.all([
-        fetchSetCards(selectedSetId),
+        fetchSetCards(selectedSetId, (enrichedCards) => {
+          setSetCards(enrichedCards);
+        }),
         fetchUserCollection(selectedSetId)
       ]);
       setSetCards(cardsData);
       setUserCollection(userColData);
     }
-  };
+  }, [selectedSetId]);
 
-  // Auto-sync background updates from remote (e.g. when another user adds cards)
   useEffect(() => {
     const cleanup = startBackgroundSync(() => {
       refreshCurrentView();
     });
     return cleanup;
-  }, [selectedSetId]);
+  }, [refreshCurrentView]);
 
-  // Load cards and user collection when selectedSetId changes
   useEffect(() => {
     if (!selectedSetId) return;
 
@@ -131,10 +153,10 @@ export default function App() {
           number: c.number,
           rarity: c.rarity,
           supertype: 'Pokémon',
-          image_url: c.image_url,
+          image_url: c.image_url || placeholderImg,
           market_price: c.market_price || 0,
           custom_price: c.custom_price || 0,
-          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+          images: { small: c.image_url || placeholderImg, large: c.image_url || placeholderImg },
           set: { id: c.set_id, name: c.set_id }
         }));
         setSetCards(formattedCards);
@@ -148,17 +170,19 @@ export default function App() {
           number: c.number,
           rarity: c.rarity,
           supertype: 'Pokémon',
-          image_url: c.image_url,
+          image_url: c.image_url || placeholderImg,
           market_price: c.market_price || 0,
           custom_price: c.custom_price || 0,
-          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
+          images: { small: c.image_url || placeholderImg, large: c.image_url || placeholderImg },
           set: { id: c.set_id, name: c.set_id }
         }));
         setSetCards(formattedCards);
         setUserCollection(wantedCards);
       } else {
         const [cardsData, userColData] = await Promise.all([
-          fetchSetCards(selectedSetId),
+          fetchSetCards(selectedSetId, (enrichedCards) => {
+            setSetCards(enrichedCards);
+          }),
           fetchUserCollection(selectedSetId)
         ]);
         setSetCards(cardsData);
@@ -170,64 +194,89 @@ export default function App() {
     loadSetData();
   }, [selectedSetId]);
 
-  // Dictionary key: card_id -> cardData
+  useEffect(() => {
+    if (searchScope !== 'all') return;
+    const query = searchQuery.trim();
+    if (query.length < 2) return;
+
+    let isCancelled = false;
+
+    const timer = setTimeout(async () => {
+      setIsLoadingGlobal(true);
+      try {
+        const results = await searchGlobalCards(query, (enrichedCards) => {
+          if (!isCancelled && searchScope === 'all' && searchQuery.trim().length >= 2) {
+            setGlobalCards(enrichedCards);
+          }
+        });
+        if (!isCancelled) {
+          setGlobalCards(results);
+        }
+      } catch {
+        if (!isCancelled) setGlobalCards([]);
+      } finally {
+        if (!isCancelled) setIsLoadingGlobal(false);
+      }
+    }, 300);
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(timer);
+    };
+  }, [searchQuery, searchScope]);
+
   const userCollectionMap = useMemo(() => {
-    return userCollection.reduce((acc, item) => {
-      acc[item.card_id] = item;
-      return acc;
-    }, {});
+    const map = {};
+    for (const item of userCollection) {
+      if (!item) continue;
+      if (item.card_id) map[item.card_id] = item;
+      const k = getCardMatchKey(item.set_id, item.number);
+      if (k && !map[k]) map[k] = item;
+    }
+    return map;
   }, [userCollection]);
 
-  // Current set object
   const currentSet = useMemo(() => {
-    return sets.find(s => s.id === selectedSetId);
-  }, [sets, selectedSetId]);
+    if (isSearchingGlobal) return null;
+    return sets.find(s => s.id === selectedSetId || canonicalSetId(s.id) === canonicalSetId(selectedSetId));
+  }, [sets, selectedSetId, isSearchingGlobal]);
 
-  // Current set value
   const currentSetValue = useMemo(() => {
+    if (isSearchingGlobal) return 0;
     if (selectedSetId === 'all_owned') return stats?.total_market_value || 0;
     if (selectedSetId === 'wanted_list') return stats?.total_wanted_cost || 0;
     if (!stats?.set_values || !selectedSetId) return 0;
-    return stats.set_values[selectedSetId] || 0;
-  }, [stats, selectedSetId]);
+    return stats.set_values[selectedSetId] || stats.set_values[canonicalSetId(selectedSetId)] || 0;
+  }, [stats, selectedSetId, isSearchingGlobal]);
 
-  // Unique rarities for current set
-  const setRarities = useMemo(() => {
-    const raritiesSet = new Set();
-    setCards.forEach(c => {
-      if (c.rarity) raritiesSet.add(c.rarity);
-    });
-    return Array.from(raritiesSet).sort();
-  }, [setCards]);
-
-  // Toggle card ownership
   const handleToggleCard = async (card, marketPrice = 0) => {
-    const existing = userCollectionMap[card.id];
+    const existing = findUserCardEntry(userCollectionMap, card);
     const isCurrentlyOwned = !!(existing && existing.quantity > 0);
-    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : '');
-    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || '';
+    const targetCardId = existing ? existing.card_id : card.id;
+    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' && !isSearchingGlobal ? selectedSetId : '');
+    const cardNum = card.number || card.localId || existing?.number || '';
+    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || placeholderImg;
     const cmPrice = card.cardmarket?.prices?.averageSellPrice;
     const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
     const mPrice = marketPrice || card.market_price || cmPrice || tcgPrice || existing?.market_price || 0;
 
     if (isCurrentlyOwned) {
-      // If the card is also wanted, keep it in collection with quantity 0 and is_wanted true
       if (existing?.is_wanted) {
-        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, quantity: 0 } : c));
+        setUserCollection(prev => prev.map(c => c.card_id === targetCardId ? { ...c, quantity: 0 } : c));
       } else {
-        setUserCollection(prev => prev.filter(c => c.card_id !== card.id));
+        setUserCollection(prev => prev.filter(c => c.card_id !== targetCardId));
       }
-      if (selectedSetId === 'all_owned') {
-        setSetCards(prev => prev.filter(c => c.id !== card.id));
+      if (selectedSetId === 'all_owned' && !isSearchingGlobal) {
+        setSetCards(prev => prev.filter(c => c.id !== targetCardId && c.id !== card.id));
       }
     } else {
       const wasWanted = !!(existing && existing.is_wanted);
       const newCardEntry = {
-        card_id: card.id,
+        card_id: targetCardId,
         set_id: cardSetId,
         name: card.name,
-        number: card.number,
-        rarity: card.rarity || '',
+        number: cardNum,
+        rarity: card.rarity || existing?.rarity || '',
         image_url: imgUrl,
         market_price: mPrice,
         custom_price: existing?.custom_price || 0,
@@ -235,23 +284,23 @@ export default function App() {
         quantity: 1,
         is_wanted: wasWanted
       };
-      setUserCollection(prev => [...prev.filter(c => c.card_id !== card.id), newCardEntry]);
+      setUserCollection(prev => [...prev.filter(c => c.card_id !== targetCardId), newCardEntry]);
     }
 
     try {
       const res = await toggleCardOwnership({
-        card_id: card.id,
+        card_id: targetCardId,
         set_id: cardSetId,
         name: card.name,
-        number: card.number,
-        rarity: card.rarity || '',
+        number: cardNum,
+        rarity: card.rarity || existing?.rarity || '',
         image_url: imgUrl,
         market_price: mPrice
       });
 
       if (res?.card) {
         setUserCollection(prev => {
-          const idx = prev.findIndex(c => c.card_id === card.id);
+          const idx = prev.findIndex(c => c.card_id === targetCardId);
           if (idx >= 0) {
             const copy = [...prev];
             copy[idx] = res.card;
@@ -264,40 +313,39 @@ export default function App() {
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
     } catch (err) {
-      console.error('Failed to sync toggle with backend', err);
+      console.error('Failed to sync toggle with collection storage', err);
     }
   };
 
-  // Toggle card wanted status (Wishlist ❤️)
   const handleToggleWanted = async (card) => {
-    const existing = userCollectionMap[card.id];
+    const existing = findUserCardEntry(userCollectionMap, card);
+    const targetCardId = existing ? existing.card_id : card.id;
     const isWantedCurrently = !!(existing && existing.is_wanted === true);
-    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : '');
-    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || '';
+    const cardSetId = card.set?.id || card.set_id || existing?.set_id || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' && !isSearchingGlobal ? selectedSetId : '');
+    const cardNum = card.number || card.localId || existing?.number || '';
+    const imgUrl = card.images?.small || card.images?.large || card.image_url || existing?.image_url || placeholderImg;
     const cmPrice = card.cardmarket?.prices?.averageSellPrice;
     const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
     const mPrice = card.market_price || cmPrice || tcgPrice || existing?.market_price || 0;
 
     if (isWantedCurrently) {
-      // Removing from wanted list
       if (existing && existing.quantity > 0) {
-        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, is_wanted: false } : c));
+        setUserCollection(prev => prev.map(c => c.card_id === targetCardId ? { ...c, is_wanted: false } : c));
       } else {
-        setUserCollection(prev => prev.filter(c => c.card_id !== card.id));
+        setUserCollection(prev => prev.filter(c => c.card_id !== targetCardId));
       }
-      if (selectedSetId === 'wanted_list') {
-        setSetCards(prev => prev.filter(c => c.id !== card.id));
+      if (selectedSetId === 'wanted_list' && !isSearchingGlobal) {
+        setSetCards(prev => prev.filter(c => c.id !== targetCardId && c.id !== card.id));
       }
     } else {
-      // Adding to wanted list
       if (existing) {
-        setUserCollection(prev => prev.map(c => c.card_id === card.id ? { ...c, is_wanted: true } : c));
+        setUserCollection(prev => prev.map(c => c.card_id === targetCardId ? { ...c, is_wanted: true } : c));
       } else {
         const newEntry = {
-          card_id: card.id,
+          card_id: targetCardId,
           set_id: cardSetId,
           name: card.name,
-          number: card.number,
+          number: cardNum,
           rarity: card.rarity || '',
           image_url: imgUrl,
           market_price: mPrice,
@@ -305,24 +353,24 @@ export default function App() {
           quantity: 0,
           is_wanted: true
         };
-        setUserCollection(prev => [...prev.filter(c => c.card_id !== card.id), newEntry]);
+        setUserCollection(prev => [...prev.filter(c => c.card_id !== targetCardId), newEntry]);
       }
     }
 
     try {
       const res = await toggleWantedCard({
-        card_id: card.id,
+        card_id: targetCardId,
         set_id: cardSetId,
         name: card.name,
-        number: card.number,
-        rarity: card.rarity || '',
+        number: cardNum,
+        rarity: card.rarity || existing?.rarity || '',
         image_url: imgUrl,
         market_price: mPrice
       });
 
       if (res?.card) {
         setUserCollection(prev => {
-          const idx = prev.findIndex(c => c.card_id === card.id);
+          const idx = prev.findIndex(c => c.card_id === targetCardId);
           if (idx >= 0) {
             const copy = [...prev];
             copy[idx] = res.card;
@@ -339,14 +387,16 @@ export default function App() {
     }
   };
 
-  // Save custom price & notes
   const handleSavePrice = async (cardId, customPrice, notes) => {
+    const existing = findUserCardEntry(userCollectionMap, { id: cardId });
+    const targetCardId = existing ? existing.card_id : cardId;
+
     setUserCollection(prev =>
-      prev.map(c => c.card_id === cardId ? { ...c, custom_price: customPrice, notes } : c)
+      prev.map(c => c.card_id === targetCardId ? { ...c, custom_price: customPrice, notes } : c)
     );
 
     try {
-      await updateCardPrice(cardId, customPrice, notes);
+      await updateCardPrice(targetCardId, customPrice, notes);
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
     } catch (err) {
@@ -354,26 +404,27 @@ export default function App() {
     }
   };
 
-  // Change quantity for owned card
   const handleQuantityChange = async (cardId, newQty) => {
-    const existing = userCollectionMap[cardId];
+    const existing = findUserCardEntry(userCollectionMap, { id: cardId });
+    const targetCardId = existing ? existing.card_id : cardId;
+
     if (newQty <= 0) {
       if (existing?.is_wanted) {
-        setUserCollection(prev => prev.map(c => c.card_id === cardId ? { ...c, quantity: 0 } : c));
+        setUserCollection(prev => prev.map(c => c.card_id === targetCardId ? { ...c, quantity: 0 } : c));
       } else {
-        setUserCollection(prev => prev.filter(c => c.card_id !== cardId));
+        setUserCollection(prev => prev.filter(c => c.card_id !== targetCardId));
       }
-      if (selectedSetId === 'all_owned') {
-        setSetCards(prev => prev.filter(c => c.id !== cardId));
+      if (selectedSetId === 'all_owned' && !isSearchingGlobal) {
+        setSetCards(prev => prev.filter(c => c.id !== targetCardId && c.id !== cardId));
       }
     } else {
       setUserCollection(prev =>
-        prev.map(c => c.card_id === cardId ? { ...c, quantity: newQty } : c)
+        prev.map(c => c.card_id === targetCardId ? { ...c, quantity: newQty } : c)
       );
     }
 
     try {
-      await updateCardQuantity(cardId, newQty);
+      await updateCardQuantity(targetCardId, newQty);
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
     } catch (err) {
@@ -381,12 +432,10 @@ export default function App() {
     }
   };
 
-  // Backup collection (current set or all)
   const handleBackup = async (setId = null) => {
-    const targetSet = setId || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' ? selectedSetId : null);
+    const targetSet = setId || (selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' && !isSearchingGlobal ? selectedSetId : null);
     try {
       const data = await backupCollection(targetSet);
-      // Trigger download
       const blob = new Blob([data.content], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -395,66 +444,26 @@ export default function App() {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      alert(`✓ Backup created successfully!\nDownloaded: ${data.filename} (${data.total_cards} cards)`);
+      alert(`Backup created successfully!\nDownloaded: ${data.filename} (${data.total_cards} cards)`);
     } catch (err) {
       alert(`Failed to create backup: ${err.message}`);
     }
   };
 
-  // Restore collection (from file upload or server backup)
   const handleRestore = async (file = null, setId = null) => {
     try {
       const res = await restoreCollection({ file, setId });
-      alert(`✓ ${res.message}!`);
+      alert(`${res.message}!`);
       const updatedStats = await fetchCollectionStats();
       setStats(updatedStats);
-      if (selectedSetId === 'all_owned') {
-        const allUserCards = await fetchUserCollection();
-        const ownedOnly = allUserCards.filter(c => c.quantity > 0);
-        setSetCards(ownedOnly.map(c => ({
-          id: c.card_id,
-          name: c.name,
-          number: c.number,
-          rarity: c.rarity,
-          supertype: 'Pokémon',
-          image_url: c.image_url,
-          market_price: c.market_price || 0,
-          custom_price: c.custom_price || 0,
-          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
-          set: { id: c.set_id, name: c.set_id }
-        })));
-        setUserCollection(allUserCards);
-      } else if (selectedSetId === 'wanted_list') {
-        const wantedCards = await fetchUserCollection(null, true);
-        setSetCards(wantedCards.map(c => ({
-          id: c.card_id,
-          name: c.name,
-          number: c.number,
-          rarity: c.rarity,
-          supertype: 'Pokémon',
-          image_url: c.image_url,
-          market_price: c.market_price || 0,
-          custom_price: c.custom_price || 0,
-          images: { small: c.image_url || 'https://images.pokemontcg.io/sv3/1.png', large: c.image_url || 'https://images.pokemontcg.io/sv3/1.png' },
-          set: { id: c.set_id, name: c.set_id }
-        })));
-        setUserCollection(wantedCards);
-      } else {
-        const [cardsData, userColData] = await Promise.all([
-          fetchSetCards(selectedSetId),
-          fetchUserCollection(selectedSetId)
-        ]);
-        setSetCards(cardsData);
-        setUserCollection(userColData);
-      }
+      refreshCurrentView();
     } catch (err) {
       alert(`Failed to restore collection: ${err.message}`);
     }
   };
 
-  // Bulk action: Mark All as Owned
   const handleMarkAllOwned = async () => {
-    if (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list') return;
+    if (selectedSetId === 'all_owned' || selectedSetId === 'wanted_list' || isSearchingGlobal) return;
     if (!window.confirm(`Are you sure you want to mark all ${setCards.length} cards in ${currentSet?.name} as owned?`)) {
       return;
     }
@@ -465,7 +474,7 @@ export default function App() {
       name: c.name,
       number: c.number,
       rarity: c.rarity || '',
-      image_url: c.images?.small || '',
+      image_url: c.images?.small || c.image_url || placeholderImg,
       quantity: 1,
       is_wanted: false
     }));
@@ -486,22 +495,55 @@ export default function App() {
     }
   };
 
-  // Filtered & Sorted Cards
+  const isWantedView = selectedSetId === 'wanted_list' && !isSearchingGlobal;
+  const isAllOwnedView = selectedSetId === 'all_owned' && !isSearchingGlobal;
+
+  const currentSetName = useMemo(() => {
+    if (isAllOwnedView) return 'My Binder';
+    if (isWantedView) return 'Wishlist';
+    return currentSet?.name || 'This Set';
+  }, [isAllOwnedView, isWantedView, currentSet]);
+
+  const activeDisplayName = isSearchingGlobal
+    ? `Search All: "${searchQuery}"`
+    : isAllOwnedView
+    ? 'My Binder'
+    : isWantedView
+    ? 'My Wishlist'
+    : currentSet?.name || 'Select Set';
+
+  const searchFilteredCards = useMemo(() => {
+    if (searchScope === 'all') {
+      if (searchQuery.trim().length >= 2) return globalCards;
+      return [];
+    }
+    if (!searchQuery.trim()) return setCards;
+    const q = searchQuery.trim().toLowerCase();
+    return setCards.filter(c => {
+      const nameMatch = c.name?.toLowerCase().includes(q);
+      const numMatch = String(c.number || c.localId || '').toLowerCase().includes(q);
+      return nameMatch || numMatch;
+    });
+  }, [searchScope, searchQuery, globalCards, setCards]);
+
+  const setRarities = useMemo(() => {
+    const raritiesSet = new Set();
+    searchFilteredCards.forEach(c => {
+      const userEntry = findUserCardEntry(userCollectionMap, c);
+      const r = c.rarity || userEntry?.rarity;
+      if (r) raritiesSet.add(r);
+    });
+    return Array.from(raritiesSet).sort();
+  }, [searchFilteredCards, userCollectionMap]);
+
   const filteredCards = useMemo(() => {
-    return setCards
+    return searchFilteredCards
       .filter((card) => {
-        if (searchQuery.trim()) {
-          const q = searchQuery.toLowerCase().trim();
-          const nameMatch = card.name?.toLowerCase().includes(q);
-          const numMatch = card.number?.toLowerCase().includes(q);
-          const setMatch = card.set?.name?.toLowerCase().includes(q) || card.set?.id?.toLowerCase().includes(q);
-          if (!nameMatch && !numMatch && !setMatch) return false;
-        }
+        const userEntry = findUserCardEntry(userCollectionMap, card);
+        const isOwned = !!(userEntry && userEntry.quantity > 0);
+        const isWanted = !!(userEntry && userEntry.is_wanted === true);
 
-        const isOwned = !!(userCollectionMap[card.id] && userCollectionMap[card.id].quantity > 0);
-        const isWanted = !!(userCollectionMap[card.id] && userCollectionMap[card.id].is_wanted === true);
-
-        if (selectedSetId === 'wanted_list') {
+        if (selectedSetId === 'wanted_list' && !isSearchingGlobal) {
           if (!isWanted) return false;
           if (statusFilter === 'owned' && !isOwned) return false;
           if (statusFilter === 'unowned' && isOwned) return false;
@@ -511,7 +553,8 @@ export default function App() {
           if (statusFilter === 'wanted' && !isWanted) return false;
         }
 
-        if (rarityFilter !== 'all' && card.rarity !== rarityFilter) return false;
+        const cardRarity = card.rarity || userEntry?.rarity;
+        if (rarityFilter !== 'all' && cardRarity !== rarityFilter) return false;
 
         return true;
       })
@@ -519,59 +562,102 @@ export default function App() {
         if (sortBy === 'name') {
           return a.name.localeCompare(b.name);
         } else if (sortBy === 'rarity') {
-          return (a.rarity || '').localeCompare(b.rarity || '');
+          const userA = findUserCardEntry(userCollectionMap, a);
+          const userB = findUserCardEntry(userCollectionMap, b);
+          const rA = a.rarity || userA?.rarity || '';
+          const rB = b.rarity || userB?.rarity || '';
+          return rA.localeCompare(rB);
         } else {
           const numA = parseInt(a.number, 10) || 9999;
           const numB = parseInt(b.number, 10) || 9999;
           return numA - numB;
         }
       });
-  }, [setCards, userCollectionMap, searchQuery, statusFilter, rarityFilter, sortBy, selectedSetId]);
+  }, [searchFilteredCards, userCollectionMap, statusFilter, rarityFilter, sortBy, selectedSetId, isSearchingGlobal]);
 
-  const isWantedView = selectedSetId === 'wanted_list';
-  const isAllOwnedView = selectedSetId === 'all_owned';
-
-  const ownedCountInSet = isAllOwnedView
+  const ownedCountInFullSet = isAllOwnedView
     ? setCards.length
     : isWantedView
-    ? setCards.filter(c => !!(userCollectionMap[c.id] && userCollectionMap[c.id].quantity > 0)).length
-    : Object.keys(userCollectionMap).filter(k => userCollectionMap[k].quantity > 0 && userCollectionMap[k].set_id === selectedSetId).length;
+    ? setCards.filter(c => {
+        const entry = findUserCardEntry(userCollectionMap, c);
+        return !!(entry && entry.quantity > 0);
+      }).length
+    : setCards.filter(c => {
+        const entry = findUserCardEntry(userCollectionMap, c);
+        return !!(entry && entry.quantity > 0);
+      }).length;
 
-  const wantedCountInSet = setCards.filter(c => !!(userCollectionMap[c.id] && userCollectionMap[c.id].is_wanted === true)).length;
+  const ownedCountInView = isAllOwnedView && !searchQuery.trim()
+    ? setCards.length
+    : isWantedView
+    ? searchFilteredCards.filter(c => {
+        const entry = findUserCardEntry(userCollectionMap, c);
+        return !!(entry && entry.quantity > 0);
+      }).length
+    : searchFilteredCards.filter(c => {
+        const entry = findUserCardEntry(userCollectionMap, c);
+        return !!(entry && entry.quantity > 0);
+      }).length;
 
-  const missingCountInSet = isWantedView
-    ? setCards.filter(c => !(userCollectionMap[c.id] && userCollectionMap[c.id].quantity > 0)).length
-    : isAllOwnedView
+  const wantedCountInView = searchFilteredCards.filter(c => {
+    const entry = findUserCardEntry(userCollectionMap, c);
+    return !!(entry && entry.is_wanted === true);
+  }).length;
+
+  const missingCountInView = isWantedView
+    ? searchFilteredCards.filter(c => {
+        const entry = findUserCardEntry(userCollectionMap, c);
+        return !(entry && entry.quantity > 0);
+      }).length
+    : isAllOwnedView && !searchQuery.trim()
     ? 0
-    : setCards.length - ownedCountInSet;
+    : Math.max(0, searchFilteredCards.length - ownedCountInView);
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    setSearchScope('set');
+  };
+
+  const handleSearchAllSets = () => {
+    setSearchScope('all');
+  };
 
   return (
     <div className="app-container">
       <Navbar
         sets={sets}
-        selectedSetId={selectedSetId}
+        selectedSetId={isSearchingGlobal ? 'global_search' : selectedSetId}
+        activeSetName={activeDisplayName}
         onSelectSet={handleSelectSet}
+        onOpenSetSelector={() => setShowSetSelector(true)}
         onOpenStats={() => setShowStatsModal(true)}
         onOpenGitHubSettings={() => setShowGitHubSettings(true)}
         totalOwnedCount={stats?.total_collected || 0}
         totalWantedCount={stats?.total_wanted || 0}
         totalMarketValue={stats?.total_market_value || 0}
+        searchQuery={searchQuery}
       />
 
       <main className="main-content">
         <SetBanner
           set={currentSet}
-          cardsCount={setCards.length}
-          ownedCount={ownedCountInSet}
+          cardsCount={isSearchingGlobal ? globalCards.length : setCards.length}
+          ownedCount={isSearchingGlobal ? ownedCountInView : ownedCountInFullSet}
           setValue={currentSetValue}
-          isAllOwnedMode={selectedSetId === 'all_owned'}
-          isWantedMode={selectedSetId === 'wanted_list'}
+          isAllOwnedMode={isAllOwnedView}
+          isWantedMode={isWantedView}
+          isGlobalSearchMode={isSearchingGlobal}
+          searchQuery={searchQuery}
           onMarkAll={handleMarkAllOwned}
         />
 
         <FilterBar
+          searchInputRef={searchInputRef}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
+          searchScope={searchScope}
+          onSearchScopeChange={setSearchScope}
+          currentSetName={currentSetName}
           statusFilter={statusFilter}
           onStatusFilterChange={setStatusFilter}
           rarityFilter={rarityFilter}
@@ -579,31 +665,36 @@ export default function App() {
           sortBy={sortBy}
           onSortByChange={setSortBy}
           rarities={setRarities}
-          totalCount={setCards.length}
-          ownedCount={ownedCountInSet}
-          missingCount={missingCountInSet}
-          wantedCount={wantedCountInSet}
-          isWantedMode={selectedSetId === 'wanted_list'}
+          totalCount={searchFilteredCards.length}
+          ownedCount={ownedCountInView}
+          missingCount={missingCountInView}
+          wantedCount={wantedCountInView}
+          isWantedMode={isWantedView}
         />
 
         <CardGrid
           cards={filteredCards}
           userCollectionMap={userCollectionMap}
-          isLoading={isLoadingCards || isLoadingSets}
+          isLoading={isSearchingGlobal ? isLoadingGlobal : (isLoadingCards || isLoadingSets)}
+          loadingMessage={isSearchingGlobal ? 'Searching across all Pokémon sets...' : 'Loading Pokémon Cards...'}
           onToggleCard={handleToggleCard}
           onToggleWanted={handleToggleWanted}
           onQuantityChange={handleQuantityChange}
           onInspectCard={setInspectedCard}
+          searchQuery={searchQuery}
+          onClearSearch={handleClearSearch}
+          searchScope={searchScope}
+          currentSetName={currentSetName}
+          onSearchAllSets={handleSearchAllSets}
         />
       </main>
 
-      {/* Inspect Card Modal */}
       {inspectedCard && (
         <CardModal
           card={inspectedCard}
-          isOwned={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].quantity > 0)}
-          isWanted={!!(userCollectionMap[inspectedCard.id] && userCollectionMap[inspectedCard.id].is_wanted === true)}
-          userCardEntry={userCollectionMap[inspectedCard.id]}
+          isOwned={!!(findUserCardEntry(userCollectionMap, inspectedCard) && findUserCardEntry(userCollectionMap, inspectedCard).quantity > 0)}
+          isWanted={!!(findUserCardEntry(userCollectionMap, inspectedCard) && findUserCardEntry(userCollectionMap, inspectedCard).is_wanted === true)}
+          userCardEntry={findUserCardEntry(userCollectionMap, inspectedCard)}
           onToggle={handleToggleCard}
           onToggleWanted={handleToggleWanted}
           onSavePrice={handleSavePrice}
@@ -611,7 +702,6 @@ export default function App() {
         />
       )}
 
-      {/* Overall Collection Stats Modal */}
       {showStatsModal && (
         <StatsModal
           stats={stats}
@@ -623,13 +713,43 @@ export default function App() {
         />
       )}
 
-      {/* GitHub Cloud Sync & Settings Modal */}
       {showGitHubSettings && (
         <GitHubSettingsModal
           onClose={() => setShowGitHubSettings(false)}
           onCollectionUpdated={refreshCurrentView}
         />
       )}
+
+      {showSetSelector && (
+        <SetSelectorModal
+          sets={sets}
+          selectedSetId={isSearchingGlobal ? '' : selectedSetId}
+          onSelectSet={(id) => {
+            handleSelectSet(id);
+            setShowSetSelector(false);
+          }}
+          onClose={() => setShowSetSelector(false)}
+          totalOwnedCount={stats?.total_collected || 0}
+          totalWantedCount={stats?.total_wanted || 0}
+        />
+      )}
+
+      <MobileBottomNav
+        currentView={selectedSetId}
+        isSearching={isSearchingGlobal}
+        onSelectView={(view) => {
+          setSearchQuery('');
+          setSearchScope('set');
+          setStatusFilter('all');
+          setSelectedSetId(view);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onOpenSetSelector={() => setShowSetSelector(true)}
+        onFocusSearch={handleFocusSearch}
+        onOpenStats={() => setShowStatsModal(true)}
+        totalWantedCount={stats?.total_wanted || 0}
+        totalOwnedCount={stats?.total_collected || 0}
+      />
     </div>
   );
 }

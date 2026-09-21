@@ -1,0 +1,2044 @@
+{
+  "data": [
+    {
+      "id": "me05-001",
+      "name": "Tropius",
+      "number": "001",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/001/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/001/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/001/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-002",
+      "name": "Grubbin",
+      "number": "002",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/002/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/002/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/002/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-003",
+      "name": "Fomantis",
+      "number": "003",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/003/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/003/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/003/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-004",
+      "name": "Lurantis ex",
+      "number": "004",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/004/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/004/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/004/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-005",
+      "name": "Poltchageist",
+      "number": "005",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/005/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/005/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/005/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-006",
+      "name": "Sinistcha",
+      "number": "006",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/006/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/006/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/006/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-007",
+      "name": "Heatran",
+      "number": "007",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/007/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/007/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/007/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-008",
+      "name": "Mega Delphox ex",
+      "number": "008",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/008/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/008/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/008/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-009",
+      "name": "Sizzlipede",
+      "number": "009",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/009/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/009/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/009/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-010",
+      "name": "Centiskorch",
+      "number": "010",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/010/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/010/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/010/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-011",
+      "name": "Charcadet",
+      "number": "011",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/011/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/011/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/011/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-012",
+      "name": "Armarouge",
+      "number": "012",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/012/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/012/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/012/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-013",
+      "name": "Goldeen",
+      "number": "013",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/013/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/013/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/013/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-014",
+      "name": "Seaking",
+      "number": "014",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/014/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/014/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/014/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-015",
+      "name": "Wailmer",
+      "number": "015",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/015/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/015/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/015/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-016",
+      "name": "Wailord ex",
+      "number": "016",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/016/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/016/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/016/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-017",
+      "name": "Relicanth",
+      "number": "017",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/017/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/017/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/017/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-018",
+      "name": "Popplio",
+      "number": "018",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/018/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/018/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/018/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-019",
+      "name": "Brionne",
+      "number": "019",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/019/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/019/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/019/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-020",
+      "name": "Primarina",
+      "number": "020",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/020/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/020/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/020/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-021",
+      "name": "Finizen",
+      "number": "021",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/021/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/021/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/021/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-022",
+      "name": "Palafin",
+      "number": "022",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/022/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/022/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/022/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-023",
+      "name": "Electrike",
+      "number": "023",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/023/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/023/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/023/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-024",
+      "name": "Manectric",
+      "number": "024",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/024/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/024/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/024/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-025",
+      "name": "Charjabug",
+      "number": "025",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/025/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/025/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/025/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-026",
+      "name": "Vikavolt",
+      "number": "026",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/026/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/026/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/026/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-027",
+      "name": "Mega Zeraora ex",
+      "number": "027",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/027/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/027/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/027/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-028",
+      "name": "Miraidon",
+      "number": "028",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/028/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/028/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/028/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-029",
+      "name": "Slowpoke",
+      "number": "029",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/029/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/029/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/029/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-030",
+      "name": "Slowbro",
+      "number": "030",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/030/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/030/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/030/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-031",
+      "name": "Mega Slowbro ex",
+      "number": "031",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/031/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/031/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/031/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-032",
+      "name": "Jynx",
+      "number": "032",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/032/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/032/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/032/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-033",
+      "name": "Shuppet",
+      "number": "033",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/033/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/033/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/033/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-034",
+      "name": "Banette",
+      "number": "034",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/034/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/034/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/034/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-035",
+      "name": "Spiritomb",
+      "number": "035",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/035/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/035/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/035/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-036",
+      "name": "Litwick",
+      "number": "036",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/036/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/036/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/036/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-037",
+      "name": "Lampent",
+      "number": "037",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/037/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/037/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/037/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-038",
+      "name": "Mega Chandelure ex",
+      "number": "038",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/038/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/038/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/038/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-039",
+      "name": "Dhelmise",
+      "number": "039",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/039/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/039/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/039/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-040",
+      "name": "Marshadow",
+      "number": "040",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/040/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/040/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/040/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-041",
+      "name": "Annihilape",
+      "number": "041",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/041/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/041/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/041/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-042",
+      "name": "Mankey",
+      "number": "042",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/042/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/042/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/042/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-043",
+      "name": "Primeape",
+      "number": "043",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/043/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/043/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/043/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-044",
+      "name": "Cranidos",
+      "number": "044",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/044/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/044/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/044/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-045",
+      "name": "Rampardos ex",
+      "number": "045",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/045/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/045/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/045/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-046",
+      "name": "Drilbur",
+      "number": "046",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/046/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/046/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/046/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-047",
+      "name": "Koraidon",
+      "number": "047",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/047/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/047/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/047/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-048",
+      "name": "Mega Darkrai ex",
+      "number": "048",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/048/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/048/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/048/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-049",
+      "name": "Vullaby",
+      "number": "049",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/049/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/049/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/049/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-050",
+      "name": "Mandibuzz",
+      "number": "050",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/050/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/050/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/050/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-051",
+      "name": "Inkay",
+      "number": "051",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/051/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/051/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/051/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-052",
+      "name": "Malamar",
+      "number": "052",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/052/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/052/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/052/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-053",
+      "name": "Nickit",
+      "number": "053",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/053/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/053/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/053/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-054",
+      "name": "Thievul",
+      "number": "054",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/054/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/054/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/054/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-055",
+      "name": "Morpeko ex",
+      "number": "055",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/055/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/055/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/055/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-056",
+      "name": "Zarude",
+      "number": "056",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/056/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/056/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/056/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-057",
+      "name": "Maschiff",
+      "number": "057",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/057/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/057/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/057/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-058",
+      "name": "Mabosstiff",
+      "number": "058",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/058/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/058/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/058/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-059",
+      "name": "Chi-Yu",
+      "number": "059",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/059/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/059/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/059/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-060",
+      "name": "Skarmory",
+      "number": "060",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/060/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/060/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/060/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-061",
+      "name": "Shieldon",
+      "number": "061",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/061/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/061/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/061/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-062",
+      "name": "Bastiodon",
+      "number": "062",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/062/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/062/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/062/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-063",
+      "name": "Bronzor",
+      "number": "063",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/063/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/063/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/063/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-064",
+      "name": "Bronzong",
+      "number": "064",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/064/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/064/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/064/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-065",
+      "name": "Mega Excadrill ex",
+      "number": "065",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/065/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/065/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/065/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-066",
+      "name": "Pikipek",
+      "number": "066",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/066/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/066/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/066/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-067",
+      "name": "Trumbeak",
+      "number": "067",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/067/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/067/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/067/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-068",
+      "name": "Toucannon",
+      "number": "068",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/068/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/068/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/068/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-069",
+      "name": "Type: Null",
+      "number": "069",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/069/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/069/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/069/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-070",
+      "name": "Silvally",
+      "number": "070",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/070/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/070/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/070/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-071",
+      "name": "Bombirdier",
+      "number": "071",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/071/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/071/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/071/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-072",
+      "name": "Antique Armor Fossil",
+      "number": "072",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/072/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/072/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/072/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-073",
+      "name": "Antique Skull Fossil",
+      "number": "073",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/073/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/073/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/073/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-074",
+      "name": "Backtrack Badge",
+      "number": "074",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/074/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/074/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/074/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-075",
+      "name": "Dark Bell",
+      "number": "075",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/075/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/075/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/075/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-076",
+      "name": "Fossil Quarry",
+      "number": "076",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/076/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/076/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/076/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-077",
+      "name": "Gladion's Final Battle",
+      "number": "077",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/077/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/077/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/077/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-078",
+      "name": "Gwynn",
+      "number": "078",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/078/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/078/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/078/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-079",
+      "name": "Jett",
+      "number": "079",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/079/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/079/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/079/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-080",
+      "name": "Misty's Vitality",
+      "number": "080",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/080/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/080/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/080/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-081",
+      "name": "Rust Syndicate Grunt",
+      "number": "081",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/081/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/081/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/081/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-082",
+      "name": "Tremendous Bomb",
+      "number": "082",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/082/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/082/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/082/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-083",
+      "name": "Shadowy Darkness Energy",
+      "number": "083",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/083/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/083/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/083/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-084",
+      "name": "Voltaic Lightning Energy",
+      "number": "084",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/084/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/084/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/084/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-085",
+      "name": "Fomantis",
+      "number": "085",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/085/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/085/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/085/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-086",
+      "name": "Armarouge",
+      "number": "086",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/086/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/086/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/086/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-087",
+      "name": "Goldeen",
+      "number": "087",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/087/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/087/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/087/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-088",
+      "name": "Primarina",
+      "number": "088",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/088/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/088/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/088/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-089",
+      "name": "Manectric",
+      "number": "089",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/089/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/089/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/089/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-090",
+      "name": "Slowbro",
+      "number": "090",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/090/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/090/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/090/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-091",
+      "name": "Dhelmise",
+      "number": "091",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/091/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/091/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/091/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-092",
+      "name": "Thievul",
+      "number": "092",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/092/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/092/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/092/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-093",
+      "name": "Bastiodon",
+      "number": "093",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/093/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/093/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/093/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-094",
+      "name": "Toucannon",
+      "number": "094",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/094/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/094/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/094/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-095",
+      "name": "Silvally",
+      "number": "095",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/095/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/095/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/095/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-096",
+      "name": "Lurantis ex",
+      "number": "096",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/096/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/096/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/096/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-097",
+      "name": "Wailord ex",
+      "number": "097",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/097/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/097/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/097/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-098",
+      "name": "Mega Zeraora ex",
+      "number": "098",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/098/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/098/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/098/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-099",
+      "name": "Mega Chandelure ex",
+      "number": "099",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/099/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/099/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/099/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-100",
+      "name": "Rampardos ex",
+      "number": "100",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/100/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/100/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/100/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-101",
+      "name": "Mega Darkrai ex",
+      "number": "101",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/101/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/101/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/101/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-102",
+      "name": "Morpeko ex",
+      "number": "102",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/102/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/102/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/102/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-103",
+      "name": "Mega Excadrill ex",
+      "number": "103",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/103/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/103/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/103/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-104",
+      "name": "Brave Bangle",
+      "number": "104",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/104/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/104/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/104/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-105",
+      "name": "Crushing Hammer",
+      "number": "105",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/105/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/105/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/105/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-106",
+      "name": "Dark Bell",
+      "number": "106",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/106/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/106/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/106/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-107",
+      "name": "Energy Switch",
+      "number": "107",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/107/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/107/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/107/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-108",
+      "name": "Gladion's Final Battle",
+      "number": "108",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/108/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/108/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/108/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-109",
+      "name": "Gwynn",
+      "number": "109",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/109/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/109/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/109/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-110",
+      "name": "Iron Defender",
+      "number": "110",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/110/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/110/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/110/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-111",
+      "name": "Misty's Vitality",
+      "number": "111",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/111/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/111/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/111/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-112",
+      "name": "Rust Syndicate Grunt",
+      "number": "112",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/112/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/112/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/112/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-113",
+      "name": "Tremendous Bomb",
+      "number": "113",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/113/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/113/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/113/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-114",
+      "name": "Mega Zeraora ex",
+      "number": "114",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/114/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/114/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/114/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-115",
+      "name": "Mega Chandelure ex",
+      "number": "115",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/115/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/115/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/115/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-116",
+      "name": "Mega Darkrai ex",
+      "number": "116",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/116/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/116/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/116/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-117",
+      "name": "Morpeko ex",
+      "number": "117",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/117/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/117/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/117/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-118",
+      "name": "Gladion's Final Battle",
+      "number": "118",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/118/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/118/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/118/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-119",
+      "name": "Gwynn",
+      "number": "119",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/119/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/119/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/119/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    },
+    {
+      "id": "me05-120",
+      "name": "Mega Darkrai ex",
+      "number": "120",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/me/me05/120/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/me/me05/120/low.webp",
+        "large": "https://assets.tcgdex.net/en/me/me05/120/high.webp"
+      },
+      "set": {
+        "id": "me05",
+        "name": "Pitch Black",
+        "series": "Mega Evolution"
+      }
+    }
+  ]
+}

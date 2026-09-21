@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart, Cloud, RefreshCw, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart, Cloud, RefreshCw, AlertCircle, CheckCircle2, ChevronDown } from 'lucide-react';
 import { subscribeSyncState, getSyncState } from '../api';
 
 export default function Navbar({
   sets,
   selectedSetId,
+  activeSetName = '',
   onSelectSet,
+  onOpenSetSelector,
   onOpenStats,
   onOpenGitHubSettings,
   totalOwnedCount,
   totalWantedCount,
-  totalMarketValue
+  totalMarketValue,
+  searchQuery = ''
 }) {
   const [syncState, setSyncState] = useState(getSyncState());
 
@@ -26,6 +29,16 @@ export default function Navbar({
     return acc;
   }, {});
 
+  const currentDisplayName = activeSetName || (
+    selectedSetId === 'all_owned'
+      ? 'My Binder'
+      : selectedSetId === 'wanted_list'
+      ? 'Wishlist'
+      : selectedSetId === 'global_search'
+      ? 'Search All Sets'
+      : (sets.find(s => s.id === selectedSetId)?.name || 'Select Set')
+  );
+
   return (
     <header className="navbar">
       <div className="brand" onClick={() => onOpenStats && onOpenStats()}>
@@ -33,11 +46,24 @@ export default function Navbar({
           <Sparkles size={20} color="#ffffff" />
         </div>
         <div>
-          <h1 className="brand-title">PokéTrack TCG</h1>
+          <h1 className="brand-title">PokéTrack</h1>
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+      <div className="mobile-nav-center">
+        <button
+          type="button"
+          className="mobile-set-pill"
+          onClick={onOpenSetSelector}
+          title="Switch Pokémon Set or View"
+        >
+          <Layers size={14} color="var(--color-primary)" />
+          <span className="mobile-set-pill-text">{currentDisplayName}</span>
+          <ChevronDown size={13} color="var(--text-muted)" />
+        </button>
+      </div>
+
+      <div className="desktop-nav-controls">
         <button
           className={`btn ${selectedSetId === 'all_owned' ? 'btn-primary' : 'btn-secondary'}`}
           onClick={() => onSelectSet('all_owned')}
@@ -64,8 +90,13 @@ export default function Navbar({
             value={selectedSetId}
             onChange={(e) => onSelectSet(e.target.value)}
           >
-            <option value="all_owned">🌟 MY BINDER (All Owned Cards)</option>
-            <option value="wanted_list">❤️ MY WANTED LIST (Wishlist)</option>
+            <option value="all_owned">MY BINDER (All Owned Cards)</option>
+            <option value="wanted_list">MY WANTED LIST (Wishlist)</option>
+            {selectedSetId === 'global_search' && (
+              <option value="global_search">
+                GLOBAL SEARCH: {searchQuery ? `"${searchQuery}"` : 'All Sets'}
+              </option>
+            )}
             {Object.entries(seriesMap).map(([series, setGroup]) => (
               <optgroup key={series} label={`─── ${series.toUpperCase()} ───`}>
                 {setGroup.map((set) => (
@@ -79,10 +110,9 @@ export default function Navbar({
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-        {/* GitHub Cloud Sync Button */}
+      <div className="nav-right-controls">
         <button
-          className="btn btn-secondary"
+          className="btn btn-secondary mobile-sync-btn"
           onClick={onOpenGitHubSettings}
           title={
             syncState.status === 'synced'
@@ -109,37 +139,53 @@ export default function Navbar({
           }}
         >
           {syncState.status === 'synced' && <CheckCircle2 size={16} color="var(--color-success)" />}
-          {(syncState.status === 'syncing' || syncState.status === 'pending') && (
-            <RefreshCw size={16} color="var(--color-accent)" className="spin-animation" />
-          )}
+          {syncState.status === 'syncing' && <RefreshCw size={16} className="spin-animation" color="var(--color-primary)" />}
           {syncState.status === 'error' && <AlertCircle size={16} color="var(--color-danger)" />}
-          {syncState.status === 'unconfigured' && <Cloud size={16} color="var(--color-primary)" />}
-
-          <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-            {syncState.status === 'synced' && 'GitHub Synced'}
-            {syncState.status === 'syncing' && 'Syncing...'}
-            {syncState.status === 'pending' && 'Saving...'}
-            {syncState.status === 'error' && 'Sync Failed'}
-            {syncState.status === 'unconfigured' && 'Cloud Sync'}
+          {syncState.status === 'pending' && <RefreshCw size={16} color="var(--color-accent)" />}
+          {syncState.status === 'unconfigured' && <Cloud size={16} color="var(--text-muted)" />}
+          <span className="sync-btn-text">
+            {syncState.status === 'synced'
+              ? 'Synced'
+              : syncState.status === 'syncing'
+              ? 'Syncing'
+              : syncState.status === 'error'
+              ? 'Error'
+              : syncState.status === 'pending'
+              ? 'Pending'
+              : 'Cloud'}
           </span>
         </button>
 
-        <button
-          className="btn btn-primary"
-          onClick={onOpenStats}
-          style={{ background: 'linear-gradient(135deg, #00e676, #00b0ff)' }}
-          title="Total Collection Portfolio Value in Euro"
-        >
-          <Euro size={18} color="#090c15" />
-          <span style={{ fontWeight: 800, color: '#090c15' }}>
-            €{(totalMarketValue || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Total Value
-          </span>
-        </button>
+        <div className="stats-badge desktop-only" onClick={onOpenStats} style={{ cursor: 'pointer' }}>
+          <div className="stat-item" title="Total Collected Cards">
+            <span className="stat-label">Collected</span>
+            <span className="stat-value">{totalOwnedCount}</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item" title="Total Wishlist Cards">
+            <span className="stat-label">Wanted</span>
+            <span className="stat-value" style={{ color: '#ff4081' }}>{totalWantedCount}</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item" title="Total Estimated Market Value">
+            <Euro size={12} color="#00e676" />
+            <span className="stat-value value-highlight">€{totalMarketValue.toFixed(2)}</span>
+          </div>
+          <div className="stat-divider"></div>
+          <button
+            type="button"
+            className="icon-btn"
+            style={{ padding: '0.2rem', color: 'var(--color-primary)' }}
+            title="View Portfolio Analytics & Breakdown"
+          >
+            <PieChart size={15} />
+          </button>
+        </div>
 
-        <button className="btn btn-secondary" onClick={onOpenStats} title="View Overall Collection Stats">
-          <PieChart size={16} color="var(--color-primary)" />
-          <span style={{ fontWeight: 700 }}>{totalOwnedCount} Owned</span>
-        </button>
+        <div className="mobile-value-pill" onClick={onOpenStats} title="View Portfolio Stats">
+          <Euro size={12} color="#00e676" />
+          <span>{totalMarketValue.toFixed(0)}</span>
+        </div>
       </div>
     </header>
   );

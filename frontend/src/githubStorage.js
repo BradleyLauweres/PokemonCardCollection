@@ -1,17 +1,3 @@
-/**
- * GitHub-backed file storage service for PokéTrack TCG.
- * Handles reading from and committing to `collection.json` in a GitHub repository
- * using the GitHub REST API.
- * 
- * Features:
- * - Multi-user concurrent editing support (card-level 3-way merge & conflict resolution)
- * - Automatic background sync (polling & window focus auto-pull)
- * - Instant local persistence via localStorage (optimistic UI updates with 0ms lag)
- * - Debounced commits to prevent API spam and merge collisions
- * - Automatic 409 conflict handling with re-fetch and re-merge
- * - Resilient offline fallback
- */
-
 const STORAGE_KEY_COLLECTION = 'poketrack_collection';
 const STORAGE_KEY_GH_CONFIG = 'poketrack_gh_config';
 const STORAGE_KEY_GH_SHA = 'poketrack_gh_sha';
@@ -22,11 +8,9 @@ export const DEFAULT_GH_CONFIG = {
   repo: 'PokemonCardCollection',
   branch: 'main',
   path: 'collection.json',
-  token: '',
-  tcgApiKey: ''
+  token: ''
 };
 
-// UTF-8 safe Base64 encoding & decoding for browsers
 export function utf8ToBase64(str) {
   const bytes = new TextEncoder().encode(str);
   let binary = '';
@@ -45,18 +29,14 @@ export function base64ToUtf8(b64) {
   return new TextDecoder().decode(bytes);
 }
 
-// In-memory state
 let currentCards = null;
 let currentSha = localStorage.getItem(STORAGE_KEY_GH_SHA) || null;
 let debounceTimer = null;
 let isSyncInProgress = false;
 let hasQueuedSync = false;
 
-// Pending delta modifications for 3-way merge:
-// Map<card_id, { action: 'set' | 'delete', card: Object, timestamp: number }>
 const pendingModifications = new Map();
 
-// Sync state: 'unconfigured' | 'idle' | 'pending' | 'syncing' | 'synced' | 'error'
 let syncState = {
   status: 'idle',
   lastSyncedAt: localStorage.getItem(STORAGE_KEY_LAST_SYNC) || null,
@@ -135,19 +115,11 @@ export function isGitHubConfigured() {
   return !!(config.token && config.token.trim() && config.owner && config.repo);
 }
 
-/**
- * Initialize and load the collection:
- * 1. Checks memory cache
- * 2. Checks localStorage
- * 3. If GitHub configured, pulls latest remote collection.json
- * 4. Fallback to bundled ./data/collection.json (initial seed) or raw GitHub
- */
 export async function loadCollection({ forceRemote = false } = {}) {
   if (currentCards !== null && !forceRemote) {
     return [...currentCards];
   }
 
-  // Check localStorage first
   let cachedCards = null;
   const localRaw = localStorage.getItem(STORAGE_KEY_COLLECTION);
   if (localRaw) {
@@ -167,18 +139,15 @@ export async function loadCollection({ forceRemote = false } = {}) {
     currentCards = cachedCards;
   }
 
-  // If not configured, set status
   if (!isGitHubConfigured()) {
     syncState.status = 'unconfigured';
     notifyListeners();
   }
 
-  // If configured, pull fresh from GitHub
   if (isGitHubConfigured()) {
     try {
       const remoteData = await fetchRemoteGitHubFile();
       if (remoteData && remoteData.cards) {
-        // Perform card-level merge if local had modifications
         if (pendingModifications.size > 0 && currentCards) {
           const merged = applyPendingModifications(remoteData.cards);
           currentCards = merged;
@@ -206,7 +175,6 @@ export async function loadCollection({ forceRemote = false } = {}) {
     }
   }
 
-  // If still no cards, load initial seed from ./data/collection.json or raw GitHub
   if (currentCards === null) {
     try {
       const res = await fetch('./data/collection.json');
@@ -245,9 +213,6 @@ export async function loadCollection({ forceRemote = false } = {}) {
   return [...currentCards];
 }
 
-/**
- * Fetch the collection file and SHA from GitHub
- */
 async function fetchRemoteGitHubFile() {
   const config = getGitHubConfig();
   if (!config.token || !config.owner || !config.repo) {
@@ -289,9 +254,6 @@ async function fetchRemoteGitHubFile() {
   };
 }
 
-/**
- * Apply locally pending modifications onto a base card array
- */
 function applyPendingModifications(baseCards) {
   const cardMap = new Map(baseCards.map(c => [c.card_id, { ...c }]));
 
@@ -306,20 +268,14 @@ function applyPendingModifications(baseCards) {
   return Array.from(cardMap.values());
 }
 
-/**
- * Record a local card change and schedule background commit
- */
 export function recordCardChange(cardId, action, card = null) {
   pendingModifications.set(cardId, {
-    action, // 'set' | 'delete'
+    action,
     card: card ? { ...card } : null,
     timestamp: Date.now()
   });
 }
 
-/**
- * Save updated cards to memory and localStorage, and schedule debounced GitHub commit
- */
 export function saveCards(updatedCards, { immediate = false, modifications = null } = {}) {
   currentCards = [...updatedCards];
   try {
@@ -353,13 +309,10 @@ export function saveCards(updatedCards, { immediate = false, modifications = nul
     if (debounceTimer) clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
       performGitHubCommit();
-    }, 2000); // 2 second debounce
+    }, 2000);
   }
 }
 
-/**
- * Performs commit of collection.json to GitHub repository with 3-way concurrent merge
- */
 export async function performGitHubCommit() {
   if (!isGitHubConfigured()) {
     syncState.status = 'unconfigured';
@@ -385,7 +338,6 @@ export async function performGitHubCommit() {
     try {
       const config = getGitHubConfig();
 
-      // 1. Fetch current remote collection & latest SHA from GitHub
       let targetSha = currentSha;
       let remoteCards = null;
       try {
@@ -399,14 +351,11 @@ export async function performGitHubCommit() {
         console.warn('Could not fetch remote before commit, attempting with known SHA:', fetchErr.message);
       }
 
-      // 2. Multi-User 3-Way Merge:
-      // If remote collection exists, take remote as base and apply our pending local changes on top!
       let cardsToCommit = currentCards || [];
       if (remoteCards && Array.isArray(remoteCards)) {
         if (pendingModifications.size > 0) {
           cardsToCommit = applyPendingModifications(remoteCards);
         } else {
-          // If no specific pending delta, merge by ID so no remote cards are lost
           const localMap = new Map((currentCards || []).map(c => [c.card_id, c]));
           for (const rCard of remoteCards) {
             if (!localMap.has(rCard.card_id)) {
@@ -420,7 +369,6 @@ export async function performGitHubCommit() {
         localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
       }
 
-      // 3. Prepare commit payload
       const contentString = JSON.stringify(cardsToCommit, null, 2);
       const base64Content = utf8ToBase64(contentString);
 
@@ -446,10 +394,8 @@ export async function performGitHubCommit() {
         body: JSON.stringify(commitPayload)
       });
 
-      // Handle 409 Conflict: someone pushed a commit right before us!
       if (res.status === 409) {
         console.warn(`GitHub SHA conflict (409) on attempt ${attempt}. Re-fetching remote and merging...`);
-        // Next loop iteration will fetch the newest remote SHA and re-merge
         await new Promise(resolve => setTimeout(resolve, 300 * attempt));
         continue;
       }
@@ -465,7 +411,6 @@ export async function performGitHubCommit() {
         localStorage.setItem(STORAGE_KEY_GH_SHA, currentSha);
       }
 
-      // Success! Clear pending local deltas
       pendingModifications.clear();
       commitSuccessful = true;
 
@@ -492,9 +437,6 @@ export async function performGitHubCommit() {
   }
 }
 
-/**
- * Force pull latest from GitHub repository
- */
 export async function pullFromGitHub() {
   if (!isGitHubConfigured()) {
     throw new Error('GitHub is not configured. Please enter your repository and token.');
@@ -509,7 +451,6 @@ export async function pullFromGitHub() {
       throw new Error('File not found in GitHub repository. You can push your current local collection first.');
     }
 
-    // Merge any pending local modifications
     if (pendingModifications.size > 0) {
       currentCards = applyPendingModifications(remote.cards);
     } else {
@@ -538,9 +479,6 @@ export async function pullFromGitHub() {
   }
 }
 
-/**
- * Force push current local collection to GitHub repository immediately
- */
 export async function pushToGitHub() {
   if (!isGitHubConfigured()) {
     throw new Error('GitHub is not configured. Please enter your repository and token.');
@@ -552,11 +490,6 @@ export async function pushToGitHub() {
   return true;
 }
 
-/**
- * Background Auto-Sync Worker:
- * Checks for remote repository changes every 25 seconds and whenever tab regains focus.
- * If new cards were added remotely by another user, automatically updates the local view!
- */
 export function startBackgroundSync(onRemoteUpdate) {
   let intervalId = null;
 
@@ -565,7 +498,6 @@ export function startBackgroundSync(onRemoteUpdate) {
       return;
     }
 
-    // Only run if document is visible to save battery/bandwidth
     if (document.hidden) {
       return;
     }
@@ -584,14 +516,11 @@ export function startBackgroundSync(onRemoteUpdate) {
         const data = await res.json();
         const remoteSha = data.sha;
 
-        // If remote SHA changed, another user or device made changes!
         if (remoteSha && remoteSha !== currentSha && data.content) {
-          console.log('Detected remote changes from another session! Auto-merging...');
           const decoded = base64ToUtf8(data.content);
           const parsed = JSON.parse(decoded);
           const remoteCards = Array.isArray(parsed) ? parsed : (parsed.cards || []);
 
-          // Merge any pending modifications the local user made
           let mergedCards = remoteCards;
           if (pendingModifications.size > 0) {
             mergedCards = applyPendingModifications(remoteCards);
@@ -613,15 +542,11 @@ export function startBackgroundSync(onRemoteUpdate) {
           notifyRemoteUpdated(currentCards);
         }
       }
-    } catch {
-      // Quietly ignore background poll errors
-    }
+    } catch {}
   }
 
-  // Poll every 25 seconds
   intervalId = setInterval(checkRemoteUpdates, 25000);
 
-  // Check immediately when user switches back to this tab
   const handleVisibilityChange = () => {
     if (!document.hidden) {
       checkRemoteUpdates();
@@ -642,9 +567,6 @@ export function startBackgroundSync(onRemoteUpdate) {
   };
 }
 
-/**
- * Test the GitHub connection and verify write permissions
- */
 export async function testGitHubConnection(configToTest) {
   const config = {
     ...getGitHubConfig(),
@@ -663,7 +585,6 @@ export async function testGitHubConnection(configToTest) {
     'Authorization': `Bearer ${config.token.trim()}`
   };
 
-  // 1. Check repository access & permissions
   const repoUrl = `https://api.github.com/repos/${encodeURIComponent(config.owner)}/${encodeURIComponent(config.repo)}`;
   const repoRes = await fetch(repoUrl, { headers });
 
@@ -681,7 +602,6 @@ export async function testGitHubConnection(configToTest) {
   const repoData = await repoRes.json();
   const canPush = repoData.permissions ? repoData.permissions.push : true;
 
-  // 2. Check if the target collection file exists
   const fileUrl = `${repoUrl}/contents/${encodeURIComponent(config.path)}?ref=${encodeURIComponent(config.branch || 'main')}`;
   const fileRes = await fetch(fileUrl, { headers });
   
@@ -698,9 +618,7 @@ export async function testGitHubConnection(configToTest) {
         const decoded = base64ToUtf8(fileData.content);
         const parsed = JSON.parse(decoded);
         remoteCardsCount = Array.isArray(parsed) ? parsed.length : (parsed.cards ? parsed.cards.length : 0);
-      } catch {
-        // ignore content parse
-      }
+      } catch {}
     }
   }
 
@@ -714,9 +632,6 @@ export async function testGitHubConnection(configToTest) {
   };
 }
 
-/**
- * Direct accessor to current cards in memory
- */
 export function getCurrentCards() {
   return currentCards || [];
 }

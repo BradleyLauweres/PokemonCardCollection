@@ -1,4 +1,3 @@
-import time
 import requests
 import json
 from pathlib import Path
@@ -10,7 +9,7 @@ from django.http import HttpResponse
 from .models import CollectedCard
 from .serializers import CollectedCardSerializer
 
-POKEMON_TCG_API_BASE = "https://api.pokemontcg.io/v2"
+TCGDEX_API_BASE = "https://api.tcgdex.net/v2/en"
 DEFAULT_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'Accept': 'application/json'
@@ -18,16 +17,23 @@ DEFAULT_HEADERS = {
 
 BASE_DIR = Path(__file__).resolve().parent
 
-def fetch_tcg_api(url, max_retries=6, delay=0.8):
-    for attempt in range(max_retries):
-        try:
-            response = requests.get(url, headers=DEFAULT_HEADERS, timeout=12)
-            if response.status_code == 200:
-                return response.json()
-        except Exception as e:
-            pass
-        time.sleep(delay)
-    return None
+EXPLICIT_SET_MAP = {
+    'rsv10pt5': 'sv10.5w',
+    'me1': 'me01', 'me2': 'me02', 'me3': 'me03', 'me4': 'me04', 'me5': 'me05',
+    'swsh12pt5': 'swsh12.5', 'swsh12pt5gg': 'swsh12.5gg',
+    'swsh45': 'swsh04.5', 'swsh45sv': 'swsh04.5sv'
+}
+
+def canonical_set_id(raw):
+    if not raw:
+        return ''
+    import re
+    s = str(raw).lower().strip()
+    if s in EXPLICIT_SET_MAP:
+        return EXPLICIT_SET_MAP[s]
+    s = re.sub(r'pt(\d+)', r'.\1', s)
+    s = re.sub(r'^(sv|me|swsh|sm)(\d)(?!\d)', r'\g<1>0\2', s)
+    return s
 
 
 @api_view(['GET'])
@@ -39,7 +45,6 @@ def list_collection(request):
     if set_id:
         cards = cards.filter(set_id=set_id)
     if wanted_only == 'true':
-        # Strictly return cards marked as wanted that are not yet owned (or explicitly wanted)
         cards = cards.filter(is_wanted=True)
 
     serializer = CollectedCardSerializer(cards, many=True)
@@ -48,7 +53,6 @@ def list_collection(request):
 
 @api_view(['POST'])
 def reset_wanted_status(request):
-    """Reset is_wanted to False for all cards"""
     count = CollectedCard.objects.all().update(is_wanted=False)
     return Response({'message': f'Successfully reset wanted status for {count} cards', 'reset_count': count})
 
@@ -79,7 +83,6 @@ def toggle_card(request):
                 return Response({'owned': False, 'wanted': False, 'card_id': card_id})
         else:
             existing.quantity = 1
-            # Preserve existing is_wanted status
             existing.save()
             serializer = CollectedCardSerializer(existing)
             return Response({'owned': True, 'wanted': existing.is_wanted, 'card': serializer.data})
@@ -236,9 +239,8 @@ def bulk_toggle(request):
         return Response({'error': 'set_id and action are required'}, status=status.HTTP_400_BAD_REQUEST)
 
     if action == 'clear_all':
-        # Preserve wishlist: set quantity to 0 for wanted cards, delete non-wanted cards
         CollectedCard.objects.filter(set_id=set_id, is_wanted=True).update(quantity=0)
-        count, _ = CollectedCard.objects.filter(set_id=set_id, is_wanted=False).delete()
+        CollectedCard.objects.filter(set_id=set_id, is_wanted=False).delete()
         return Response({'message': f'Cleared collected cards for set {set_id}'})
     elif action == 'mark_all':
         created_count = 0
@@ -270,7 +272,6 @@ def bulk_toggle(request):
                 created_count += 1
             else:
                 card.quantity = max(card.quantity, 1)
-                # Keep card.is_wanted intact
                 card.save()
         return Response({'message': f'Marked set {set_id} cards as collected (added {created_count})'})
 
@@ -498,29 +499,46 @@ def restore_collection(request):
 
 @api_view(['GET'])
 def proxy_sets(request):
-    cache_key = 'pokemon_tcg_sets_v5'
+    cache_key = 'tcgdex_sets_v1'
     cached_data = cache.get(cache_key)
     if cached_data:
         return Response(cached_data)
 
-    seed_file = BASE_DIR / 'seed_sets.json'
+    try:
+        r = requests.get(f"{TCGDEX_API_BASE}/series", headers=DEFAULT_HEADERS, timeout=10)
+        if r.status_code == 200:
+            series_list = r.json()
+            all_sets = []
+            for s in series_list:
+                s_detail_r = requests.get(f"{TCGDEX_API_BASE}/series/{s['id']}", headers=DEFAULT_HEADERS, timeout=8)
+                if s_detail_r.status_code == 200:
+                    detail = s_detail_r.json()
+                    for st in detail.get('sets', []):
+                        all_sets.append({
+                            'id': st['id'],
+                            'name': st['name'],
+                            'series': s['name'],
+                            'logo': f"{st['logo']}.png" if st.get('logo') else None,
+                            'symbol': f"{st['symbol']}.png" if st.get('symbol') else None,
+                            'total': st.get('cardCount', {}).get('total', 0),
+                            'printedTotal': st.get('cardCount', {}).get('official', 0),
+                            'images': {
+                                'logo': f"{st['logo']}.png" if st.get('logo') else None,
+                                'symbol': f"{st['symbol']}.png" if st.get('symbol') else None
+                            }
+                        })
+            if all_sets:
+                res_data = {'data': all_sets}
+                cache.set(cache_key, res_data, timeout=3600 * 24)
+                return Response(res_data)
+    except Exception:
+        pass
 
-    data = fetch_tcg_api(f"{POKEMON_TCG_API_BASE}/sets")
-    if data:
-        cache.set(cache_key, data, timeout=3600 * 24)
-        try:
-            with open(seed_file, 'w') as f:
-                json.dump(data, f)
-        except Exception:
-            pass
-        return Response(data)
-
+    seed_file = BASE_DIR / 'seed_tcgdex_sets.json'
     if seed_file.exists():
-        with open(seed_file, 'r') as f:
-            fallback_data = json.load(f)
-            return Response(fallback_data)
-
-    return Response({'error': 'Failed to reach Pokémon TCG API after retries'}, status=status.HTTP_502_BAD_GATEWAY)
+        with open(seed_file, 'r', encoding='utf-8') as f:
+            return Response(json.load(f))
+    return Response({'error': 'Failed to reach TCGdex API'}, status=status.HTTP_502_BAD_GATEWAY)
 
 
 @api_view(['GET'])
@@ -529,27 +547,40 @@ def proxy_set_cards(request):
     if not set_id:
         return Response({'error': 'set_id query param is required'}, status=status.HTTP_400_BAD_REQUEST)
 
-    cache_key = f'pokemon_tcg_set_cards_{set_id}'
+    cache_key = f'tcgdex_set_cards_{set_id}'
     cached_data = cache.get(cache_key)
     if cached_data:
         return Response(cached_data)
 
-    seed_file = BASE_DIR / f'seed_cards_{set_id}.json'
+    try:
+        r = requests.get(f"{TCGDEX_API_BASE}/sets/{set_id}", headers=DEFAULT_HEADERS, timeout=12)
+        if r.status_code == 200:
+            s_data = r.json()
+            raw_cards = s_data.get('cards', [])
+            formatted = []
+            for c in raw_cards:
+                img = c.get('image', '')
+                formatted.append({
+                    'id': c.get('id'),
+                    'name': c.get('name'),
+                    'number': c.get('localId'),
+                    'rarity': '',
+                    'supertype': 'Pokémon',
+                    'image_url': f"{img}/low.webp" if img else '',
+                    'images': {
+                        'small': f"{img}/low.webp" if img else '',
+                        'large': f"{img}/high.webp" if img else ''
+                    },
+                    'set': {
+                        'id': s_data.get('id'),
+                        'name': s_data.get('name'),
+                        'series': s_data.get('serie', {}).get('name', '')
+                    }
+                })
+            res_data = {'data': formatted}
+            cache.set(cache_key, res_data, timeout=3600 * 24)
+            return Response(res_data)
+    except Exception:
+        pass
 
-    url = f"{POKEMON_TCG_API_BASE}/cards?q=set.id:{set_id}&pageSize=250"
-    data = fetch_tcg_api(url)
-    if data:
-        cache.set(cache_key, data, timeout=3600 * 24)
-        try:
-            with open(seed_file, 'w') as f:
-                json.dump(data, f)
-        except Exception:
-            pass
-        return Response(data)
-
-    if seed_file.exists():
-        with open(seed_file, 'r') as f:
-            fallback_data = json.load(f)
-            return Response(fallback_data)
-
-    return Response({'error': f'Failed to reach Pokémon TCG API for set {set_id}'}, status=status.HTTP_502_BAD_GATEWAY)
+    return Response({'error': f'Failed to reach TCGdex API for set {set_id}'}, status=status.HTTP_502_BAD_GATEWAY)
