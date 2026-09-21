@@ -10484,5 +10484,19 @@
     "market_price": 15.96,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh9tg-TG04",
+    "set_id": "swsh9tg",
+    "name": "Jolteon",
+    "number": "TG04",
+    "rarity": "Rare",
+    "image_url": "https://bradleylauweres.github.io/PokemonCardCollection/assets/placeholder-CYNWb8RT.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 18.09,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
