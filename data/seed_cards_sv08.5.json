@@ -1,0 +1,3064 @@
+{
+  "data": [
+    {
+      "id": "sv08.5-001",
+      "name": "Exeggcute",
+      "number": "001",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/001/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/001/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/001/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-002",
+      "name": "Exeggutor",
+      "number": "002",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/002/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/002/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/002/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-003",
+      "name": "Pinsir",
+      "number": "003",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/003/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/003/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/003/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-004",
+      "name": "Budew",
+      "number": "004",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/004/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/004/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/004/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-005",
+      "name": "Leafeon",
+      "number": "005",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/005/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/005/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/005/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-006",
+      "name": "Leafeon ex",
+      "number": "006",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/006/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/006/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/006/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-007",
+      "name": "Cottonee",
+      "number": "007",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/007/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/007/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/007/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-008",
+      "name": "Whimsicott",
+      "number": "008",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/008/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/008/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/008/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-009",
+      "name": "Applin",
+      "number": "009",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/009/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/009/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/009/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-010",
+      "name": "Dipplin",
+      "number": "010",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/010/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/010/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/010/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-011",
+      "name": "Hydrapple ex",
+      "number": "011",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/011/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/011/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/011/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-012",
+      "name": "Teal Mask Ogerpon ex",
+      "number": "012",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/012/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/012/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/012/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-013",
+      "name": "Flareon",
+      "number": "013",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/013/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/013/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/013/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-014",
+      "name": "Flareon ex",
+      "number": "014",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/014/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/014/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/014/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-015",
+      "name": "Litleo",
+      "number": "015",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/015/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/015/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/015/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-016",
+      "name": "Pyroar",
+      "number": "016",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/016/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/016/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/016/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-017",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "number": "017",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/017/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/017/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/017/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-018",
+      "name": "Slowpoke",
+      "number": "018",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/018/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/018/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/018/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-019",
+      "name": "Slowking",
+      "number": "019",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/019/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/019/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/019/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-020",
+      "name": "Goldeen",
+      "number": "020",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/020/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/020/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/020/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-021",
+      "name": "Seaking",
+      "number": "021",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/021/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/021/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/021/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-022",
+      "name": "Vaporeon",
+      "number": "022",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/022/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/022/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/022/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-023",
+      "name": "Vaporeon ex",
+      "number": "023",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/023/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/023/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/023/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-024",
+      "name": "Suicune",
+      "number": "024",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/024/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/024/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/024/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-025",
+      "name": "Glaceon",
+      "number": "025",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/025/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/025/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/025/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-026",
+      "name": "Glaceon ex",
+      "number": "026",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/026/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/026/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/026/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-027",
+      "name": "Wellspring Mask Ogerpon ex",
+      "number": "027",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/027/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/027/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/027/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-028",
+      "name": "Pikachu ex",
+      "number": "028",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/028/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/028/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/028/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-029",
+      "name": "Jolteon",
+      "number": "029",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/029/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/029/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/029/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-030",
+      "name": "Jolteon ex",
+      "number": "030",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/030/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/030/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/030/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-031",
+      "name": "Iron Hands ex",
+      "number": "031",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/031/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/031/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/031/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-032",
+      "name": "Iron Thorns ex",
+      "number": "032",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/032/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/032/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/032/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-033",
+      "name": "Espeon",
+      "number": "033",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/033/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/033/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/033/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-034",
+      "name": "Espeon ex",
+      "number": "034",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/034/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/034/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/034/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-035",
+      "name": "Duskull",
+      "number": "035",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/035/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/035/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/035/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-036",
+      "name": "Dusclops",
+      "number": "036",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/036/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/036/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/036/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-037",
+      "name": "Dusknoir",
+      "number": "037",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/037/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/037/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/037/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-038",
+      "name": "Spritzee",
+      "number": "038",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/038/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/038/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/038/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-039",
+      "name": "Aromatisse",
+      "number": "039",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/039/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/039/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/039/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-040",
+      "name": "Sylveon",
+      "number": "040",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/040/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/040/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/040/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-041",
+      "name": "Sylveon ex",
+      "number": "041",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/041/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/041/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/041/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-042",
+      "name": "Scream Tail",
+      "number": "042",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/042/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/042/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/042/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-043",
+      "name": "Flutter Mane",
+      "number": "043",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/043/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/043/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/043/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-044",
+      "name": "Munkidori",
+      "number": "044",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/044/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/044/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/044/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-045",
+      "name": "Fezandipiti",
+      "number": "045",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/045/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/045/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/045/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-046",
+      "name": "Iron Boulder",
+      "number": "046",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/046/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/046/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/046/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-047",
+      "name": "Larvitar",
+      "number": "047",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/047/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/047/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/047/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-048",
+      "name": "Pupitar",
+      "number": "048",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/048/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/048/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/048/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-049",
+      "name": "Groudon",
+      "number": "049",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/049/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/049/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/049/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-050",
+      "name": "Riolu",
+      "number": "050",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/050/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/050/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/050/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-051",
+      "name": "Lucario ex",
+      "number": "051",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/051/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/051/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/051/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-052",
+      "name": "Hippopotas",
+      "number": "052",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/052/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/052/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/052/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-053",
+      "name": "Hippowdon",
+      "number": "053",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/053/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/053/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/053/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-054",
+      "name": "Bloodmoon Ursaluna",
+      "number": "054",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/054/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/054/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/054/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-055",
+      "name": "Great Tusk",
+      "number": "055",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/055/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/055/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/055/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-056",
+      "name": "Sandy Shocks ex",
+      "number": "056",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/056/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/056/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/056/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-057",
+      "name": "Okidogi",
+      "number": "057",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/057/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/057/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/057/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-058",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "number": "058",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/058/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/058/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/058/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-059",
+      "name": "Umbreon",
+      "number": "059",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/059/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/059/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/059/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-060",
+      "name": "Umbreon ex",
+      "number": "060",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/060/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/060/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/060/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-061",
+      "name": "Sneasel",
+      "number": "061",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/061/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/061/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/061/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-062",
+      "name": "Houndour",
+      "number": "062",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/062/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/062/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/062/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-063",
+      "name": "Houndoom",
+      "number": "063",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/063/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/063/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/063/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-064",
+      "name": "Tyranitar ex",
+      "number": "064",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/064/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/064/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/064/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-065",
+      "name": "Roaring Moon",
+      "number": "065",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/065/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/065/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/065/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-066",
+      "name": "Bronzor",
+      "number": "066",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/066/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/066/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/066/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-067",
+      "name": "Bronzong",
+      "number": "067",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/067/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/067/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/067/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-068",
+      "name": "Heatran",
+      "number": "068",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/068/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/068/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/068/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-069",
+      "name": "Duraludon",
+      "number": "069",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/069/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/069/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/069/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-070",
+      "name": "Archaludon",
+      "number": "070",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/070/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/070/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/070/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-071",
+      "name": "Dreepy",
+      "number": "071",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/071/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/071/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/071/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-072",
+      "name": "Drakloak",
+      "number": "072",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/072/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/072/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/072/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-073",
+      "name": "Dragapult ex",
+      "number": "073",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/073/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/073/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/073/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-074",
+      "name": "Eevee",
+      "number": "074",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/074/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/074/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/074/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-075",
+      "name": "Eevee ex",
+      "number": "075",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/075/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/075/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/075/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-076",
+      "name": "Snorlax ex",
+      "number": "076",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/076/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/076/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/076/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-077",
+      "name": "Hoothoot",
+      "number": "077",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/077/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/077/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/077/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-078",
+      "name": "Noctowl",
+      "number": "078",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/078/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/078/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/078/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-079",
+      "name": "Dunsparce",
+      "number": "079",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/079/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/079/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/079/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-080",
+      "name": "Dudunsparce",
+      "number": "080",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/080/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/080/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/080/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-081",
+      "name": "Miltank",
+      "number": "081",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/081/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/081/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/081/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-082",
+      "name": "Lugia ex",
+      "number": "082",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/082/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/082/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/082/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-083",
+      "name": "Buneary",
+      "number": "083",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/083/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/083/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/083/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-084",
+      "name": "Lopunny",
+      "number": "084",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/084/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/084/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/084/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-085",
+      "name": "Fan Rotom",
+      "number": "085",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/085/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/085/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/085/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-086",
+      "name": "Regigigas",
+      "number": "086",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/086/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/086/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/086/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-087",
+      "name": "Shaymin",
+      "number": "087",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/087/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/087/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/087/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-088",
+      "name": "Furfrou",
+      "number": "088",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/088/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/088/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/088/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-089",
+      "name": "Hawlucha",
+      "number": "089",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/089/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/089/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/089/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-090",
+      "name": "Noibat",
+      "number": "090",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/090/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/090/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/090/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-091",
+      "name": "Noivern ex",
+      "number": "091",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/091/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/091/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/091/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-092",
+      "name": "Terapagos ex",
+      "number": "092",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/092/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/092/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/092/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-093",
+      "name": "Amarys",
+      "number": "093",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/093/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/093/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/093/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-094",
+      "name": "Area Zero Underdepths",
+      "number": "094",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/094/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/094/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/094/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-095",
+      "name": "Binding Mochi",
+      "number": "095",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/095/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/095/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/095/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-096",
+      "name": "Black Belt's Training",
+      "number": "096",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/096/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/096/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/096/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-097",
+      "name": "Black Belt's Training",
+      "number": "097",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/097/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/097/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/097/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-098",
+      "name": "Black Belt's Training",
+      "number": "098",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/098/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/098/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/098/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-099",
+      "name": "Black Belt's Training",
+      "number": "099",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/099/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/099/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/099/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-100",
+      "name": "Briar",
+      "number": "100",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/100/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/100/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/100/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-101",
+      "name": "Buddy-Buddy Poffin",
+      "number": "101",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/101/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/101/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/101/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-102",
+      "name": "Bug Catching Set",
+      "number": "102",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/102/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/102/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/102/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-103",
+      "name": "Carmine",
+      "number": "103",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/103/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/103/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/103/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-104",
+      "name": "Ciphermaniac's Codebreaking",
+      "number": "104",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/104/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/104/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/104/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-105",
+      "name": "Crispin",
+      "number": "105",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/105/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/105/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/105/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-106",
+      "name": "Earthen Vessel",
+      "number": "106",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/106/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/106/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/106/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-107",
+      "name": "Explorer's Guidance",
+      "number": "107",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/107/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/107/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/107/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-108",
+      "name": "Festival Grounds",
+      "number": "108",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/108/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/108/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/108/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-109",
+      "name": "Friends in Paldea",
+      "number": "109",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/109/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/109/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/109/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-110",
+      "name": "Glass Trumpet",
+      "number": "110",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/110/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/110/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/110/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-111",
+      "name": "Haban Berry",
+      "number": "111",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/111/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/111/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/111/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-112",
+      "name": "Janine's Secret Art",
+      "number": "112",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/112/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/112/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/112/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-113",
+      "name": "Kieran",
+      "number": "113",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/113/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/113/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/113/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-114",
+      "name": "Lacey",
+      "number": "114",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/114/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/114/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/114/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-115",
+      "name": "Larry's Skill",
+      "number": "115",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/115/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/115/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/115/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-116",
+      "name": "Max Rod",
+      "number": "116",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/116/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/116/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/116/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-117",
+      "name": "Maximum Belt",
+      "number": "117",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/117/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/117/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/117/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-118",
+      "name": "Ogre's Mask",
+      "number": "118",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/118/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/118/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/118/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-119",
+      "name": "Prime Catcher",
+      "number": "119",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/119/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/119/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/119/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-120",
+      "name": "Professor Sada's Vitality",
+      "number": "120",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/120/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/120/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/120/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-121",
+      "name": "Professor Turo's Scenario",
+      "number": "121",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/121/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/121/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/121/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-122",
+      "name": "Professor's Research",
+      "number": "122",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/122/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/122/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/122/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-123",
+      "name": "Professor's Research",
+      "number": "123",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/123/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/123/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/123/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-124",
+      "name": "Professor's Research",
+      "number": "124",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/124/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/124/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/124/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-125",
+      "name": "Professor's Research",
+      "number": "125",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/125/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/125/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/125/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-126",
+      "name": "Rescue Board",
+      "number": "126",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/126/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/126/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/126/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-127",
+      "name": "Roto-Stick",
+      "number": "127",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/127/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/127/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/127/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-128",
+      "name": "Scoop Up Cyclone",
+      "number": "128",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/128/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/128/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/128/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-129",
+      "name": "Sparkling Crystal",
+      "number": "129",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/129/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/129/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/129/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-130",
+      "name": "Techno Radar",
+      "number": "130",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/130/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/130/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/130/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-131",
+      "name": "Treasure Tracker",
+      "number": "131",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/131/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/131/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/131/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-132",
+      "name": "Amarys",
+      "number": "132",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/132/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/132/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/132/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-133",
+      "name": "Atticus",
+      "number": "133",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/133/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/133/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/133/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-134",
+      "name": "Atticus",
+      "number": "134",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/134/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/134/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/134/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-135",
+      "name": "Brassius",
+      "number": "135",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/135/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/135/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/135/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-136",
+      "name": "Eri",
+      "number": "136",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/136/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/136/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/136/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-137",
+      "name": "Friends in Paldea",
+      "number": "137",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/137/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/137/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/137/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-138",
+      "name": "Giacomo",
+      "number": "138",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/138/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/138/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/138/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-139",
+      "name": "Larry's Skill",
+      "number": "139",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/139/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/139/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/139/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-140",
+      "name": "Mela",
+      "number": "140",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/140/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/140/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/140/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-141",
+      "name": "Ortega",
+      "number": "141",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/141/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/141/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/141/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-142",
+      "name": "Raifort",
+      "number": "142",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/142/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/142/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/142/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-143",
+      "name": "Tyme",
+      "number": "143",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/143/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/143/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/143/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-144",
+      "name": "Leafeon ex",
+      "number": "144",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/144/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/144/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/144/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-145",
+      "name": "Teal Mask Ogerpon ex",
+      "number": "145",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/145/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/145/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/145/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-146",
+      "name": "Flareon ex",
+      "number": "146",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/146/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/146/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/146/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-147",
+      "name": "Ceruledge ex",
+      "number": "147",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/147/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/147/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/147/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-148",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "number": "148",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/148/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/148/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/148/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-149",
+      "name": "Vaporeon ex",
+      "number": "149",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/149/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/149/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/149/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-150",
+      "name": "Glaceon ex",
+      "number": "150",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/150/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/150/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/150/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-151",
+      "name": "Palafin ex",
+      "number": "151",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/151/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/151/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/151/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-152",
+      "name": "Wellspring Mask Ogerpon ex",
+      "number": "152",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/152/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/152/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/152/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-153",
+      "name": "Jolteon ex",
+      "number": "153",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/153/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/153/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/153/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-154",
+      "name": "Iron Hands ex",
+      "number": "154",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/154/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/154/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/154/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-155",
+      "name": "Espeon ex",
+      "number": "155",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/155/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/155/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/155/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-156",
+      "name": "Sylveon ex",
+      "number": "156",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/156/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/156/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/156/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-157",
+      "name": "Iron Valiant ex",
+      "number": "157",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/157/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/157/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/157/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-158",
+      "name": "Iron Crown ex",
+      "number": "158",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/158/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/158/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/158/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-159",
+      "name": "Sandy Shocks ex",
+      "number": "159",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/159/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/159/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/159/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-160",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "number": "160",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/160/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/160/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/160/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-161",
+      "name": "Umbreon ex",
+      "number": "161",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/161/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/161/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/161/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-162",
+      "name": "Roaring Moon ex",
+      "number": "162",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/162/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/162/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/162/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-163",
+      "name": "Pecharunt ex",
+      "number": "163",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/163/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/163/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/163/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-164",
+      "name": "Gholdengo ex",
+      "number": "164",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/164/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/164/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/164/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-165",
+      "name": "Dragapult ex",
+      "number": "165",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/165/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/165/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/165/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-166",
+      "name": "Raging Bolt ex",
+      "number": "166",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/166/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/166/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/166/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-167",
+      "name": "Eevee ex",
+      "number": "167",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/167/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/167/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/167/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-168",
+      "name": "Bloodmoon Ursaluna ex",
+      "number": "168",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/168/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/168/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/168/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-169",
+      "name": "Terapagos ex",
+      "number": "169",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/169/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/169/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/169/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-170",
+      "name": "Amarys",
+      "number": "170",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/170/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/170/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/170/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-171",
+      "name": "Crispin",
+      "number": "171",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/171/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/171/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/171/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-172",
+      "name": "Drayton",
+      "number": "172",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/172/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/172/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/172/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-173",
+      "name": "Janine's Secret Art",
+      "number": "173",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/173/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/173/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/173/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-174",
+      "name": "Kieran",
+      "number": "174",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/174/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/174/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/174/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-175",
+      "name": "Lacey",
+      "number": "175",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/175/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/175/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/175/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-176",
+      "name": "Iron Leaves ex",
+      "number": "176",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/176/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/176/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/176/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-177",
+      "name": "Teal Mask Ogerpon ex",
+      "number": "177",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/177/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/177/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/177/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-178",
+      "name": "Walking Wake ex",
+      "number": "178",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/178/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/178/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/178/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-179",
+      "name": "Pikachu ex",
+      "number": "179",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/179/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/179/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/179/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    },
+    {
+      "id": "sv08.5-180",
+      "name": "Terapagos ex",
+      "number": "180",
+      "rarity": "",
+      "supertype": "Pokémon",
+      "image_url": "https://assets.tcgdex.net/en/sv/sv08.5/180/low.webp",
+      "images": {
+        "small": "https://assets.tcgdex.net/en/sv/sv08.5/180/low.webp",
+        "large": "https://assets.tcgdex.net/en/sv/sv08.5/180/high.webp"
+      },
+      "set": {
+        "id": "sv08.5",
+        "name": "Prismatic Evolutions",
+        "series": "Scarlet & Violet"
+      }
+    }
+  ]
+}
