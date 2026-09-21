@@ -10386,5 +10386,19 @@
     "market_price": 69.03,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "cel25-8",
+    "set_id": "cel25",
+    "name": "Surfing Pikachu V",
+    "number": "8",
+    "rarity": "Holo Rare V",
+    "image_url": "https://assets.tcgdex.net/en/swsh/cel25/8/low.webp",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 3.57,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
