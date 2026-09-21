@@ -10498,5 +10498,19 @@
     "market_price": 18.09,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh9tg-TG02",
+    "set_id": "swsh9tg",
+    "name": "Vaporeon",
+    "number": "TG02",
+    "rarity": "Rare",
+    "image_url": "https://bradleylauweres.github.io/PokemonCardCollection/assets/placeholder-CYNWb8RT.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 21.54,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
