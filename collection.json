@@ -10372,5 +10372,19 @@
     "market_price": 4.53,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "swsh12.5gg-GG10",
+    "set_id": "swsh12.5gg",
+    "name": "Mew",
+    "number": "GG10",
+    "rarity": "Rare",
+    "image_url": "https://bradleylauweres.github.io/PokemonCardCollection/assets/placeholder-CYNWb8RT.png",
+    "quantity": 1,
+    "is_foil": false,
+    "is_wanted": false,
+    "market_price": 69.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
