@@ -175,6 +175,23 @@ export async function loadCollection({ forceRemote = false } = {}) {
     }
   }
 
+  if (currentCards !== null && !isGitHubConfigured()) {
+    try {
+      const res = await fetch('./data/collection.json');
+      if (res.ok) {
+        const seed = await res.json();
+        const seedCards = Array.isArray(seed) ? seed : (seed.cards || []);
+        if (seedCards.length > currentCards.length) {
+          const cardMap = new Map();
+          seedCards.forEach(c => cardMap.set(c.card_id, c));
+          currentCards.forEach(c => cardMap.set(c.card_id, c));
+          currentCards = Array.from(cardMap.values());
+          localStorage.setItem(STORAGE_KEY_COLLECTION, JSON.stringify(currentCards));
+        }
+      }
+    } catch {}
+  }
+
   if (currentCards === null) {
     try {
       const res = await fetch('./data/collection.json');

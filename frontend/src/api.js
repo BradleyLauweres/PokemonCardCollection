@@ -847,8 +847,8 @@ function parseBackupContent(txtContent) {
       if (!cardId) continue;
 
       const cardSetId = parts[1] || (cardId.includes('-') ? cardId.split('-')[0] : '');
-      const number = parts[2] || (cardId.includes('-') ? cardId.split('-')[1] : '');
-      const qty = parseInt(parts[3], 10) || 1;
+      const parsedQty = parseInt(parts[3], 10);
+      const qty = isNaN(parsedQty) ? 0 : parsedQty;
       const isWanted = parts[4] === '1' || parts[4]?.toLowerCase() === 'true';
       const marketPrice = parseFloat(parts[5]) || 0.0;
       const customPrice = parseFloat(parts[6]) || 0.0;

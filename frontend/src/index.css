@@ -1261,6 +1261,18 @@ option {
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.filter-select-wrap:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(9, 12, 21, 0.8);
+}
+
+.filter-select-wrap.active {
+  border-color: rgba(0, 229, 255, 0.45);
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.18);
 }
 
 .compact-select {
@@ -1271,6 +1283,37 @@ option {
   color: #fff;
   outline: none;
   cursor: pointer;
+}
+
+.compact-select option,
+.compact-select optgroup {
+  background: #0d121f;
+  color: #e2e8f0;
+}
+
+.filter-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 82, 82, 0.12);
+  border: 1px solid rgba(255, 82, 82, 0.35);
+  color: #ff8080;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filter-reset-btn:hover {
+  background: rgba(255, 82, 82, 0.25);
+  border-color: rgba(255, 82, 82, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 82, 82, 0.25);
 }
 
 .card-action-btn {

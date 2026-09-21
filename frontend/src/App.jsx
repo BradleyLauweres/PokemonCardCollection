@@ -45,7 +45,9 @@ export default function App() {
   const [globalCards, setGlobalCards] = useState([]);
   const [statusFilter, setStatusFilter] = useState('all');
   const [rarityFilter, setRarityFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('number');
+  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [priceFilter, setPriceFilter] = useState('all');
+  const [sortBy, setSortBy] = useState('number_asc');
   
   const [inspectedCard, setInspectedCard] = useState(null);
   const [showStatsModal, setShowStatsModal] = useState(false);
@@ -72,9 +74,29 @@ export default function App() {
     setSearchQuery('');
     setSearchScope('set');
     setStatusFilter('all');
+    setRarityFilter('all');
+    setCategoryFilter('all');
+    setPriceFilter('all');
     setSelectedSetId(id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setStatusFilter('all');
+    setRarityFilter('all');
+    setCategoryFilter('all');
+    setPriceFilter('all');
+    setSortBy('number_asc');
+  };
+
+  const hasActiveFilters =
+    statusFilter !== 'all' ||
+    rarityFilter !== 'all' ||
+    categoryFilter !== 'all' ||
+    priceFilter !== 'all' ||
+    (sortBy !== 'number' && sortBy !== 'number_asc') ||
+    !!searchQuery.trim();
 
   const handleFocusSearch = () => {
     setSearchScope('all');
@@ -531,9 +553,19 @@ export default function App() {
     searchFilteredCards.forEach(c => {
       const userEntry = findUserCardEntry(userCollectionMap, c);
       const r = c.rarity || userEntry?.rarity;
-      if (r) raritiesSet.add(r);
+      if (r && r.trim()) raritiesSet.add(r.trim());
     });
+    if (raritiesSet.size === 0) {
+      return ['Common', 'Uncommon', 'Rare', 'Double Rare', 'Ultra Rare', 'Illustration Rare', 'Special Illustration Rare', 'Hyper Rare', 'Promo'];
+    }
     return Array.from(raritiesSet).sort();
+  }, [searchFilteredCards, userCollectionMap]);
+
+  const duplicatesCountInView = useMemo(() => {
+    return searchFilteredCards.filter(c => {
+      const entry = findUserCardEntry(userCollectionMap, c);
+      return !!(entry && entry.quantity > 1);
+    }).length;
   }, [searchFilteredCards, userCollectionMap]);
 
   const filteredCards = useMemo(() => {
@@ -542,6 +574,7 @@ export default function App() {
         const userEntry = findUserCardEntry(userCollectionMap, card);
         const isOwned = !!(userEntry && userEntry.quantity > 0);
         const isWanted = !!(userEntry && userEntry.is_wanted === true);
+        const qty = userEntry?.quantity || 0;
 
         if (selectedSetId === 'wanted_list' && !isSearchingGlobal) {
           if (!isWanted) return false;
@@ -551,29 +584,94 @@ export default function App() {
           if (statusFilter === 'owned' && !isOwned) return false;
           if (statusFilter === 'missing' && isOwned) return false;
           if (statusFilter === 'wanted' && !isWanted) return false;
+          if (statusFilter === 'duplicates' && qty <= 1) return false;
         }
 
-        const cardRarity = card.rarity || userEntry?.rarity;
-        if (rarityFilter !== 'all' && cardRarity !== rarityFilter) return false;
+        const cardRarity = card.rarity || userEntry?.rarity || '';
+        const cardName = card.name || '';
+        if (rarityFilter !== 'all') {
+          if (rarityFilter === 'hits') {
+            const isHit = /illustration|special|ultra|double|hyper|secret|ace spec|rare holo|promo|ex|gx|\bv\b|vstar|vmax/i.test(cardRarity) || /\b(ex|gx|v|vstar|vmax)\b/i.test(cardName);
+            if (!isHit) return false;
+          } else if (rarityFilter === 'special_art') {
+            if (!/illustration/i.test(cardRarity)) return false;
+          } else if (rarityFilter === 'ex_ultra') {
+            const isEx = /ultra|double|ex|\bv\b/i.test(cardRarity) || /\b(ex|v|vstar|vmax)\b/i.test(cardName);
+            if (!isEx) return false;
+          } else if (rarityFilter === 'holos') {
+            if (!/holo/i.test(cardRarity)) return false;
+          } else {
+            if (cardRarity.toLowerCase() !== rarityFilter.toLowerCase()) return false;
+          }
+        }
+
+        if (categoryFilter !== 'all') {
+          const category = (card.supertype || userEntry?.supertype || '').toLowerCase();
+          const name = card.name.toLowerCase();
+          if (categoryFilter === 'pokemon') {
+            if (category && category !== 'pokémon' && category !== 'pokemon') return false;
+          } else if (categoryFilter === 'trainer') {
+            const isTrainer = category === 'trainer' || /supporter|item|stadium|tool/.test(category);
+            if (!isTrainer) return false;
+          } else if (categoryFilter === 'energy') {
+            const isEnergy = category === 'energy' || name.includes('energy');
+            if (!isEnergy) return false;
+          }
+        }
+
+        if (priceFilter !== 'all') {
+          const cmPrice = card.cardmarket?.prices?.averageSellPrice;
+          const tcgPrice = card.tcgplayer?.prices?.holofoil?.market || card.tcgplayer?.prices?.normal?.market;
+          const price = userEntry?.custom_price || userEntry?.market_price || card.market_price || cmPrice || tcgPrice || 0;
+          if (priceFilter === 'has_price' && price <= 0) return false;
+          if (priceFilter === 'no_price' && price > 0) return false;
+          if (priceFilter === 'min_1' && price < 1) return false;
+          if (priceFilter === 'min_5' && price < 5) return false;
+          if (priceFilter === 'min_10' && price < 10) return false;
+          if (priceFilter === 'min_25' && price < 25) return false;
+        }
 
         return true;
       })
       .sort((a, b) => {
-        if (sortBy === 'name') {
+        const userA = findUserCardEntry(userCollectionMap, a);
+        const userB = findUserCardEntry(userCollectionMap, b);
+        const cmA = a.cardmarket?.prices?.averageSellPrice;
+        const tcgA = a.tcgplayer?.prices?.holofoil?.market || a.tcgplayer?.prices?.normal?.market;
+        const priceA = userA?.custom_price || userA?.market_price || a.market_price || cmA || tcgA || 0;
+
+        const cmB = b.cardmarket?.prices?.averageSellPrice;
+        const tcgB = b.tcgplayer?.prices?.holofoil?.market || b.tcgplayer?.prices?.normal?.market;
+        const priceB = userB?.custom_price || userB?.market_price || b.market_price || cmB || tcgB || 0;
+
+        const qtyA = userA?.quantity || 0;
+        const qtyB = userB?.quantity || 0;
+
+        if (sortBy === 'price_desc') {
+          return priceB - priceA;
+        } else if (sortBy === 'price_asc') {
+          return priceA - priceB;
+        } else if (sortBy === 'qty_desc') {
+          return qtyB - qtyA;
+        } else if (sortBy === 'name_asc' || sortBy === 'name') {
           return a.name.localeCompare(b.name);
+        } else if (sortBy === 'name_desc') {
+          return b.name.localeCompare(a.name);
         } else if (sortBy === 'rarity') {
-          const userA = findUserCardEntry(userCollectionMap, a);
-          const userB = findUserCardEntry(userCollectionMap, b);
           const rA = a.rarity || userA?.rarity || '';
           const rB = b.rarity || userB?.rarity || '';
           return rA.localeCompare(rB);
+        } else if (sortBy === 'number_desc') {
+          const numA = parseInt(a.number, 10) || 0;
+          const numB = parseInt(b.number, 10) || 0;
+          return numB - numA;
         } else {
           const numA = parseInt(a.number, 10) || 9999;
           const numB = parseInt(b.number, 10) || 9999;
           return numA - numB;
         }
       });
-  }, [searchFilteredCards, userCollectionMap, statusFilter, rarityFilter, sortBy, selectedSetId, isSearchingGlobal]);
+  }, [searchFilteredCards, userCollectionMap, statusFilter, rarityFilter, categoryFilter, priceFilter, sortBy, selectedSetId, isSearchingGlobal]);
 
   const ownedCountInFullSet = isAllOwnedView
     ? setCards.length
@@ -662,13 +760,20 @@ export default function App() {
           onStatusFilterChange={setStatusFilter}
           rarityFilter={rarityFilter}
           onRarityFilterChange={setRarityFilter}
+          categoryFilter={categoryFilter}
+          onCategoryFilterChange={setCategoryFilter}
+          priceFilter={priceFilter}
+          onPriceFilterChange={setPriceFilter}
           sortBy={sortBy}
           onSortByChange={setSortBy}
+          onResetFilters={handleResetFilters}
+          hasActiveFilters={hasActiveFilters}
           rarities={setRarities}
           totalCount={searchFilteredCards.length}
           ownedCount={ownedCountInView}
           missingCount={missingCountInView}
           wantedCount={wantedCountInView}
+          duplicatesCount={duplicatesCountInView}
           isWantedMode={isWantedView}
         />
 

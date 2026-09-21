@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Filter, ArrowUpDown, X, Layers, Globe } from 'lucide-react';
+import { Search, ArrowUpDown, X, Layers, Globe, Sparkles, Euro, RotateCcw } from 'lucide-react';
 
 export default function FilterBar({
   searchQuery,
@@ -11,13 +11,20 @@ export default function FilterBar({
   onStatusFilterChange,
   rarityFilter,
   onRarityFilterChange,
+  categoryFilter = 'all',
+  onCategoryFilterChange,
+  priceFilter = 'all',
+  onPriceFilterChange,
   sortBy,
   onSortByChange,
-  rarities,
+  onResetFilters,
+  hasActiveFilters = false,
+  rarities = [],
   totalCount,
   ownedCount,
   missingCount,
   wantedCount = 0,
+  duplicatesCount = 0,
   isWantedMode = false,
   searchInputRef
 }) {
@@ -130,39 +137,116 @@ export default function FilterBar({
               >
                 Wanted ({wantedCount})
               </button>
+              {duplicatesCount > 0 && (
+                <button
+                  type="button"
+                  className={`filter-btn ${statusFilter === 'duplicates' ? 'active' : ''}`}
+                  onClick={() => onStatusFilterChange('duplicates')}
+                  style={
+                    statusFilter === 'duplicates'
+                      ? { background: 'linear-gradient(135deg, #ffb300, #ff8f00)', color: '#090c15', fontWeight: 800 }
+                      : { color: '#ffb300' }
+                  }
+                  title="Filter cards where you own 2 or more copies"
+                >
+                  Duplicates ({duplicatesCount})
+                </button>
+              )}
             </>
           )}
         </div>
 
         <div className="filter-dropdowns-group">
-          <div className="filter-select-wrap">
-            <Filter size={15} color="var(--text-muted)" />
+          <div className={`filter-select-wrap ${rarityFilter !== 'all' ? 'active' : ''}`}>
+            <Sparkles size={14} color={rarityFilter !== 'all' ? 'var(--color-primary)' : 'var(--text-muted)'} />
             <select
               className="set-dropdown compact-select"
               value={rarityFilter}
               onChange={(e) => onRarityFilterChange(e.target.value)}
+              title="Filter by card rarity"
             >
               <option value="all">All Rarities</option>
-              {rarities.map((r) => (
-                <option key={r} value={r}>
-                  {r}
-                </option>
-              ))}
+              <optgroup label="Rarity Groups">
+                <option value="hits">Hits & Secret Rares</option>
+                <option value="special_art">Illustration Rares (IR/SIR)</option>
+                <option value="ex_ultra">ex & Ultra Rares</option>
+                <option value="holos">Holo Rares</option>
+              </optgroup>
+              {rarities && rarities.length > 0 && (
+                <optgroup label="Specific Rarities">
+                  {rarities.map((r) => (
+                    <option key={r} value={r}>
+                      {r}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
             </select>
           </div>
 
-          <div className="filter-select-wrap">
-            <ArrowUpDown size={15} color="var(--text-muted)" />
+          <div className={`filter-select-wrap ${categoryFilter !== 'all' ? 'active' : ''}`}>
+            <Layers size={14} color={categoryFilter !== 'all' ? 'var(--color-primary)' : 'var(--text-muted)'} />
+            <select
+              className="set-dropdown compact-select"
+              value={categoryFilter}
+              onChange={(e) => onCategoryFilterChange(e.target.value)}
+              title="Filter by card category"
+            >
+              <option value="all">All Categories</option>
+              <option value="pokemon">Pokémon Only</option>
+              <option value="trainer">Trainers Only</option>
+              <option value="energy">Energy Cards</option>
+            </select>
+          </div>
+
+          <div className={`filter-select-wrap ${priceFilter !== 'all' ? 'active' : ''}`}>
+            <Euro size={14} color={priceFilter !== 'all' ? '#00e676' : 'var(--text-muted)'} />
+            <select
+              className="set-dropdown compact-select"
+              value={priceFilter}
+              onChange={(e) => onPriceFilterChange(e.target.value)}
+              title="Filter by estimated market price"
+            >
+              <option value="all">All Prices</option>
+              <option value="min_1">Over €1.00</option>
+              <option value="min_5">Over €5.00</option>
+              <option value="min_10">Over €10.00</option>
+              <option value="min_25">Over €25.00</option>
+              <option value="has_price">Priced Cards Only</option>
+              <option value="no_price">Unpriced Only</option>
+            </select>
+          </div>
+
+          <div className={`filter-select-wrap ${sortBy !== 'number_asc' && sortBy !== 'number' ? 'active' : ''}`}>
+            <ArrowUpDown size={14} color={sortBy !== 'number_asc' && sortBy !== 'number' ? 'var(--color-primary)' : 'var(--text-muted)'} />
             <select
               className="set-dropdown compact-select"
               value={sortBy}
               onChange={(e) => onSortByChange(e.target.value)}
+              title="Sort cards"
             >
-              <option value="number">Card #</option>
-              <option value="name">Name</option>
+              <option value="number_asc">Card # (1 → 999)</option>
+              <option value="number_desc">Card # (999 → 1)</option>
+              <option value="price_desc">Price: High to Low</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="name_asc">Name (A → Z)</option>
+              <option value="name_desc">Name (Z → A)</option>
+              <option value="qty_desc">Most Owned (x2+)</option>
               <option value="rarity">Rarity</option>
             </select>
           </div>
+
+          {hasActiveFilters && (
+            <button
+              type="button"
+              className="filter-reset-btn"
+              onClick={onResetFilters}
+              title="Reset all search and filter options"
+            >
+              <RotateCcw size={12} />
+              <span>Reset</span>
+            </button>
+          )}
         </div>
       </div>
     </div>
