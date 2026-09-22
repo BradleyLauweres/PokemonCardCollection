@@ -10526,5 +10526,19 @@
     "market_price": 2.99,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "B1-243",
+    "set_id": "B1",
+    "name": "Pancham",
+    "number": "243",
+    "rarity": "One Star",
+    "image_url": "https://assets.tcgdex.net/en/tcgp/B1/243/low.webp",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
