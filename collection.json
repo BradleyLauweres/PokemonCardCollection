@@ -10540,5 +10540,19 @@
     "market_price": 0,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sm12-165",
+    "set_id": "sm12",
+    "name": "Mega Lopunny & Jigglypuff GX",
+    "number": "165",
+    "rarity": "Ultra Rare",
+    "image_url": "https://assets.tcgdex.net/en/sm/sm12/165/low.webp",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 24.03,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
