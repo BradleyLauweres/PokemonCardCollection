@@ -10596,5 +10596,19 @@
     "market_price": 5.65,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "sv03.5-187",
+    "set_id": "sv03.5",
+    "name": "Wigglytuff ex",
+    "number": "187",
+    "rarity": "Ultra Rare",
+    "image_url": "https://assets.tcgdex.net/en/sv/sv03.5/187/low.webp",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 11.21,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
