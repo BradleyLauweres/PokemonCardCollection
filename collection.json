@@ -10610,5 +10610,19 @@
     "market_price": 11.21,
     "custom_price": 0,
     "notes": ""
+  },
+  {
+    "card_id": "A3-237",
+    "set_id": "A3",
+    "name": "Wigglytuff ex",
+    "number": "237",
+    "rarity": "Two Shiny",
+    "image_url": "https://assets.tcgdex.net/en/tcgp/A3/237/low.webp",
+    "quantity": 0,
+    "is_foil": false,
+    "is_wanted": true,
+    "market_price": 0,
+    "custom_price": 0,
+    "notes": ""
   }
 ]
