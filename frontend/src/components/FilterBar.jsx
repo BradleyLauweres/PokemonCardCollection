@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, ArrowUpDown, X, Layers, Globe, Sparkles, Euro, RotateCcw } from 'lucide-react';
+import { Search, ArrowUpDown, X, Layers, Globe, Sparkles, Euro, RotateCcw, Camera } from 'lucide-react';
 
 export default function FilterBar({
   searchQuery,
@@ -7,6 +7,7 @@ export default function FilterBar({
   searchScope = 'set',
   onSearchScopeChange,
   currentSetName = 'This Set',
+  onOpenScanner,
   statusFilter,
   onStatusFilterChange,
   rarityFilter,
@@ -57,6 +58,18 @@ export default function FilterBar({
               title="Clear search"
             >
               <X size={14} />
+            </button>
+          )}
+
+          {onOpenScanner && (
+            <button
+              type="button"
+              className="search-scan-btn"
+              onClick={onOpenScanner}
+              title="Scan Pokémon card with camera"
+            >
+              <Camera size={15} />
+              <span className="search-scan-label">Scan</span>
             </button>
           )}
         </div>

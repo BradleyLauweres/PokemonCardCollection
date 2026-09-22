@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# OCR & Node artifacts
+*.traineddata
+/package-lock.json

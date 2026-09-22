@@ -27,7 +27,15 @@ export {
   isGitHubConfigured
 };
 
-const TCGDEX_API_BASE = 'https://api.tcgdex.net/v2/en';
+export const TCGDEX_API_BASE = 'https://api.tcgdex.net/v2/en';
+
+export function formatCardImageUrl(imgUrl) {
+  if (!imgUrl) return placeholderImg;
+  if (imgUrl.includes('.webp') || imgUrl.includes('.png') || imgUrl.includes('.jpg')) {
+    return imgUrl;
+  }
+  return `${imgUrl}/high.webp`;
+}
 
 const EXPLICIT_SET_MAP = {
   'rsv10pt5': 'sv10.5w',

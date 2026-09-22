@@ -8,6 +8,7 @@ import CardModal from './components/CardModal';
 import StatsModal from './components/StatsModal';
 import GitHubSettingsModal from './components/GitHubSettingsModal';
 import SetSelectorModal from './components/SetSelectorModal';
+import CardScannerModal from './components/CardScannerModal';
 import MobileBottomNav from './components/MobileBottomNav';
 import placeholderImg from './assets/placeholder.png';
 import {
@@ -53,6 +54,7 @@ export default function App() {
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [showGitHubSettings, setShowGitHubSettings] = useState(false);
   const [showSetSelector, setShowSetSelector] = useState(false);
+  const [showScannerModal, setShowScannerModal] = useState(false);
 
   const searchInputRef = useRef(null);
   const isSearchingGlobal = searchScope === 'all' && searchQuery.trim().length >= 2;
@@ -71,24 +73,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScrollOrTouch = () => {
-      const activeEl = document.activeElement;
-      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
-        const currentScrollY = window.scrollY;
-        if (Math.abs(currentScrollY - lastScrollY) > 15) {
-          activeEl.blur();
-          lastScrollY = currentScrollY;
-        }
-      } else {
-        lastScrollY = window.scrollY;
+    const handleFocusIn = (e) => {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+        document.body.classList.add('keyboard-open');
       }
     };
-    window.addEventListener('scroll', handleScrollOrTouch, { passive: true });
-    window.addEventListener('touchmove', handleScrollOrTouch, { passive: true });
+    const handleFocusOut = (e) => {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+        document.body.classList.remove('keyboard-open');
+      }
+    };
+    window.addEventListener('focusin', handleFocusIn);
+    window.addEventListener('focusout', handleFocusOut);
     return () => {
-      window.removeEventListener('scroll', handleScrollOrTouch);
-      window.removeEventListener('touchmove', handleScrollOrTouch);
+      window.removeEventListener('focusin', handleFocusIn);
+      window.removeEventListener('focusout', handleFocusOut);
     };
   }, []);
 
@@ -752,6 +751,7 @@ export default function App() {
         onOpenSetSelector={() => setShowSetSelector(true)}
         onOpenStats={() => setShowStatsModal(true)}
         onOpenGitHubSettings={() => setShowGitHubSettings(true)}
+        onOpenScanner={() => setShowScannerModal(true)}
         totalOwnedCount={stats?.total_collected || 0}
         totalWantedCount={stats?.total_wanted || 0}
         totalMarketValue={stats?.total_market_value || 0}
@@ -778,6 +778,7 @@ export default function App() {
           searchScope={searchScope}
           onSearchScopeChange={setSearchScope}
           currentSetName={currentSetName}
+          onOpenScanner={() => setShowScannerModal(true)}
           statusFilter={statusFilter}
           onStatusFilterChange={setStatusFilter}
           rarityFilter={rarityFilter}
@@ -860,6 +861,18 @@ export default function App() {
           totalWantedCount={stats?.total_wanted || 0}
         />
       )}
+
+      <CardScannerModal
+        isOpen={showScannerModal}
+        onClose={() => setShowScannerModal(false)}
+        sets={sets}
+        currentSetId={selectedSetId !== 'all_owned' && selectedSetId !== 'wanted_list' && !isSearchingGlobal ? selectedSetId : ''}
+        userCollectionMap={userCollectionMap}
+        onToggleCard={handleToggleCard}
+        onToggleWanted={handleToggleWanted}
+        onQuantityChange={handleQuantityChange}
+        onInspectCard={setInspectedCard}
+      />
 
       <MobileBottomNav
         currentView={selectedSetId}

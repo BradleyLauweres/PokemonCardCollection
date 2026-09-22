@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart, Cloud, RefreshCw, AlertCircle, CheckCircle2, ChevronDown } from 'lucide-react';
+import { Layers, Sparkles, PieChart, Euro, BookOpen, Heart, Cloud, RefreshCw, AlertCircle, CheckCircle2, ChevronDown, Camera } from 'lucide-react';
 import { subscribeSyncState, getSyncState } from '../api';
 
 export default function Navbar({
@@ -10,6 +10,7 @@ export default function Navbar({
   onOpenSetSelector,
   onOpenStats,
   onOpenGitHubSettings,
+  onOpenScanner,
   totalOwnedCount,
   totalWantedCount,
   totalMarketValue,
@@ -83,6 +84,18 @@ export default function Navbar({
           <span>Wanted ({totalWantedCount || 0})</span>
         </button>
 
+        {onOpenScanner && (
+          <button
+            type="button"
+            className="btn btn-secondary scan-nav-btn"
+            onClick={onOpenScanner}
+            title="Scan Pokémon card with camera"
+          >
+            <Camera size={16} color="var(--color-primary)" />
+            <span>Scan Card</span>
+          </button>
+        )}
+
         <div className="set-selector-group">
           <Layers size={18} color="var(--color-primary)" />
           <select
@@ -111,6 +124,17 @@ export default function Navbar({
       </div>
 
       <div className="nav-right-controls">
+        {onOpenScanner && (
+          <button
+            type="button"
+            className="icon-btn mobile-scan-btn"
+            onClick={onOpenScanner}
+            title="Scan Pokémon card with camera"
+          >
+            <Camera size={18} color="var(--color-primary)" />
+          </button>
+        )}
+
         <button
           className="btn btn-secondary mobile-sync-btn"
           onClick={onOpenGitHubSettings}
